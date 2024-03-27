@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE67A0EE2BA534EE00649A3E /* MagisterWorkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67A0ED2BA534EE00649A3E /* MagisterWorkApp.swift */; };
+		CE67A0F22BA534EF00649A3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE67A0F12BA534EF00649A3E /* Assets.xcassets */; };
+		CE67A0F52BA534EF00649A3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE67A0F42BA534EF00649A3E /* Preview Assets.xcassets */; };
+		CE67A1012BA53E6800649A3E /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67A1002BA53E6800649A3E /* CameraView.swift */; };
+		CE67A1032BA53E9C00649A3E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67A1022BA53E9C00649A3E /* SettingsView.swift */; };
+		CE67A1052BA5433C00649A3E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67A1042BA5433C00649A3E /* MainView.swift */; };
+		CE67A10E2BA5EF5400649A3E /* InceptionV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE67A10D2BA5EF5400649A3E /* InceptionV3.mlmodel */; };
+		CE67A1102BA5EF8000649A3E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67A10F2BA5EF8000649A3E /* ImagePicker.swift */; };
+		CE91B9DA2BAC67D900E4C4C5 /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91B9D92BAC67D900E4C4C5 /* Prediction.swift */; };
+		CE91B9DC2BAC6B1900E4C4C5 /* ImagePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91B9DB2BAC6B1900E4C4C5 /* ImagePredictor.swift */; };
+		CE91B9DF2BACAFE100E4C4C5 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91B9DE2BACAFE100E4C4C5 /* SettingsViewModel.swift */; };
+		CE91B9E12BACC4B000E4C4C5 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91B9E02BACC4B000E4C4C5 /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
+		CE91B9E32BACC51500E4C4C5 /* VNClassificationObservation+confidenceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91B9E22BACC51500E4C4C5 /* VNClassificationObservation+confidenceString.swift */; };
+		CECC0C432BA607E9003F386B /* SeeFood.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CECC0C422BA607E9003F386B /* SeeFood.mlmodel */; };
+		CECC0C452BA6092E003F386B /* imagetest.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CECC0C442BA6092E003F386B /* imagetest.mlmodel */; };
+		CECC0C472BA609C5003F386B /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CECC0C462BA609C5003F386B /* MobileNet.mlmodel */; };
+		CECC0C512BA6164C003F386B /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CECC0C502BA6164C003F386B /* SqueezeNet.mlmodel */; };
+		CECC0C542BA651F0003F386B /* NeuralNetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC0C532BA651F0003F386B /* NeuralNetworkType.swift */; };
+		CECC0C562BA8C274003F386B /* NeuralNetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC0C552BA8C274003F386B /* NeuralNetworkBuilder.swift */; };
+		CECC0C592BA8C44C003F386B /* GlobalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC0C582BA8C44C003F386B /* GlobalSettings.swift */; };
+		CECC0C5C2BA8D286003F386B /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC0C5B2BA8D286003F386B /* CameraViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CE67A0EA2BA534EE00649A3E /* MagisterWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagisterWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE67A0ED2BA534EE00649A3E /* MagisterWorkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagisterWorkApp.swift; sourceTree = "<group>"; };
+		CE67A0F12BA534EF00649A3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE67A0F42BA534EF00649A3E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE67A1002BA53E6800649A3E /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		CE67A1022BA53E9C00649A3E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CE67A1042BA5433C00649A3E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CE67A10D2BA5EF5400649A3E /* InceptionV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = InceptionV3.mlmodel; sourceTree = "<group>"; };
+		CE67A10F2BA5EF8000649A3E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		CE91B9D92BAC67D900E4C4C5 /* Prediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
+		CE91B9DB2BAC6B1900E4C4C5 /* ImagePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePredictor.swift; sourceTree = "<group>"; };
+		CE91B9DE2BACAFE100E4C4C5 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		CE91B9E02BACC4B000E4C4C5 /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
+		CE91B9E22BACC51500E4C4C5 /* VNClassificationObservation+confidenceString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VNClassificationObservation+confidenceString.swift"; sourceTree = "<group>"; };
+		CECC0C422BA607E9003F386B /* SeeFood.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SeeFood.mlmodel; sourceTree = "<group>"; };
+		CECC0C442BA6092E003F386B /* imagetest.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = imagetest.mlmodel; sourceTree = "<group>"; };
+		CECC0C462BA609C5003F386B /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
+		CECC0C502BA6164C003F386B /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
+		CECC0C532BA651F0003F386B /* NeuralNetworkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetworkType.swift; sourceTree = "<group>"; };
+		CECC0C552BA8C274003F386B /* NeuralNetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetworkBuilder.swift; sourceTree = "<group>"; };
+		CECC0C582BA8C44C003F386B /* GlobalSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSettings.swift; sourceTree = "<group>"; };
+		CECC0C5B2BA8D286003F386B /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE67A0E72BA534EE00649A3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE67A0E12BA534EE00649A3E = {
+			isa = PBXGroup;
+			children = (
+				CE67A0EC2BA534EE00649A3E /* MagisterWork */,
+				CE67A0EB2BA534EE00649A3E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE67A0EB2BA534EE00649A3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE67A0EA2BA534EE00649A3E /* MagisterWork.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE67A0EC2BA534EE00649A3E /* MagisterWork */ = {
+			isa = PBXGroup;
+			children = (
+				CEA609792BB24DA600CC6F7B /* App */,
+				CE91B9DD2BAC747800E4C4C5 /* Extentions */,
+				CECC0C5A2BA8D26E003F386B /* ViewModels */,
+				CECC0C522BA651CF003F386B /* Models */,
+				CE67A10C2BA5EF3300649A3E /* MLModels */,
+				CE67A1062BA5466500649A3E /* Views */,
+				CE67A1072BA5EED600649A3E /* Services */,
+				CECC0C572BA8C440003F386B /* Utils */,
+				CEA6097A2BB24DB500CC6F7B /* Resources */,
+			);
+			path = MagisterWork;
+			sourceTree = "<group>";
+		};
+		CE67A0F32BA534EF00649A3E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CE67A0F42BA534EF00649A3E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE67A1062BA5466500649A3E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE67A1042BA5433C00649A3E /* MainView.swift */,
+				CE67A10F2BA5EF8000649A3E /* ImagePicker.swift */,
+				CE67A1002BA53E6800649A3E /* CameraView.swift */,
+				CE67A1022BA53E9C00649A3E /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE67A1072BA5EED600649A3E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE91B9DB2BAC6B1900E4C4C5 /* ImagePredictor.swift */,
+				CECC0C552BA8C274003F386B /* NeuralNetworkBuilder.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE67A10C2BA5EF3300649A3E /* MLModels */ = {
+			isa = PBXGroup;
+			children = (
+				CECC0C442BA6092E003F386B /* imagetest.mlmodel */,
+				CE67A10D2BA5EF5400649A3E /* InceptionV3.mlmodel */,
+				CECC0C502BA6164C003F386B /* SqueezeNet.mlmodel */,
+				CECC0C462BA609C5003F386B /* MobileNet.mlmodel */,
+				CECC0C422BA607E9003F386B /* SeeFood.mlmodel */,
+			);
+			path = MLModels;
+			sourceTree = "<group>";
+		};
+		CE91B9DD2BAC747800E4C4C5 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				CE91B9E02BACC4B000E4C4C5 /* CGImagePropertyOrientation+UIImageOrientation.swift */,
+				CE91B9E22BACC51500E4C4C5 /* VNClassificationObservation+confidenceString.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		CEA609792BB24DA600CC6F7B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CE67A0ED2BA534EE00649A3E /* MagisterWorkApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CEA6097A2BB24DB500CC6F7B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE67A0F12BA534EF00649A3E /* Assets.xcassets */,
+				CE67A0F32BA534EF00649A3E /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CECC0C522BA651CF003F386B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CECC0C532BA651F0003F386B /* NeuralNetworkType.swift */,
+				CE91B9D92BAC67D900E4C4C5 /* Prediction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CECC0C572BA8C440003F386B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CECC0C582BA8C44C003F386B /* GlobalSettings.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CECC0C5A2BA8D26E003F386B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CECC0C5B2BA8D286003F386B /* CameraViewModel.swift */,
+				CE91B9DE2BACAFE100E4C4C5 /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE67A0E92BA534EE00649A3E /* MagisterWork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE67A0F82BA534EF00649A3E /* Build configuration list for PBXNativeTarget "MagisterWork" */;
+			buildPhases = (
+				CE67A0E62BA534EE00649A3E /* Sources */,
+				CE67A0E72BA534EE00649A3E /* Frameworks */,
+				CE67A0E82BA534EE00649A3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MagisterWork;
+			productName = MagisterWork;
+			productReference = CE67A0EA2BA534EE00649A3E /* MagisterWork.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE67A0E22BA534EE00649A3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					CE67A0E92BA534EE00649A3E = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = CE67A0E52BA534EE00649A3E /* Build configuration list for PBXProject "MagisterWork" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE67A0E12BA534EE00649A3E;
+			productRefGroup = CE67A0EB2BA534EE00649A3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE67A0E92BA534EE00649A3E /* MagisterWork */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE67A0E82BA534EE00649A3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE67A0F52BA534EF00649A3E /* Preview Assets.xcassets in Resources */,
+				CE67A0F22BA534EF00649A3E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE67A0E62BA534EE00649A3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CECC0C512BA6164C003F386B /* SqueezeNet.mlmodel in Sources */,
+				CE67A1032BA53E9C00649A3E /* SettingsView.swift in Sources */,
+				CECC0C562BA8C274003F386B /* NeuralNetworkBuilder.swift in Sources */,
+				CE91B9E32BACC51500E4C4C5 /* VNClassificationObservation+confidenceString.swift in Sources */,
+				CE91B9DC2BAC6B1900E4C4C5 /* ImagePredictor.swift in Sources */,
+				CE67A1052BA5433C00649A3E /* MainView.swift in Sources */,
+				CECC0C5C2BA8D286003F386B /* CameraViewModel.swift in Sources */,
+				CECC0C472BA609C5003F386B /* MobileNet.mlmodel in Sources */,
+				CE67A0EE2BA534EE00649A3E /* MagisterWorkApp.swift in Sources */,
+				CECC0C432BA607E9003F386B /* SeeFood.mlmodel in Sources */,
+				CE91B9E12BACC4B000E4C4C5 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
+				CECC0C452BA6092E003F386B /* imagetest.mlmodel in Sources */,
+				CE67A1102BA5EF8000649A3E /* ImagePicker.swift in Sources */,
+				CE67A10E2BA5EF5400649A3E /* InceptionV3.mlmodel in Sources */,
+				CECC0C592BA8C44C003F386B /* GlobalSettings.swift in Sources */,
+				CECC0C542BA651F0003F386B /* NeuralNetworkType.swift in Sources */,
+				CE91B9DA2BAC67D900E4C4C5 /* Prediction.swift in Sources */,
+				CE67A1012BA53E6800649A3E /* CameraView.swift in Sources */,
+				CE91B9DF2BACAFE100E4C4C5 /* SettingsViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CE67A0F62BA534EF00649A3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CE67A0F72BA534EF00649A3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE67A0F92BA534EF00649A3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MagisterWork/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = BC9D8B2H8N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Takes pictures to demonstrate image recognition.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Takes photos to demonstrate image recognition.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsirotin.MagisterWork;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE67A0FA2BA534EF00649A3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MagisterWork/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = BC9D8B2H8N;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Takes pictures to demonstrate image recognition.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Takes photos to demonstrate image recognition.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsirotin.MagisterWork;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE67A0E52BA534EE00649A3E /* Build configuration list for PBXProject "MagisterWork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE67A0F62BA534EF00649A3E /* Debug */,
+				CE67A0F72BA534EF00649A3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE67A0F82BA534EF00649A3E /* Build configuration list for PBXNativeTarget "MagisterWork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE67A0F92BA534EF00649A3E /* Debug */,
+				CE67A0FA2BA534EF00649A3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE67A0E22BA534EE00649A3E /* Project object */;
+}
