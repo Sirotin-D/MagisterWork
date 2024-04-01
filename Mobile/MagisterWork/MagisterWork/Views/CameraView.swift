@@ -54,7 +54,7 @@ struct CameraView: View {
                 HStack() {
                     VStack {
                         Text("\(Constants.ImageCategories):")
-                        if let predictionResult = viewModel.predictionsResult {
+                        if let predictionResult = viewModel.cameraState.predictionsResult {
                             ForEach(predictionResult) { prediction in
                                 HStack {
                                     Text("\(prediction.classification) - \(prediction.confidencePercentage) %")
@@ -72,8 +72,8 @@ struct CameraView: View {
                     
                     VStack {
                         Text("\(Constants.TimeElapsed):")
-                        if !viewModel.timeElapsed.isEmpty {
-                            Text("\(viewModel.timeElapsed) sec.")
+                        if !viewModel.cameraState.timeElapsed.isEmpty {
+                            Text("\(viewModel.cameraState.timeElapsed) sec.")
                                 .bold()
                         } else {
                             Text(Constants.UnknownValue)
@@ -82,13 +82,13 @@ struct CameraView: View {
                     }
                 }
                 .padding()
-                if (viewModel.isLoading) {
+                if (viewModel.cameraState.isLoading) {
                     ProgressView()
                 }
             }
         }
-        .sheet(isPresented: $viewModel.isPresenting){
-            ImagePicker(uiImage: $uiImage, isPresenting: $viewModel.isPresenting, sourceType: $viewModel.imageSourceType)
+        .sheet(isPresented: $viewModel.cameraState.isPresenting){
+            ImagePicker(uiImage: $uiImage, isPresenting: $viewModel.cameraState.isPresenting, sourceType: $viewModel.cameraState.imageSourceType)
                 .onDisappear{
                     if let uiImage = uiImage {
                         viewModel.imageSelected(for: uiImage)
@@ -96,7 +96,7 @@ struct CameraView: View {
                 }
         }
         .alert(Constants.LiveImageClassificationImplementationMessage, isPresented:
-                $viewModel.isShowAlert) {
+                $viewModel.cameraState.isShowAlert) {
             Button(Constants.Ok, role: .cancel) {}
         }
         .padding()
