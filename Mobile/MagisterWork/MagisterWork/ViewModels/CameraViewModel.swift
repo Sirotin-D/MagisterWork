@@ -9,6 +9,9 @@ class CameraViewModel: ObservableObject {
     @Published var isPresenting = false
     @Published var predictionsResult: [Prediction]?
     @Published var timeElapsed: String = ""
+    @Published var imageSourceType: UIImagePickerController.SourceType =
+        .photoLibrary
+    @Published var isShowAlert = false
     private var predictor = ImagePredictor()
     private let predictionsToShow = 2
     
@@ -36,6 +39,21 @@ class CameraViewModel: ObservableObject {
         } catch {
             print("Vision was unable to make a prediction...\n\n\(error.localizedDescription)")
         }
+    }
+
+    func photoLibraryImagePickerClicked() {
+        isPresenting = true
+        imageSourceType = .photoLibrary
+    }
+    
+    func cameraImagePickerClicked() {
+        isPresenting = true
+        imageSourceType = UIImagePickerController.isSourceTypeAvailable(.camera)
+        ? .camera : .photoLibrary
+    }
+    
+    func liveImageClassificationClicked() {
+        isShowAlert = true
     }
     
     private func formatElapsedTime(_ value: Double) -> String {

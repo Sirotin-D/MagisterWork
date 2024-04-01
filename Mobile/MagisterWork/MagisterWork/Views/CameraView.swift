@@ -5,7 +5,6 @@
 import SwiftUI
 
 struct CameraView: View {
-    @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @State private var uiImage: UIImage?
     @ObservedObject private var viewModel = CameraViewModel()
     
@@ -14,18 +13,15 @@ struct CameraView: View {
             HStack{
                 Image(systemName: IconNames.PhotoSystemIcon)
                     .onTapGesture {
-                        viewModel.isPresenting = true
-                        sourceType = .photoLibrary
+                        viewModel.photoLibraryImagePickerClicked()
                     }
                 Image(systemName: IconNames.CameraSystemIcon)
                     .onTapGesture {
-                        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                            viewModel.isPresenting = true
-                            sourceType = .camera
-                        } else {
-                            viewModel.isPresenting = true
-                            sourceType = .photoLibrary
-                        }
+                        viewModel.cameraImagePickerClicked()
+                    }
+                Image(systemName: IconNames.VideoSystemIcon)
+                    .onTapGesture {
+                        viewModel.liveImageClassificationClicked()
                     }
             }
             .font(.title)
@@ -92,12 +88,16 @@ struct CameraView: View {
             }
         }
         .sheet(isPresented: $viewModel.isPresenting){
-            ImagePicker(uiImage: $uiImage, isPresenting:  $viewModel.isPresenting, sourceType: $sourceType)
+            ImagePicker(uiImage: $uiImage, isPresenting: $viewModel.isPresenting, sourceType: $viewModel.imageSourceType)
                 .onDisappear{
                     if let uiImage = uiImage {
                         viewModel.imageSelected(for: uiImage)
                     }
                 }
+        }
+        .alert(Constants.LiveImageClassificationImplementationMessage, isPresented:
+                $viewModel.isShowAlert) {
+            Button(Constants.Ok, role: .cancel) {}
         }
         .padding()
     }
@@ -108,12 +108,17 @@ extension CameraView {
         static let CameraTitle = "Камера"
         static let ImageCategories = "Категории фото"
         static let TimeElapsed = "Время затрачено"
+        static let PersentSign = "%"
         static let UnknownValue = "NA"
+        static let SecondsMeasure = "сек."
+        static let LiveImageClassificationImplementationMessage = "Функционал классификации изображений в режиме видео ещё не реализован"
+        static let Ok = "Ок"
     }
     
     private enum IconNames {
         static let PhotoSystemIcon = "photo"
         static let CameraSystemIcon = "camera"
+        static let VideoSystemIcon = "video"
         static let BoltSystemIcon = "bolt.fill"
     }
 }
