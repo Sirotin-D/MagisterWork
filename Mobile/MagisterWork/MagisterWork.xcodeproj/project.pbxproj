@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE5402D52BBB7D54000ED2DF /* MobileNetV2Int8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE5402D02BBB7D46000ED2DF /* MobileNetV2Int8LUT.mlmodel */; };
+		CE5402D62BBB7D54000ED2DF /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE5402D12BBB7D47000ED2DF /* MobileNetV2.mlmodel */; };
+		CE5402D72BBB7D54000ED2DF /* MobileNetV2FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE5402D22BBB7D47000ED2DF /* MobileNetV2FP16.mlmodel */; };
+		CE5402D82BBB7D54000ED2DF /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE5402D32BBB7D4A000ED2DF /* Resnet50.mlmodel */; };
 		CE67A0EE2BA534EE00649A3E /* MagisterWorkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67A0ED2BA534EE00649A3E /* MagisterWorkApp.swift */; };
 		CE67A0F22BA534EF00649A3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE67A0F12BA534EF00649A3E /* Assets.xcassets */; };
 		CE67A0F52BA534EF00649A3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE67A0F42BA534EF00649A3E /* Preview Assets.xcassets */; };
@@ -31,6 +35,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE5402D02BBB7D46000ED2DF /* MobileNetV2Int8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2Int8LUT.mlmodel; sourceTree = "<group>"; };
+		CE5402D12BBB7D47000ED2DF /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
+		CE5402D22BBB7D47000ED2DF /* MobileNetV2FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2FP16.mlmodel; sourceTree = "<group>"; };
+		CE5402D32BBB7D4A000ED2DF /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		CE67A0EA2BA534EE00649A3E /* MagisterWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagisterWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE67A0ED2BA534EE00649A3E /* MagisterWorkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagisterWorkApp.swift; sourceTree = "<group>"; };
 		CE67A0F12BA534EF00649A3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +137,10 @@
 		CE67A10C2BA5EF3300649A3E /* MLModels */ = {
 			isa = PBXGroup;
 			children = (
+				CE5402D12BBB7D47000ED2DF /* MobileNetV2.mlmodel */,
+				CE5402D22BBB7D47000ED2DF /* MobileNetV2FP16.mlmodel */,
+				CE5402D02BBB7D46000ED2DF /* MobileNetV2Int8LUT.mlmodel */,
+				CE5402D32BBB7D4A000ED2DF /* Resnet50.mlmodel */,
 				CECC0C442BA6092E003F386B /* imagetest.mlmodel */,
 				CE67A10D2BA5EF5400649A3E /* InceptionV3.mlmodel */,
 				CECC0C502BA6164C003F386B /* SqueezeNet.mlmodel */,
@@ -260,7 +272,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5402D62BBB7D54000ED2DF /* MobileNetV2.mlmodel in Sources */,
 				CECC0C512BA6164C003F386B /* SqueezeNet.mlmodel in Sources */,
+				CE5402D52BBB7D54000ED2DF /* MobileNetV2Int8LUT.mlmodel in Sources */,
+				CE5402D82BBB7D54000ED2DF /* Resnet50.mlmodel in Sources */,
 				CE67A1032BA53E9C00649A3E /* SettingsView.swift in Sources */,
 				CECC0C562BA8C274003F386B /* NeuralNetworkBuilder.swift in Sources */,
 				CE91B9E32BACC51500E4C4C5 /* VNClassificationObservation+confidenceString.swift in Sources */,
@@ -277,6 +292,7 @@
 				CECC0C592BA8C44C003F386B /* GlobalSettings.swift in Sources */,
 				CECC0C542BA651F0003F386B /* NeuralNetworkType.swift in Sources */,
 				CE91B9DA2BAC67D900E4C4C5 /* Prediction.swift in Sources */,
+				CE5402D72BBB7D54000ED2DF /* MobileNetV2FP16.mlmodel in Sources */,
 				CE67A1012BA53E6800649A3E /* CameraView.swift in Sources */,
 				CE91B9DF2BACAFE100E4C4C5 /* SettingsViewModel.swift in Sources */,
 			);

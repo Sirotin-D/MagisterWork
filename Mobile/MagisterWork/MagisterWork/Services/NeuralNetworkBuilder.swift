@@ -16,6 +16,12 @@ class NeuralNetworkBuilder {
             model = try? InceptionV3(configuration: configuration).model
         case .MobileNet:
              model = try? MobileNet(configuration: configuration).model
+        case .MobileNetV2:
+            model = try? MobileNetV2(configuration: configuration).model
+        case .MobileNetV2FP16:
+            model = try? MobileNetV2FP16(configuration: configuration).model
+        case .MobileNetV2Int8LUT:
+            model = try? MobileNetV2Int8LUT(configuration: configuration).model
         case .SqueezeNet:
             model = try? SqueezeNet(configuration: configuration).model
         case .SeeFood:
