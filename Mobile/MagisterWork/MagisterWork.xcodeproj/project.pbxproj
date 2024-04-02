@@ -435,6 +435,7 @@
 				DEVELOPMENT_TEAM = BC9D8B2H8N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Magister work";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Takes pictures to demonstrate image recognition.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Takes photos to demonstrate image recognition.";
@@ -448,7 +449,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dsirotin.MagisterWork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsirotin.unnmagisterwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -467,6 +468,7 @@
 				DEVELOPMENT_TEAM = BC9D8B2H8N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Magister work";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Takes pictures to demonstrate image recognition.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Takes photos to demonstrate image recognition.";
@@ -480,7 +482,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dsirotin.MagisterWork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsirotin.unnmagisterwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
