@@ -1,0 +1,18 @@
+{
+  "Outputs" : {
+    "var_757" : {
+      "MLFeatureShortDescription" : "Probability of each category"
+    },
+    "classLabel" : {
+      "MLFeatureShortDescription" : "Most likely image category"
+    }
+  },
+  "Inputs" : {
+    "x_1" : {
+      "MLFeatureShortDescription" : "input image of scene to be classified"
+    }
+  },
+  "TrainingInputs" : {
+
+  }
+}

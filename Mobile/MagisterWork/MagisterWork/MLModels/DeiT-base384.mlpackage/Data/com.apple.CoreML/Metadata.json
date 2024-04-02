@@ -1,0 +1,10 @@
+{
+  "MLModelVersionStringKey" : "--",
+  "MLModelDescriptionKey" : "Data-efficient Image Transformers. Image Classification for ImageNetLabels.",
+  "MLModelCreatorDefinedKey" : {
+    "com.github.apple.coremltools.version" : "5.1.0",
+    "com.github.apple.coremltools.source" : "torch==1.10.0+cu111"
+  },
+  "MLModelAuthorKey" : "https:\/\/github.com\/facebookresearch\/deit",
+  "MLModelLicenseKey" : "Apache License 2.0"
+}

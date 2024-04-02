@@ -14,4 +14,5 @@ enum NeuralNetworkType: String, CaseIterable, Identifiable, Equatable {
     case MobileNetV2Int8LUT
     case SqueezeNet
     case SeeFood
+    case Deit
 }

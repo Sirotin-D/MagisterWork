@@ -26,6 +26,8 @@ class NeuralNetworkBuilder {
             model = try? SqueezeNet(configuration: configuration).model
         case .SeeFood:
             model = try? SeeFood(configuration: configuration).model
+        case .Deit:
+            model = try? DeiT_base384(configuration: configuration).model
         }
         guard let model = model else { fatalError("Can't initialize Neural Network model for type: \(type)")}
         return model
