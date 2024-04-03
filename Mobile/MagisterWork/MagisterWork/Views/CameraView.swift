@@ -9,97 +9,99 @@ struct CameraView: View {
     @ObservedObject private var viewModel = CameraViewModel()
     
     var body: some View {
-        VStack {
-            HStack{
-                Image(systemName: IconNames.PhotoSystemIcon)
-                    .onTapGesture {
-                        viewModel.photoLibraryImagePickerClicked()
-                    }
-                Image(systemName: IconNames.CameraSystemIcon)
-                    .onTapGesture {
-                        viewModel.cameraImagePickerClicked()
-                    }
-                Image(systemName: IconNames.VideoSystemIcon)
-                    .onTapGesture {
-                        viewModel.liveImageClassificationClicked()
-                    }
-            }
-            .font(.title)
-            .foregroundColor(.blue)
-            
-            Rectangle()
-                .strokeBorder()
+        NavigationStack {
+            VStack {
+                HStack{
+                    Image(systemName: IconNames.PhotoSystemIcon)
+                        .onTapGesture {
+                            viewModel.photoLibraryImagePickerClicked()
+                        }
+                    Image(systemName: IconNames.CameraSystemIcon)
+                        .onTapGesture {
+                            viewModel.cameraImagePickerClicked()
+                        }
+                    Image(systemName: IconNames.VideoSystemIcon)
+                        .onTapGesture {
+                            viewModel.liveImageClassificationClicked()
+                        }
+                }
+                .font(.title)
                 .foregroundColor(.blue)
-                .overlay(
-                    Group {
-                        if uiImage != nil {
-                            Image(uiImage: uiImage!)
-                                .resizable()
-                                .scaledToFit()
-                        }
-                    }
-                )
-            
-            VStack{
-                Button(action: {
-                    if let uiImage = uiImage {
-                        viewModel.imageSelected(for: uiImage)
-                    }
-                }) {
-                    Image(systemName: IconNames.BoltSystemIcon)
-                        .foregroundColor(.blue)
-                        .font(.title)
-                }
                 
-                HStack() {
-                    VStack {
-                        Text("\(Constants.ImageCategories):")
-                        if let predictionResult = viewModel.cameraState.predictionsResult {
-                            ForEach(predictionResult) { prediction in
-                                HStack {
-                                    Text("\(prediction.classification) - \(prediction.confidencePercentage) %")
-                                        .bold()
-                                        .font(.subheadline)
-                                }
+                Rectangle()
+                    .strokeBorder()
+                    .foregroundColor(.blue)
+                    .overlay(
+                        Group {
+                            if uiImage != nil {
+                                Image(uiImage: uiImage!)
+                                    .resizable()
+                                    .scaledToFit()
                             }
-                        } else {
-                            Text(Constants.UnknownValue)
-                                .bold()
                         }
+                    )
+                
+                VStack{
+                    Button(action: {
+                        if let uiImage = uiImage {
+                            viewModel.imageSelected(for: uiImage)
+                        }
+                    }) {
+                        Image(systemName: IconNames.BoltSystemIcon)
+                            .foregroundColor(.blue)
+                            .font(.title)
                     }
                     
-                    Spacer()
-                    
-                    VStack {
-                        Text("\(Constants.TimeElapsed):")
-                        if !viewModel.cameraState.timeElapsed.isEmpty {
-                            Text("\(viewModel.cameraState.timeElapsed) sec.")
-                                .bold()
-                        } else {
-                            Text(Constants.UnknownValue)
-                                .bold()
+                    HStack() {
+                        VStack {
+                            Text("\(Constants.ImageCategories):")
+                            if let predictionResult = viewModel.cameraState.predictionsResult {
+                                ForEach(predictionResult) { prediction in
+                                    HStack {
+                                        Text("\(prediction.classification) - \(prediction.confidencePercentage) %")
+                                            .bold()
+                                            .font(.subheadline)
+                                    }
+                                }
+                            } else {
+                                Text(Constants.UnknownValue)
+                                    .bold()
+                            }
+                        }
+                        
+                        Spacer()
+                        
+                        VStack {
+                            Text("\(Constants.TimeElapsed):")
+                            if !viewModel.cameraState.timeElapsed.isEmpty {
+                                Text("\(viewModel.cameraState.timeElapsed) sec.")
+                                    .bold()
+                            } else {
+                                Text(Constants.UnknownValue)
+                                    .bold()
+                            }
                         }
                     }
-                }
-                .padding()
-                if (viewModel.cameraState.isLoading) {
-                    ProgressView()
+                    .padding()
+                    if (viewModel.cameraState.isLoading) {
+                        ProgressView()
+                    }
                 }
             }
-        }
-        .sheet(isPresented: $viewModel.cameraState.isPresenting){
-            ImagePicker(uiImage: $uiImage, isPresenting: $viewModel.cameraState.isPresenting, sourceType: $viewModel.cameraState.imageSourceType)
-                .onDisappear{
-                    if let uiImage = uiImage {
-                        viewModel.imageSelected(for: uiImage)
+            .navigationDestination(isPresented: $viewModel.cameraState.isShowAlert, destination: {
+                LiveCameraView()
+                    .toolbar(.hidden, for: .tabBar)
+            })
+            .sheet(isPresented: $viewModel.cameraState.isPresenting){
+                ImagePicker(uiImage: $uiImage, isPresenting: $viewModel.cameraState.isPresenting, sourceType: $viewModel.cameraState.imageSourceType)
+                    .onDisappear{
+                        if let uiImage = uiImage {
+                            viewModel.imageSelected(for: uiImage)
+                        }
                     }
-                }
+            }
+            .padding()
         }
-        .alert(Constants.LiveImageClassificationImplementationMessage, isPresented:
-                $viewModel.cameraState.isShowAlert) {
-            Button(Constants.Ok, role: .cancel) {}
-        }
-        .padding()
     }
 }
 

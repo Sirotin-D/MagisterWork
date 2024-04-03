@@ -20,6 +20,10 @@
 		CE67A1052BA5433C00649A3E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67A1042BA5433C00649A3E /* MainView.swift */; };
 		CE67A10E2BA5EF5400649A3E /* InceptionV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE67A10D2BA5EF5400649A3E /* InceptionV3.mlmodel */; };
 		CE67A1102BA5EF8000649A3E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67A10F2BA5EF8000649A3E /* ImagePicker.swift */; };
+		CE8784032BBC3831006203D3 /* LiveCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8784022BBC3831006203D3 /* LiveCameraView.swift */; };
+		CE8784052BBC384B006203D3 /* LiveCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8784042BBC384B006203D3 /* LiveCameraViewModel.swift */; };
+		CE8784072BBC3AFC006203D3 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8784062BBC3AFC006203D3 /* CameraPreviewView.swift */; };
+		CE87840B2BBCBD0A006203D3 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87840A2BBCBD0A006203D3 /* CameraManager.swift */; };
 		CE91B9DA2BAC67D900E4C4C5 /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91B9D92BAC67D900E4C4C5 /* Prediction.swift */; };
 		CE91B9DC2BAC6B1900E4C4C5 /* ImagePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91B9DB2BAC6B1900E4C4C5 /* ImagePredictor.swift */; };
 		CE91B9DF2BACAFE100E4C4C5 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91B9DE2BACAFE100E4C4C5 /* SettingsViewModel.swift */; };
@@ -50,6 +54,10 @@
 		CE67A1042BA5433C00649A3E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CE67A10D2BA5EF5400649A3E /* InceptionV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = InceptionV3.mlmodel; sourceTree = "<group>"; };
 		CE67A10F2BA5EF8000649A3E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		CE8784022BBC3831006203D3 /* LiveCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCameraView.swift; sourceTree = "<group>"; };
+		CE8784042BBC384B006203D3 /* LiveCameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCameraViewModel.swift; sourceTree = "<group>"; };
+		CE8784062BBC3AFC006203D3 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		CE87840A2BBCBD0A006203D3 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		CE91B9D92BAC67D900E4C4C5 /* Prediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
 		CE91B9DB2BAC6B1900E4C4C5 /* ImagePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePredictor.swift; sourceTree = "<group>"; };
 		CE91B9DE2BACAFE100E4C4C5 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -121,7 +129,9 @@
 			children = (
 				CE67A1042BA5433C00649A3E /* MainView.swift */,
 				CE67A10F2BA5EF8000649A3E /* ImagePicker.swift */,
+				CE8784062BBC3AFC006203D3 /* CameraPreviewView.swift */,
 				CE67A1002BA53E6800649A3E /* CameraView.swift */,
+				CE8784022BBC3831006203D3 /* LiveCameraView.swift */,
 				CE67A1022BA53E9C00649A3E /* SettingsView.swift */,
 			);
 			path = Views;
@@ -131,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				CE91B9DB2BAC6B1900E4C4C5 /* ImagePredictor.swift */,
+				CE87840A2BBCBD0A006203D3 /* CameraManager.swift */,
 				CECC0C552BA8C274003F386B /* NeuralNetworkBuilder.swift */,
 			);
 			path = Services;
@@ -201,6 +212,7 @@
 			children = (
 				CECC0C5B2BA8D286003F386B /* CameraViewModel.swift */,
 				CE91B9DE2BACAFE100E4C4C5 /* SettingsViewModel.swift */,
+				CE8784042BBC384B006203D3 /* LiveCameraViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -290,10 +302,14 @@
 				CE67A0EE2BA534EE00649A3E /* MagisterWorkApp.swift in Sources */,
 				CECC0C432BA607E9003F386B /* SeeFood.mlmodel in Sources */,
 				CE91B9E12BACC4B000E4C4C5 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
+				CE8784072BBC3AFC006203D3 /* CameraPreviewView.swift in Sources */,
+				CE8784052BBC384B006203D3 /* LiveCameraViewModel.swift in Sources */,
+				CE8784032BBC3831006203D3 /* LiveCameraView.swift in Sources */,
 				CECC0C452BA6092E003F386B /* imagetest.mlmodel in Sources */,
 				CE67A1102BA5EF8000649A3E /* ImagePicker.swift in Sources */,
 				CE67A10E2BA5EF5400649A3E /* InceptionV3.mlmodel in Sources */,
 				CECC0C592BA8C44C003F386B /* GlobalSettings.swift in Sources */,
+				CE87840B2BBCBD0A006203D3 /* CameraManager.swift in Sources */,
 				CECC0C542BA651F0003F386B /* NeuralNetworkType.swift in Sources */,
 				CE91B9DA2BAC67D900E4C4C5 /* Prediction.swift in Sources */,
 				CE5402D72BBB7D54000ED2DF /* MobileNetV2FP16.mlmodel in Sources */,
