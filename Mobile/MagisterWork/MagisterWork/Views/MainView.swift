@@ -5,15 +5,6 @@
 import SwiftUI
 
 struct MainView: View {
-    private enum Constants {
-        static let HomeTabName = "Home"
-        static let HomeTabIconName = "house"
-        static let CameraTabName = "Камера"
-        static let CameraTabIconName = "camera"
-        static let SettingsTabName = "Настройки"
-        static let SettingsTabIconName = "gearshape"
-    }
-
     var body: some View {
         TabView {
             CameraView()
@@ -25,6 +16,17 @@ struct MainView: View {
                     Label(Constants.SettingsTabName, systemImage: Constants.SettingsTabIconName)
                 }
         }
+    }
+}
+
+extension MainView {
+    private enum Constants {
+        static let HomeTabName = "Home"
+        static let HomeTabIconName = "house"
+        static let CameraTabName = "Камера"
+        static let CameraTabIconName = "camera"
+        static let SettingsTabName = "Настройки"
+        static let SettingsTabIconName = "gearshape"
     }
 }
 

@@ -4,46 +4,8 @@
 
 import Vision
 import UIKit
-import ImageIO
 
 class ImagePredictor {
-    private func createImageClassifier() -> VNCoreMLModel {
-        let currentNetworkType = GlobalSettings.shared.currentNetworkType
-        print("Using network type: \(currentNetworkType)")
-        let imageClassifierModel = NeuralNetworkBuilder.build(type: currentNetworkType)
-
-        // Create a Vision instance using the image classifier's model instance.
-        guard let imageClassifierVisionModel = try? VNCoreMLModel(for: imageClassifierModel) else {
-            fatalError("App failed to create a `VNCoreMLModel` instance.")
-        }
-
-        return imageClassifierVisionModel
-    }
-
-    /// A common image classifier instance that all Image Predictor instances use to generate predictions.
-    ///
-    /// Share one ``VNCoreMLModel`` instance --- for each Core ML model file --- across the app,
-    /// since each can be expensive in time and resources.
-//    private static let imageClassifier = createImageClassifier()
-
-    /// The function signature the caller must provide as a completion handler.
-    typealias ImagePredictionHandler = (_ predictions: [Prediction]?) -> Void
-
-    /// A dictionary of prediction handler functions, each keyed by its Vision request.
-    private var predictionHandlers = [VNRequest: ImagePredictionHandler]()
-
-    /// Generates a new request instance that uses the Image Predictor's image classifier model.
-    private func createImageClassificationRequest() -> VNImageBasedRequest {
-        // Create an image classification request with an image classifier model.
-
-        let imageClassifier = createImageClassifier()
-        let imageClassificationRequest = VNCoreMLRequest(model: imageClassifier,
-                                                         completionHandler: visionRequestHandler)
-
-        imageClassificationRequest.imageCropAndScaleOption = .centerCrop
-        return imageClassificationRequest
-    }
-
     /// Generates an image classification prediction for a photo.
     /// - Parameter photo: An image, typically of an object or a scene.
     /// - Tag: makePredictions
@@ -62,6 +24,39 @@ class ImagePredictor {
 
         // Start the image classification request.
         try handler.perform(requests)
+    }
+    
+    //MARK: - Private methods
+    
+    private func createImageClassifier() -> VNCoreMLModel {
+        let currentNetworkType = GlobalSettings.shared.currentNetworkType
+        print("Using network type: \(currentNetworkType)")
+        let imageClassifierModel = NeuralNetworkBuilder.build(type: currentNetworkType)
+
+        // Create a Vision instance using the image classifier's model instance.
+        guard let imageClassifierVisionModel = try? VNCoreMLModel(for: imageClassifierModel) else {
+            fatalError("App failed to create a `VNCoreMLModel` instance.")
+        }
+
+        return imageClassifierVisionModel
+    }
+
+    /// The function signature the caller must provide as a completion handler.
+    typealias ImagePredictionHandler = (_ predictions: [Prediction]?) -> Void
+
+    /// A dictionary of prediction handler functions, each keyed by its Vision request.
+    private var predictionHandlers = [VNRequest: ImagePredictionHandler]()
+
+    /// Generates a new request instance that uses the Image Predictor's image classifier model.
+    private func createImageClassificationRequest() -> VNImageBasedRequest {
+        // Create an image classification request with an image classifier model.
+
+        let imageClassifier = createImageClassifier()
+        let imageClassificationRequest = VNCoreMLRequest(model: imageClassifier,
+                                                         completionHandler: visionRequestHandler)
+
+        imageClassificationRequest.imageCropAndScaleOption = .centerCrop
+        return imageClassificationRequest
     }
 
     /// The completion handler method that Vision calls when it completes a request.

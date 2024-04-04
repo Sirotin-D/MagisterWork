@@ -33,7 +33,7 @@ struct LiveCameraView: View {
                 VStack {
                     Text("\(Constants.TimeElapsed):")
                     if !viewModel.liveCameraState.timeElapsed.isEmpty {
-                        Text("\(viewModel.liveCameraState.timeElapsed) sec.")
+                        Text("\(viewModel.liveCameraState.timeElapsed) \(Constants.SecondsMeasure).")
                             .bold()
                     } else {
                         Text(Constants.UnknownValue)
@@ -58,7 +58,7 @@ extension LiveCameraView {
         static let TimeElapsed = "Время затрачено"
         static let PersentSign = "%"
         static let UnknownValue = "NA"
-        static let SecondsMeasure = "сек."
+        static let SecondsMeasure = "сек"
     }
 }
 

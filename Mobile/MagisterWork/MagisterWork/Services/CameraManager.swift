@@ -8,8 +8,6 @@ import AVFoundation
 class CameraManager: NSObject, ObservableObject {
     @Published var capturedImage: UIImage? = nil
     private let session = AVCaptureSession()
-    private var videoDeviceInput: AVCaptureDeviceInput?
-    private let videoOutput = AVCaptureVideoDataOutput()
     private let sessionQueue = DispatchQueue(label: "com.unn.sessionQueue")
     
     func configureCaptureSession() {
@@ -49,23 +47,19 @@ class CameraManager: NSObject, ObservableObject {
     
     private func setupVideoInput() {
         do {
-            let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
-            guard let camera else {
+            guard let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
                 print("CameraManager: Video device is unavailable.")
                 session.commitConfiguration()
                 return
             }
             
             let videoInput = try AVCaptureDeviceInput(device: camera)
-            
-            if session.canAddInput(videoInput) {
-                session.addInput(videoInput)
-                videoDeviceInput = videoInput
-            } else {
+            guard session.canAddInput(videoInput) else {
                 print("CameraManager: Couldn't add video device input to the session.")
                 session.commitConfiguration()
                 return
             }
+            session.addInput(videoInput)
         } catch {
             print("CameraManager: Couldn't create video device input: \(error)")
             session.commitConfiguration()
@@ -74,6 +68,7 @@ class CameraManager: NSObject, ObservableObject {
     }
     
     private func setupVideoOutput() {
+        let videoOutput = AVCaptureVideoDataOutput()
         guard session.canAddOutput(videoOutput) else {
             print("error adding videoOutput")
             session.commitConfiguration()
@@ -81,7 +76,6 @@ class CameraManager: NSObject, ObservableObject {
         }
         session.addOutput(videoOutput)
         videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "sampleBufferQueue"))
-        videoOutput.connection(with: .video)?.videoOrientation = .portrait
     }
 }
 

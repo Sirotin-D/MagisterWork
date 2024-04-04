@@ -74,7 +74,7 @@ struct CameraView: View {
                         VStack {
                             Text("\(Constants.TimeElapsed):")
                             if !viewModel.cameraState.timeElapsed.isEmpty {
-                                Text("\(viewModel.cameraState.timeElapsed) sec.")
+                                Text("\(viewModel.cameraState.timeElapsed) \(Constants.SecondsMeasure).")
                                     .bold()
                             } else {
                                 Text(Constants.UnknownValue)
@@ -112,9 +112,7 @@ extension CameraView {
         static let TimeElapsed = "Время затрачено"
         static let PersentSign = "%"
         static let UnknownValue = "NA"
-        static let SecondsMeasure = "сек."
-        static let LiveImageClassificationImplementationMessage = "Функционал классификации изображений в режиме видео ещё не реализован"
-        static let Ok = "Ок"
+        static let SecondsMeasure = "сек"
     }
     
     private enum IconNames {

@@ -14,6 +14,8 @@ class NeuralNetworkBuilder {
             model = try? imagetest(configuration: configuration).model
         case .InceptionV3:
             model = try? InceptionV3(configuration: configuration).model
+        case .Resnet:
+            model = try? Resnet50(configuration: configuration).model
         case .MobileNet:
              model = try? MobileNet(configuration: configuration).model
         case .MobileNetV2:

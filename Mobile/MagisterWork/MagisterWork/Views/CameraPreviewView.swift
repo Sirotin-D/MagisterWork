@@ -6,7 +6,6 @@ import SwiftUI
 import AVKit
 import Vision
 
-
 struct CameraPreviewView: UIViewRepresentable {
     let session: AVCaptureSession
     
@@ -14,7 +13,6 @@ struct CameraPreviewView: UIViewRepresentable {
         let view = VideoPreviewView()
         view.videoPreviewLayer.session = session
         view.videoPreviewLayer.videoGravity = .resizeAspect
-        view.videoPreviewLayer.connection?.videoOrientation = .portrait
         return view
     }
     
