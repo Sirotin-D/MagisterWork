@@ -8,13 +8,13 @@ struct LiveCameraView: View {
     @ObservedObject private var viewModel = LiveCameraViewModel()
     var body: some View {
         VStack {
-            if let captureSession = viewModel.liveCameraState.captureSesion {
+            if let captureSession = viewModel.liveCameraViewState.captureSesion {
                 CameraPreviewView(session: captureSession)
             }
             HStack() {
                 VStack {
                     Text("\(Constants.ImageCategories):")
-                    if let predictionResult = viewModel.liveCameraState.predictionsResult {
+                    if let predictionResult = viewModel.liveCameraViewState.predictionsResult {
                         ForEach(predictionResult) { prediction in
                             HStack {
                                 Text("\(prediction.classification) - \(prediction.confidencePercentage) %")
@@ -32,8 +32,8 @@ struct LiveCameraView: View {
                 
                 VStack {
                     Text("\(Constants.TimeElapsed):")
-                    if !viewModel.liveCameraState.timeElapsed.isEmpty {
-                        Text("\(viewModel.liveCameraState.timeElapsed) \(Constants.SecondsMeasure).")
+                    if !viewModel.liveCameraViewState.timeElapsed.isEmpty {
+                        Text("\(viewModel.liveCameraViewState.timeElapsed) \(Constants.SecondsMeasure).")
                             .bold()
                     } else {
                         Text(Constants.UnknownValue)

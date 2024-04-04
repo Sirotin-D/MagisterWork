@@ -9,7 +9,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     
     @Binding var uiImage: UIImage?
     @Binding var isPresenting: Bool
-    @Binding var sourceType: UIImagePickerController.SourceType
+    public var sourceType: UIImagePickerController.SourceType
     
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let imagePicker = UIImagePickerController()

@@ -5,7 +5,7 @@
 import SwiftUI
 
 class SettingsViewModel: ObservableObject {
-    @Published var settingsState = SettingsViewState()
+    @Published var settingsViewState = SettingsViewState()
     func neuralNetworkChanged(type: NeuralNetworkType) {
         GlobalSettings.shared.currentNetworkType = type
     }

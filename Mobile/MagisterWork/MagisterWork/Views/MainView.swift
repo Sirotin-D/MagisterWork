@@ -7,9 +7,9 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         TabView {
-            CameraView()
+            HomeView()
                 .tabItem {
-                    Label(Constants.CameraTabName, systemImage: Constants.CameraTabIconName)
+                    Label(Constants.HomeTabName, systemImage: Constants.HomeTabIconName)
                 }
             SettingsView()
                 .tabItem {
@@ -21,10 +21,8 @@ struct MainView: View {
 
 extension MainView {
     private enum Constants {
-        static let HomeTabName = "Home"
+        static let HomeTabName = "Классификатор"
         static let HomeTabIconName = "house"
-        static let CameraTabName = "Камера"
-        static let CameraTabIconName = "camera"
         static let SettingsTabName = "Настройки"
         static let SettingsTabIconName = "gearshape"
     }

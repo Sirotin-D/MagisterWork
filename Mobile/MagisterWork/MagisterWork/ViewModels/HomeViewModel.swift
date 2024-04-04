@@ -1,34 +1,34 @@
 //
-//  CameraViewModel.swift
+//  HomeViewModel.swift
 //
 
 import SwiftUI
 
-class CameraViewModel: ObservableObject {
-    @Published var cameraState = CameraViewState()
+class HomeViewModel: ObservableObject {
+    @Published var homeViewState = HomeViewState()
     private var predictor = ImagePredictor()
     private let predictionsToShow = 2
     
     func imageSelected(for photo: UIImage) {
-        cameraState.isLoading = true
-        cameraState.timeElapsed = ""
-        cameraState.predictionsResult = nil
+        homeViewState.isLoading = true
+        homeViewState.timeElapsed = ""
+        homeViewState.predictionsResult = nil
         let startTime = CFAbsoluteTimeGetCurrent()
         
         do {
             try predictor.makePredictions(for: photo) { predictions in
                 guard let predictions = predictions else {
                     print("No predictions. Check console log.")
-                    self.cameraState.isLoading = false
+                    self.homeViewState.isLoading = false
                     return
                 }
                 
-                self.cameraState.predictionsResult = predictions.prefix(self.predictionsToShow).map{ prediction in
+                self.homeViewState.predictionsResult = predictions.prefix(self.predictionsToShow).map{ prediction in
                     Prediction(classification: prediction.classification, confidencePercentage: prediction.confidencePercentage)
                 }
-                self.cameraState.isLoading = false
+                self.homeViewState.isLoading = false
                 let endTime = CFAbsoluteTimeGetCurrent() - startTime
-                self.cameraState.timeElapsed = self.formatElapsedTime(endTime)
+                self.homeViewState.timeElapsed = self.formatElapsedTime(endTime)
             }
         } catch {
             print("Vision was unable to make a prediction...\n\n\(error.localizedDescription)")
@@ -36,18 +36,18 @@ class CameraViewModel: ObservableObject {
     }
 
     func photoLibraryImagePickerClicked() {
-        cameraState.isPresenting = true
-        cameraState.imageSourceType = .photoLibrary
+        homeViewState.isPresenting = true
+        homeViewState.imageSourceType = .photoLibrary
     }
     
     func cameraImagePickerClicked() {
-        cameraState.isPresenting = true
-        cameraState.imageSourceType = UIImagePickerController.isSourceTypeAvailable(.camera)
+        homeViewState.isPresenting = true
+        homeViewState.imageSourceType = UIImagePickerController.isSourceTypeAvailable(.camera)
         ? .camera : .photoLibrary
     }
     
     func liveImageClassificationClicked() {
-        cameraState.isShowAlert = true
+        homeViewState.isShowAlert = true
     }
     
     private func formatElapsedTime(_ value: Double) -> String {
@@ -55,8 +55,8 @@ class CameraViewModel: ObservableObject {
     }
 }
 
-extension CameraViewModel {
-    public struct CameraViewState {
+extension HomeViewModel {
+    public struct HomeViewState {
         var isLoading = false
         var isPresenting = false
         var predictionsResult: [Prediction]?

@@ -7,14 +7,14 @@ import AVFoundation
 import Combine
 
 class LiveCameraViewModel: ObservableObject {
-    @Published var liveCameraState = LiveCameraViewState()
+    @Published var liveCameraViewState = LiveCameraViewState()
     @ObservedObject private var cameraManager = CameraManager()
     private var cancelables = Set<AnyCancellable>()
     private let predictor = ImagePredictor()
     private let predictionsToShow = 2
     
     init() {
-        liveCameraState.captureSesion = cameraManager.getCaptureSession()
+        liveCameraViewState.captureSesion = cameraManager.getCaptureSession()
         cameraManager.configureCaptureSession()
     }
     
@@ -50,11 +50,11 @@ class LiveCameraViewModel: ObservableObject {
                     return
                 }
                 
-                self.liveCameraState.predictionsResult = predictions.prefix(self.predictionsToShow).map{ prediction in
+                self.liveCameraViewState.predictionsResult = predictions.prefix(self.predictionsToShow).map{ prediction in
                     Prediction(classification: prediction.classification, confidencePercentage: prediction.confidencePercentage)
                 }
                 let endTime = CFAbsoluteTimeGetCurrent() - startTime
-                self.liveCameraState.timeElapsed = self.formatElapsedTime(endTime)
+                self.liveCameraViewState.timeElapsed = self.formatElapsedTime(endTime)
             }
         } catch {
             print("Vision was unable to make a prediction...\n\n\(error.localizedDescription)")

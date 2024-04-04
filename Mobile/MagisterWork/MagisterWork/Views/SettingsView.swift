@@ -11,12 +11,12 @@ struct SettingsView: View {
             VStack {
                 Text(Constants.selectNeuralNetworkTitle)
                     .font(.headline)
-                Picker(Constants.selectNNLocalizedKey, selection: $viewModel.settingsState.selectedNeuralNetwork) {
+                Picker(Constants.selectNNLocalizedKey, selection: $viewModel.settingsViewState.selectedNeuralNetwork) {
                     ForEach(NeuralNetworkType.allCases) { neuralNetworkType in
                         Text(neuralNetworkType.rawValue.capitalized)
                     }
                 }
-                .onChange(of: viewModel.settingsState.selectedNeuralNetwork) { oldValue, newValue in
+                .onChange(of: viewModel.settingsViewState.selectedNeuralNetwork) { oldValue, newValue in
                     viewModel.neuralNetworkChanged(type: newValue)
                 }
             }

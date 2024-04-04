@@ -1,12 +1,12 @@
 //
-//  CameraView.swift
+//  HomeView.swift
 //
 
 import SwiftUI
 
-struct CameraView: View {
+struct HomeView: View {
     @State private var uiImage: UIImage?
-    @ObservedObject private var viewModel = CameraViewModel()
+    @ObservedObject private var viewModel = HomeViewModel()
     
     var body: some View {
         NavigationStack {
@@ -55,7 +55,7 @@ struct CameraView: View {
                     HStack() {
                         VStack {
                             Text("\(Constants.ImageCategories):")
-                            if let predictionResult = viewModel.cameraState.predictionsResult {
+                            if let predictionResult = viewModel.homeViewState.predictionsResult {
                                 ForEach(predictionResult) { prediction in
                                     HStack {
                                         Text("\(prediction.classification) - \(prediction.confidencePercentage) %")
@@ -73,8 +73,8 @@ struct CameraView: View {
                         
                         VStack {
                             Text("\(Constants.TimeElapsed):")
-                            if !viewModel.cameraState.timeElapsed.isEmpty {
-                                Text("\(viewModel.cameraState.timeElapsed) \(Constants.SecondsMeasure).")
+                            if !viewModel.homeViewState.timeElapsed.isEmpty {
+                                Text("\(viewModel.homeViewState.timeElapsed) \(Constants.SecondsMeasure).")
                                     .bold()
                             } else {
                                 Text(Constants.UnknownValue)
@@ -83,17 +83,17 @@ struct CameraView: View {
                         }
                     }
                     .padding()
-                    if (viewModel.cameraState.isLoading) {
+                    if (viewModel.homeViewState.isLoading) {
                         ProgressView()
                     }
                 }
             }
-            .navigationDestination(isPresented: $viewModel.cameraState.isShowAlert, destination: {
+            .navigationDestination(isPresented: $viewModel.homeViewState.isShowAlert, destination: {
                 LiveCameraView()
                     .toolbar(.hidden, for: .tabBar)
             })
-            .sheet(isPresented: $viewModel.cameraState.isPresenting){
-                ImagePicker(uiImage: $uiImage, isPresenting: $viewModel.cameraState.isPresenting, sourceType: $viewModel.cameraState.imageSourceType)
+            .sheet(isPresented: $viewModel.homeViewState.isPresenting){
+                ImagePicker(uiImage: $uiImage, isPresenting: $viewModel.homeViewState.isPresenting, sourceType: viewModel.homeViewState.imageSourceType)
                     .onDisappear{
                         if let uiImage = uiImage {
                             viewModel.imageSelected(for: uiImage)
@@ -105,9 +105,8 @@ struct CameraView: View {
     }
 }
 
-extension CameraView {
+extension HomeView {
     private enum Constants {
-        static let CameraTitle = "Камера"
         static let ImageCategories = "Категории фото"
         static let TimeElapsed = "Время затрачено"
         static let PersentSign = "%"
@@ -124,5 +123,5 @@ extension CameraView {
 }
 
 #Preview {
-    CameraView()
+    HomeView()
 }

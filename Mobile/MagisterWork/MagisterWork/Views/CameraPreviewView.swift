@@ -1,5 +1,5 @@
 //
-//  LiveCameraPreviewView.swift
+//  CameraPreviewView.swift
 //
 
 import SwiftUI
