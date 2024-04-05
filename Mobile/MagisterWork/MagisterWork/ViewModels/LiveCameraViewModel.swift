@@ -55,15 +55,11 @@ class LiveCameraViewModel: ObservableObject {
                     Prediction(classification: prediction.classification, confidencePercentage: prediction.confidencePercentage)
                 }
                 let endTime = CFAbsoluteTimeGetCurrent() - startTime
-                self.liveCameraViewState.timeElapsed = self.formatElapsedTime(endTime)
+                self.liveCameraViewState.timeElapsed = Utils.formatElapsedTime(endTime)
             }
         } catch {
             Logger.shared.e(kLogTag, "Vision was unable to make a prediction: \(error.localizedDescription)")
         }
-    }
-    
-    private func formatElapsedTime(_ value: Double) -> String {
-        return String(format: "%.2f", (value * 100).rounded(.toNearestOrEven) / 100)
     }
 }
 

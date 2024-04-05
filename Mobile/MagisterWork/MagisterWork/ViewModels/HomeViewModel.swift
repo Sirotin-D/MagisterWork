@@ -29,7 +29,7 @@ class HomeViewModel: ObservableObject {
                 }
                 self.homeViewState.isLoading = false
                 let endTime = CFAbsoluteTimeGetCurrent() - startTime
-                self.homeViewState.timeElapsed = self.formatElapsedTime(endTime)
+                self.homeViewState.timeElapsed = Utils.formatElapsedTime(endTime)
             }
         } catch {
             Logger.shared.e(kLogTag, "Vision was unable to make a prediction: \(error.localizedDescription)")
@@ -49,10 +49,6 @@ class HomeViewModel: ObservableObject {
     
     func liveImageClassificationClicked() {
         homeViewState.isShowAlert = true
-    }
-    
-    private func formatElapsedTime(_ value: Double) -> String {
-        return String(format: "%.2f", (value * 100).rounded(.toNearestOrEven) / 100)
     }
 }
 
