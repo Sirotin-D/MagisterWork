@@ -9,6 +9,7 @@ class CameraManager: NSObject, ObservableObject {
     @Published var capturedImage: UIImage? = nil
     private let session = AVCaptureSession()
     private let sessionQueue = DispatchQueue(label: "com.unn.sessionQueue")
+    private let kLogTag = "CameraManager"
     
     func configureCaptureSession() {
         sessionQueue.async { [weak self] in
@@ -48,20 +49,20 @@ class CameraManager: NSObject, ObservableObject {
     private func setupVideoInput() {
         do {
             guard let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
-                print("CameraManager: Video device is unavailable.")
+                Logger.shared.e(kLogTag, "Video device is unavailable.")
                 session.commitConfiguration()
                 return
             }
             
             let videoInput = try AVCaptureDeviceInput(device: camera)
             guard session.canAddInput(videoInput) else {
-                print("CameraManager: Couldn't add video device input to the session.")
+                Logger.shared.e(kLogTag, "Couldn't add video device input to the session.")
                 session.commitConfiguration()
                 return
             }
             session.addInput(videoInput)
         } catch {
-            print("CameraManager: Couldn't create video device input: \(error)")
+            Logger.shared.e(kLogTag, "Couldn't create video device input: \(error)")
             session.commitConfiguration()
             return
         }
@@ -70,7 +71,7 @@ class CameraManager: NSObject, ObservableObject {
     private func setupVideoOutput() {
         let videoOutput = AVCaptureVideoDataOutput()
         guard session.canAddOutput(videoOutput) else {
-            print("error adding videoOutput")
+            Logger.shared.e(kLogTag, "Error adding videoOutput")
             session.commitConfiguration()
             return
         }
@@ -82,14 +83,14 @@ class CameraManager: NSObject, ObservableObject {
 extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
-            print("Error creating pixel buffer")
+            Logger.shared.e(kLogTag, "Error creating pixel buffer")
             return
         }
         
         let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
         let context = CIContext()
         guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else {
-            print("Error creating cgImage")
+            Logger.shared.e(kLogTag, "Error creating cgImage")
             return
         }
         let uiImage = UIImage(cgImage: cgImage)

@@ -6,6 +6,7 @@ import Vision
 import UIKit
 
 class ImagePredictor {
+    private let kLogTag = "ImagePredictor"
     /// Generates an image classification prediction for a photo.
     /// - Parameter photo: An image, typically of an object or a scene.
     /// - Tag: makePredictions
@@ -30,7 +31,7 @@ class ImagePredictor {
     
     private func createImageClassifier() -> VNCoreMLModel {
         let currentNetworkType = GlobalSettings.shared.currentNetworkType
-        print("Using network type: \(currentNetworkType)")
+        Logger.shared.i(kLogTag, "Using network type: \(currentNetworkType)")
         let imageClassifierModel = NeuralNetworkBuilder.build(type: currentNetworkType)
 
         // Create a Vision instance using the image classifier's model instance.
@@ -83,13 +84,13 @@ class ImagePredictor {
 
         // Check for an error first.
         if let error = error {
-            print("Vision image classification error...\n\n\(error.localizedDescription)")
+            Logger.shared.e(kLogTag, "Vision image classification error: \(error.localizedDescription)")
             return
         }
 
         // Check that the results aren't `nil`.
         if request.results == nil {
-            print("Vision request had no results.")
+            Logger.shared.e(kLogTag, "Vision request had no results.")
             return
         }
 
@@ -98,7 +99,7 @@ class ImagePredictor {
             // Image classifiers, like MobileNet, only produce classification observations.
             // However, other Core ML model types can produce other observations.
             // For example, a style transfer model produces `VNPixelBufferObservation` instances.
-            print("VNRequest produced the wrong result type: \(type(of: request.results)).")
+            Logger.shared.e(kLogTag, "VNRequest produced the wrong result type: \(type(of: request.results)).")
             return
         }
 

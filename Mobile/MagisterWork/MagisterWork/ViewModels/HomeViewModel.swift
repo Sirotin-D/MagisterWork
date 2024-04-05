@@ -8,6 +8,7 @@ class HomeViewModel: ObservableObject {
     @Published var homeViewState = HomeViewState()
     private var predictor = ImagePredictor()
     private let predictionsToShow = 2
+    private let kLogTag = "HomeViewModel"
     
     func imageSelected(for photo: UIImage) {
         homeViewState.isLoading = true
@@ -18,7 +19,7 @@ class HomeViewModel: ObservableObject {
         do {
             try predictor.makePredictions(for: photo) { predictions in
                 guard let predictions = predictions else {
-                    print("No predictions. Check console log.")
+                    Logger.shared.e(self.kLogTag, "No predictions. Check console log.")
                     self.homeViewState.isLoading = false
                     return
                 }
@@ -31,7 +32,7 @@ class HomeViewModel: ObservableObject {
                 self.homeViewState.timeElapsed = self.formatElapsedTime(endTime)
             }
         } catch {
-            print("Vision was unable to make a prediction...\n\n\(error.localizedDescription)")
+            Logger.shared.e(kLogTag, "Vision was unable to make a prediction: \(error.localizedDescription)")
         }
     }
 

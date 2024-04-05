@@ -12,6 +12,7 @@ class LiveCameraViewModel: ObservableObject {
     private var cancelables = Set<AnyCancellable>()
     private let predictor = ImagePredictor()
     private let predictionsToShow = 2
+    private let kLogTag = "LiveCameraViewModel"
     
     init() {
         liveCameraViewState.captureSesion = cameraManager.getCaptureSession()
@@ -46,7 +47,7 @@ class LiveCameraViewModel: ObservableObject {
         do {
             try predictor.makePredictions(for: photo) { predictions in
                 guard let predictions = predictions else {
-                    print("No predictions. Check console log.")
+                    Logger.shared.e(self.kLogTag, "No predictions. Check console log.")
                     return
                 }
                 
@@ -57,7 +58,7 @@ class LiveCameraViewModel: ObservableObject {
                 self.liveCameraViewState.timeElapsed = self.formatElapsedTime(endTime)
             }
         } catch {
-            print("Vision was unable to make a prediction...\n\n\(error.localizedDescription)")
+            Logger.shared.e(kLogTag, "Vision was unable to make a prediction: \(error.localizedDescription)")
         }
     }
     
