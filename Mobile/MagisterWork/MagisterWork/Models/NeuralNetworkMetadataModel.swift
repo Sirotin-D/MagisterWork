@@ -1,8 +1,5 @@
 //
 //  NeuralNetworkMetadataModel.swift
-//  MagisterWork
-//
-//  Created by user on 05.04.2024.
 //
 
 import Foundation
