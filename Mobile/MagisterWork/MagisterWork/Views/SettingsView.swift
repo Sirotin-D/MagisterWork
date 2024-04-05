@@ -60,6 +60,7 @@ struct NetworkModelMetaDataView: View {
                 Text(Constants.ModelClassLabelsSubTitle).bold()
                 NavigationLink {
                     AllClassLabelsView(classLabels: metadata.classLabels)
+                        .toolbar(.hidden, for: .tabBar)
                 } label: {
                     Text(Constants.SeeAllClassLabelsButtonTitle)
                 }
