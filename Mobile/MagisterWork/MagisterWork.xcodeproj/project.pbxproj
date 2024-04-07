@@ -44,6 +44,7 @@
 		CECC0C562BA8C274003F386B /* NeuralNetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC0C552BA8C274003F386B /* NeuralNetworkBuilder.swift */; };
 		CECC0C592BA8C44C003F386B /* GlobalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC0C582BA8C44C003F386B /* GlobalSettings.swift */; };
 		CECC0C5C2BA8D286003F386B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC0C5B2BA8D286003F386B /* HomeViewModel.swift */; };
+		CED127F22BC311E80068510E /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CED127F12BC311E80068510E /* InfoPlist.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		CECC0C552BA8C274003F386B /* NeuralNetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetworkBuilder.swift; sourceTree = "<group>"; };
 		CECC0C582BA8C44C003F386B /* GlobalSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSettings.swift; sourceTree = "<group>"; };
 		CECC0C5B2BA8D286003F386B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CED127F12BC311E80068510E /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				CE60FB592BC0CD8D005EEF5F /* Localizable.xcstrings */,
+				CED127F12BC311E80068510E /* InfoPlist.xcstrings */,
 				CE67A0F12BA534EF00649A3E /* Assets.xcassets */,
 				CE67A0F32BA534EF00649A3E /* Preview Content */,
 			);
@@ -299,6 +302,7 @@
 			files = (
 				CE67A0F52BA534EF00649A3E /* Preview Assets.xcassets in Resources */,
 				CE67A0F22BA534EF00649A3E /* Assets.xcassets in Resources */,
+				CED127F22BC311E80068510E /* InfoPlist.xcstrings in Resources */,
 				CE60FB5A2BC0CD8D005EEF5F /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
