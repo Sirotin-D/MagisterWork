@@ -39,10 +39,15 @@ struct HomeView: View {
                     ProgressView()
                 }
             }
-            .navigationDestination(isPresented: $viewModel.homeViewState.isShowAlert, destination: {
+            .navigationDestination(isPresented: $viewModel.homeViewState.isShowLiveCamera, destination: {
                 LiveCameraView()
                     .toolbar(.hidden, for: .tabBar)
             })
+            .alert(viewModel.homeViewState.alertMessage, isPresented: $viewModel.homeViewState.isShowAlert) {
+                Button(Constants.Ok, role: .cancel) {
+                    viewModel.alertClosed()
+                }
+            }
             .sheet(isPresented: $viewModel.homeViewState.isPresenting){
                 ImagePicker(uiImage: $uiImage, isPresenting: $viewModel.homeViewState.isPresenting, sourceType: viewModel.homeViewState.imageSourceType)
                     .onDisappear{
@@ -57,6 +62,10 @@ struct HomeView: View {
 }
 
 extension HomeView {
+    private enum Constants {
+        static let Ok: LocalizedStringKey = "Ok"
+    }
+    
     private enum IconNames {
         static let PhotoSystemIcon = "photo"
         static let CameraSystemIcon = "camera"

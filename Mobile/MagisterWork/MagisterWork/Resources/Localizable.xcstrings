@@ -97,6 +97,16 @@
         }
       }
     },
+    "Ok" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ок"
+          }
+        }
+      }
+    },
     "See all class labels" : {
       "localizations" : {
         "ru" : {

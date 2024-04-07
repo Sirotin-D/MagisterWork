@@ -45,6 +45,7 @@
 		CECC0C592BA8C44C003F386B /* GlobalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC0C582BA8C44C003F386B /* GlobalSettings.swift */; };
 		CECC0C5C2BA8D286003F386B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC0C5B2BA8D286003F386B /* HomeViewModel.swift */; };
 		CED127F22BC311E80068510E /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CED127F12BC311E80068510E /* InfoPlist.xcstrings */; };
+		CED128122BC31B640068510E /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED128112BC31B640068510E /* PermissionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		CECC0C582BA8C44C003F386B /* GlobalSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSettings.swift; sourceTree = "<group>"; };
 		CECC0C5B2BA8D286003F386B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CED127F12BC311E80068510E /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		CED128112BC31B640068510E /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				CE91B9DB2BAC6B1900E4C4C5 /* ImagePredictor.swift */,
 				CE87840A2BBCBD0A006203D3 /* CameraManager.swift */,
 				CECC0C552BA8C274003F386B /* NeuralNetworkBuilder.swift */,
+				CED128112BC31B640068510E /* PermissionManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				CECC0C562BA8C274003F386B /* NeuralNetworkBuilder.swift in Sources */,
 				CE5402DB2BBB8256000ED2DF /* DeiT-base384.mlpackage in Sources */,
 				CE91B9E32BACC51500E4C4C5 /* VNClassificationObservation+confidenceString.swift in Sources */,
+				CED128122BC31B640068510E /* PermissionManager.swift in Sources */,
 				CE91B9DC2BAC6B1900E4C4C5 /* ImagePredictor.swift in Sources */,
 				CE67A1052BA5433C00649A3E /* MainView.swift in Sources */,
 				CECC0C5C2BA8D286003F386B /* HomeViewModel.swift in Sources */,
