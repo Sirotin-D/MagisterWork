@@ -9,11 +9,11 @@ struct MainView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label(Constants.HomeTabName, systemImage: Constants.HomeTabIconName)
+                    Label(Constants.HomeTabName, systemImage: IconNames.HomeTabIconName)
                 }
             SettingsView()
                 .tabItem {
-                    Label(Constants.SettingsTabName, systemImage: Constants.SettingsTabIconName)
+                    Label(Constants.SettingsTabName, systemImage: IconNames.SettingsTabIconName)
                 }
         }
     }
@@ -21,9 +21,12 @@ struct MainView: View {
 
 extension MainView {
     private enum Constants {
-        static let HomeTabName = "Классификатор"
+        static let HomeTabName: LocalizedStringKey = "Classificator"
+        static let SettingsTabName: LocalizedStringKey = "Settings"
+    }
+    
+    private enum IconNames {
         static let HomeTabIconName = "house"
-        static let SettingsTabName = "Настройки"
         static let SettingsTabIconName = "gearshape"
     }
 }

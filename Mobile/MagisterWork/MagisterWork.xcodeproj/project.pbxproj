@@ -15,6 +15,7 @@
 		CE60FB442BBF5E49005EEF5F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60FB432BBF5E49005EEF5F /* Logger.swift */; };
 		CE60FB4E2BC01A6C005EEF5F /* NeuralNetworkMetadataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60FB4D2BC01A6C005EEF5F /* NeuralNetworkMetadataModel.swift */; };
 		CE60FB502BC07CFD005EEF5F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60FB4F2BC07CFD005EEF5F /* Utils.swift */; };
+		CE60FB5A2BC0CD8D005EEF5F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CE60FB592BC0CD8D005EEF5F /* Localizable.xcstrings */; };
 		CE67A0EE2BA534EE00649A3E /* MagisterWorkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67A0ED2BA534EE00649A3E /* MagisterWorkApp.swift */; };
 		CE67A0F22BA534EF00649A3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE67A0F12BA534EF00649A3E /* Assets.xcassets */; };
 		CE67A0F52BA534EF00649A3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE67A0F42BA534EF00649A3E /* Preview Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		CE60FB432BBF5E49005EEF5F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		CE60FB4D2BC01A6C005EEF5F /* NeuralNetworkMetadataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetworkMetadataModel.swift; sourceTree = "<group>"; };
 		CE60FB4F2BC07CFD005EEF5F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		CE60FB592BC0CD8D005EEF5F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		CE67A0EA2BA534EE00649A3E /* MagisterWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagisterWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE67A0ED2BA534EE00649A3E /* MagisterWorkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagisterWorkApp.swift; sourceTree = "<group>"; };
 		CE67A0F12BA534EF00649A3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		CEA6097A2BB24DB500CC6F7B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE60FB592BC0CD8D005EEF5F /* Localizable.xcstrings */,
 				CE67A0F12BA534EF00649A3E /* Assets.xcassets */,
 				CE67A0F32BA534EF00649A3E /* Preview Content */,
 			);
@@ -268,6 +271,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = CE67A0E12BA534EE00649A3E;
 			productRefGroup = CE67A0EB2BA534EE00649A3E /* Products */;
@@ -286,6 +290,7 @@
 			files = (
 				CE67A0F52BA534EF00649A3E /* Preview Assets.xcassets in Resources */,
 				CE67A0F22BA534EF00649A3E /* Assets.xcassets in Resources */,
+				CE60FB5A2BC0CD8D005EEF5F /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

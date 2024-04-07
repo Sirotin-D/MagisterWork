@@ -91,7 +91,7 @@ struct PredictionResultsView: View {
     var body: some View {
         HStack() {
             VStack {
-                Text("\(Constants.ImageCategories):")
+                Text(Constants.ImageCategories)
                 if let predictionResult = predictionsResult {
                     ForEach(predictionResult) { prediction in
                         Text("\(prediction.classification) - \(prediction.confidencePercentage) %")
@@ -105,9 +105,9 @@ struct PredictionResultsView: View {
             }
             Spacer()
             VStack {
-                Text("\(Constants.TimeElapsed):")
+                Text(Constants.TimeElapsed)
                 if !timeElapsed.isEmpty {
-                    Text("\(timeElapsed) \(Constants.SecondsMeasure).")
+                    Text("\(timeElapsed) sec.")
                         .bold()
                 } else {
                     Text(Constants.UnknownValue)
@@ -120,11 +120,10 @@ struct PredictionResultsView: View {
 
 extension PredictionResultsView {
     private enum Constants {
-        static let ImageCategories = "Категории фото"
-        static let TimeElapsed = "Время затрачено"
+        static let ImageCategories: LocalizedStringKey = "Image categories:"
+        static let TimeElapsed: LocalizedStringKey = "Time elapsed:"
         static let PersentSign = "%"
         static let UnknownValue = "NA"
-        static let SecondsMeasure = "сек"
     }
 }
 

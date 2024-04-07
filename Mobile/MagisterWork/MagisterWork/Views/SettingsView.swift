@@ -11,7 +11,7 @@ struct SettingsView: View {
             VStack {
                 Text(Constants.selectNeuralNetworkTitle)
                     .font(.headline)
-                Picker(Constants.selectNNLocalizedKey, selection: $viewModel.settingsViewState.selectedNeuralNetwork) {
+                Picker(Constants.selectNeuralNetworkTitle, selection: $viewModel.settingsViewState.selectedNeuralNetwork) {
                     ForEach(NeuralNetworkType.allCases) { neuralNetworkType in
                         Text(neuralNetworkType.rawValue.capitalized)
                     }
@@ -36,10 +36,8 @@ struct SettingsView: View {
 
 extension SettingsView {
     private enum Constants {
-        static let title = "Настройки"
-        static let selectNeuralNetworkTitle = "Выберете модель нейронной сети"
-        static let selectNNLocalizedKey = "Выбрать модель нейронной сети"
-        static let selectNNDocumentation = "Документация"
+        static let title: LocalizedStringKey = "Settings"
+        static let selectNeuralNetworkTitle: LocalizedStringKey = "Select neural network model"
     }
 }
 
@@ -49,12 +47,12 @@ struct NetworkModelMetaDataView: View {
         NavigationStack {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("\(Constants.ModelNameSubTitle):").bold()
+                    Text(Constants.ModelNameSubTitle).bold()
                     Text(metadata.name)
                     Spacer()
                 }
                 .padding(.bottom, Constants.SubTitlesBottomPadding)
-                Text("\(Constants.ModelDescriptionSubTitle):").bold()
+                Text(Constants.ModelDescriptionSubTitle).bold()
                 Text(metadata.description)
                     .padding(.bottom, Constants.SubTitlesBottomPadding)
                 Text(Constants.ModelClassLabelsSubTitle).bold()
@@ -71,10 +69,10 @@ struct NetworkModelMetaDataView: View {
 
 extension NetworkModelMetaDataView {
     private enum Constants {
-        static let ModelNameSubTitle = "Имя"
-        static let ModelDescriptionSubTitle = "Описание"
-        static let ModelClassLabelsSubTitle = "Распознаваемые классы объектов"
-        static let SeeAllClassLabelsButtonTitle = "Посмотреть все классы"
+        static let ModelNameSubTitle: LocalizedStringKey = "Name:"
+        static let ModelDescriptionSubTitle: LocalizedStringKey = "Description:"
+        static let ModelClassLabelsSubTitle: LocalizedStringKey = "Classification class labels:"
+        static let SeeAllClassLabelsButtonTitle: LocalizedStringKey = "See all class labels"
         static let SubTitlesBottomPadding = CGFloat(10)
     }
 }
@@ -84,7 +82,7 @@ struct AllClassLabelsView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, content: {
-                Text("\(Constants.ClassLabelsCountSubtitle): \(classLabels.count)")
+                Text("Class labels count: \(classLabels.count)")
                     .padding(.horizontal)
                 List(classLabels) { item in
                     Text(item.name)
@@ -98,8 +96,8 @@ struct AllClassLabelsView: View {
 
 extension AllClassLabelsView {
     private enum Constants {
-        static let ClassLabelsTitle = "Классы объектов"
-        static let ClassLabelsCountSubtitle = "Количество классов"
+        static let ClassLabelsTitle: LocalizedStringKey = "Class labels"
+        static let ClassLabelsCountSubtitle = "Class labels count:"
     }
 }
 
