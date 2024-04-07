@@ -16,6 +16,9 @@
 		CE60FB4E2BC01A6C005EEF5F /* NeuralNetworkMetadataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60FB4D2BC01A6C005EEF5F /* NeuralNetworkMetadataModel.swift */; };
 		CE60FB502BC07CFD005EEF5F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60FB4F2BC07CFD005EEF5F /* Utils.swift */; };
 		CE60FB5A2BC0CD8D005EEF5F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CE60FB592BC0CD8D005EEF5F /* Localizable.xcstrings */; };
+		CE60FB632BC2E6AE005EEF5F /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60FB622BC2E6AE005EEF5F /* IconButton.swift */; };
+		CE60FB652BC2F19F005EEF5F /* PredictionResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60FB642BC2F19F005EEF5F /* PredictionResultsView.swift */; };
+		CE60FB692BC2F5A5005EEF5F /* NetworkModelMetaDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60FB682BC2F5A5005EEF5F /* NetworkModelMetaDataView.swift */; };
 		CE67A0EE2BA534EE00649A3E /* MagisterWorkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67A0ED2BA534EE00649A3E /* MagisterWorkApp.swift */; };
 		CE67A0F22BA534EF00649A3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE67A0F12BA534EF00649A3E /* Assets.xcassets */; };
 		CE67A0F52BA534EF00649A3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE67A0F42BA534EF00649A3E /* Preview Assets.xcassets */; };
@@ -53,6 +56,9 @@
 		CE60FB4D2BC01A6C005EEF5F /* NeuralNetworkMetadataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetworkMetadataModel.swift; sourceTree = "<group>"; };
 		CE60FB4F2BC07CFD005EEF5F /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		CE60FB592BC0CD8D005EEF5F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		CE60FB622BC2E6AE005EEF5F /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		CE60FB642BC2F19F005EEF5F /* PredictionResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsView.swift; sourceTree = "<group>"; };
+		CE60FB682BC2F5A5005EEF5F /* NetworkModelMetaDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModelMetaDataView.swift; sourceTree = "<group>"; };
 		CE67A0EA2BA534EE00649A3E /* MagisterWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagisterWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE67A0ED2BA534EE00649A3E /* MagisterWorkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagisterWorkApp.swift; sourceTree = "<group>"; };
 		CE67A0F12BA534EF00649A3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -136,11 +142,14 @@
 			isa = PBXGroup;
 			children = (
 				CE67A1042BA5433C00649A3E /* MainView.swift */,
+				CE60FB682BC2F5A5005EEF5F /* NetworkModelMetaDataView.swift */,
+				CE60FB642BC2F19F005EEF5F /* PredictionResultsView.swift */,
 				CE67A10F2BA5EF8000649A3E /* ImagePicker.swift */,
 				CE8784062BBC3AFC006203D3 /* CameraPreviewView.swift */,
 				CE67A1002BA53E6800649A3E /* HomeView.swift */,
 				CE8784022BBC3831006203D3 /* LiveCameraView.swift */,
 				CE67A1022BA53E9C00649A3E /* SettingsView.swift */,
+				CE60FB622BC2E6AE005EEF5F /* IconButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,9 +310,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE60FB692BC2F5A5005EEF5F /* NetworkModelMetaDataView.swift in Sources */,
 				CE5402D62BBB7D54000ED2DF /* MobileNetV2.mlmodel in Sources */,
 				CECC0C512BA6164C003F386B /* SqueezeNet.mlmodel in Sources */,
 				CE5402D52BBB7D54000ED2DF /* MobileNetV2Int8LUT.mlmodel in Sources */,
+				CE60FB652BC2F19F005EEF5F /* PredictionResultsView.swift in Sources */,
 				CE5402D82BBB7D54000ED2DF /* Resnet50.mlmodel in Sources */,
 				CE67A1032BA53E9C00649A3E /* SettingsView.swift in Sources */,
 				CE60FB442BBF5E49005EEF5F /* Logger.swift in Sources */,
@@ -317,6 +328,7 @@
 				CE67A0EE2BA534EE00649A3E /* MagisterWorkApp.swift in Sources */,
 				CECC0C432BA607E9003F386B /* SeeFood.mlmodel in Sources */,
 				CE91B9E12BACC4B000E4C4C5 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
+				CE60FB632BC2E6AE005EEF5F /* IconButton.swift in Sources */,
 				CE8784072BBC3AFC006203D3 /* CameraPreviewView.swift in Sources */,
 				CE60FB502BC07CFD005EEF5F /* Utils.swift in Sources */,
 				CE8784052BBC384B006203D3 /* LiveCameraViewModel.swift in Sources */,

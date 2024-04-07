@@ -8,15 +8,18 @@ class SettingsViewModel: ObservableObject {
     @Published var settingsViewState = SettingsViewState()
     func neuralNetworkChanged(type: NeuralNetworkType) {
         GlobalSettings.shared.currentNetworkType = type
-        UpdateNetworkMetadata()
+        updateNetworkMetadata()
     }
     
-    func OnAppear() {
-        UpdateNetworkMetadata()
+    func onAppear() {
+        if settingsViewState.selectedNetworkMetadata == nil {
+            updateNetworkMetadata()
+        }
     }
     
-    private func UpdateNetworkMetadata() {
-        let dispatchQueue = DispatchQueue(label: "com.unn.settings")
+    private func updateNetworkMetadata() {
+        settingsViewState.selectedNetworkMetadata = nil
+        let dispatchQueue = DispatchQueue(label: "com.magisterwork.settings")
         dispatchQueue.async {
             let modelMetadata = Utils.getNetworkSpecification()
             DispatchQueue.main.async {
@@ -32,7 +35,6 @@ class SettingsViewModel: ObservableObject {
 extension SettingsViewModel {
     public struct SettingsViewState {
         var selectedNeuralNetwork = GlobalSettings.shared.currentNetworkType
-        var showNNDocumentation = false
         var selectedNetworkMetadata: NeuralNetworkMetadataModel? = nil
     }
 }

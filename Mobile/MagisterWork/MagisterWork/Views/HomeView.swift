@@ -11,52 +11,32 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                HStack{
-                    Image(systemName: IconNames.PhotoSystemIcon)
-                        .onTapGesture {
-                            viewModel.photoLibraryImagePickerClicked()
-                        }
-                    Image(systemName: IconNames.CameraSystemIcon)
-                        .onTapGesture {
-                            viewModel.cameraImagePickerClicked()
-                        }
-                    Image(systemName: IconNames.VideoSystemIcon)
-                        .onTapGesture {
-                            viewModel.liveImageClassificationClicked()
-                        }
-                }
-                .font(.title)
-                .foregroundColor(.blue)
-                
-                Rectangle()
-                    .strokeBorder()
-                    .foregroundColor(.blue)
-                    .overlay(
-                        Group {
-                            if uiImage != nil {
-                                Image(uiImage: uiImage!)
-                                    .resizable()
-                                    .scaledToFit()
-                            }
-                        }
-                    )
-                
-                VStack{
-                    Button(action: {
-                        if let uiImage = uiImage {
-                            viewModel.imageSelected(for: uiImage)
-                        }
-                    }) {
-                        Image(systemName: IconNames.BoltSystemIcon)
-                            .foregroundColor(.blue)
-                            .font(.title)
+                HStack {
+                    IconButton(systemName: IconNames.PhotoSystemIcon) {
+                        viewModel.photoLibraryImagePickerClicked()
                     }
                     
-                    PredictionResultsView(predictionsResult: viewModel.homeViewState.predictionsResult, timeElapsed: viewModel.homeViewState.timeElapsed)
-                    .padding()
-                    if (viewModel.homeViewState.isLoading) {
-                        ProgressView()
+                    IconButton(systemName: IconNames.CameraSystemIcon) {
+                        viewModel.cameraImagePickerClicked()
                     }
+                    
+                    IconButton(systemName: IconNames.VideoSystemIcon) {
+                        viewModel.liveImageClassificationClicked()
+                    }
+                }
+                
+                ImagePreview(image: uiImage)
+                
+                IconButton(systemName: IconNames.BoltSystemIcon) {
+                    if let image = uiImage {
+                        viewModel.imageSelected(for: image)
+                    }
+                }
+                
+                PredictionResultsView(predictionsResult: viewModel.homeViewState.predictionsResult, timeElapsed: viewModel.homeViewState.timeElapsed)
+                    .padding()
+                if (viewModel.homeViewState.isLoading) {
+                    ProgressView()
                 }
             }
             .navigationDestination(isPresented: $viewModel.homeViewState.isShowAlert, destination: {
@@ -85,45 +65,19 @@ extension HomeView {
     }
 }
 
-struct PredictionResultsView: View {
-    let predictionsResult: [Prediction]?
-    let timeElapsed: String
+struct ImagePreview: View {
+    let image: UIImage?
     var body: some View {
-        HStack() {
-            VStack {
-                Text(Constants.ImageCategories)
-                if let predictionResult = predictionsResult {
-                    ForEach(predictionResult) { prediction in
-                        Text("\(prediction.classification) - \(prediction.confidencePercentage) %")
-                            .bold()
-                            .font(.subheadline)
-                    }
-                } else {
-                    Text(Constants.UnknownValue)
-                        .bold()
+        Rectangle()
+            .strokeBorder()
+            .foregroundColor(.blue)
+            .overlay {
+                if image != nil {
+                    Image(uiImage: image!)
+                        .resizable()
+                        .scaledToFit()
                 }
             }
-            Spacer()
-            VStack {
-                Text(Constants.TimeElapsed)
-                if !timeElapsed.isEmpty {
-                    Text("\(timeElapsed) sec.")
-                        .bold()
-                } else {
-                    Text(Constants.UnknownValue)
-                        .bold()
-                }
-            }
-        }
-    }
-}
-
-extension PredictionResultsView {
-    private enum Constants {
-        static let ImageCategories: LocalizedStringKey = "Image categories:"
-        static let TimeElapsed: LocalizedStringKey = "Time elapsed:"
-        static let PersentSign = "%"
-        static let UnknownValue = "NA"
     }
 }
 
