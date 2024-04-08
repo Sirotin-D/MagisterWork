@@ -46,6 +46,7 @@
 		CECC0C5C2BA8D286003F386B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC0C5B2BA8D286003F386B /* HomeViewModel.swift */; };
 		CED127F22BC311E80068510E /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CED127F12BC311E80068510E /* InfoPlist.xcstrings */; };
 		CED128122BC31B640068510E /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED128112BC31B640068510E /* PermissionManager.swift */; };
+		CED128162BC405440068510E /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED128152BC405440068510E /* AlertModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		CECC0C5B2BA8D286003F386B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CED127F12BC311E80068510E /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		CED128112BC31B640068510E /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
+		CED128152BC405440068510E /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 		CECC0C522BA651CF003F386B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CED128152BC405440068510E /* AlertModel.swift */,
 				CECC0C532BA651F0003F386B /* NeuralNetworkType.swift */,
 				CE91B9D92BAC67D900E4C4C5 /* Prediction.swift */,
 				CE60FB4D2BC01A6C005EEF5F /* NeuralNetworkMetadataModel.swift */,
@@ -333,6 +336,7 @@
 				CE67A1052BA5433C00649A3E /* MainView.swift in Sources */,
 				CECC0C5C2BA8D286003F386B /* HomeViewModel.swift in Sources */,
 				CECC0C472BA609C5003F386B /* MobileNet.mlmodel in Sources */,
+				CED128162BC405440068510E /* AlertModel.swift in Sources */,
 				CE67A0EE2BA534EE00649A3E /* MagisterWorkApp.swift in Sources */,
 				CECC0C432BA607E9003F386B /* SeeFood.mlmodel in Sources */,
 				CE91B9E12BACC4B000E4C4C5 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,

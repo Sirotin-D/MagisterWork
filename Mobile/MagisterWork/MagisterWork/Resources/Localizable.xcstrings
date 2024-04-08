@@ -117,6 +117,16 @@
         }
       }
     },
+    "Open Settings" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открыть Настройки"
+          }
+        }
+      }
+    },
     "Please allow access to resource in the settings to continue" : {
       "localizations" : {
         "ru" : {

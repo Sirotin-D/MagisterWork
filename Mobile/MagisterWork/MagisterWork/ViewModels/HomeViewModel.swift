@@ -35,7 +35,7 @@ class HomeViewModel: ObservableObject {
             Logger.shared.e(kLogTag, "Vision was unable to make a prediction: \(error.localizedDescription)")
         }
     }
-
+    
     func photoLibraryImagePickerClicked() {
         performActionIfPermissionAccessed(for: .PhotoLibrary, action: showPhotoLibrary)
     }
@@ -49,7 +49,7 @@ class HomeViewModel: ObservableObject {
     }
     
     func onAlertClosed() {
-        homeViewState.alertMessage = ""
+        homeViewState.alertModel = AlertModel()
     }
     
     //MARK: - Private methods
@@ -72,7 +72,13 @@ class HomeViewModel: ObservableObject {
     }
     
     private func permissionStatusDenied() {
-        showAlert(message: Constants.alertMessage)
+        showAlert(
+            AlertModel(
+                title: Constants.AlertMessage,
+                isActionButtonEnabled: true,
+                actionButtonTitle: Constants.OpenSettignsActionButtonTitle,
+                actionButtonHandler: openPhoneSettings)
+        )
     }
     
     private func showPhotoLibrary() {
@@ -90,9 +96,15 @@ class HomeViewModel: ObservableObject {
         homeViewState.isOpenLiveCamera = true
     }
     
-    private func showAlert(message: LocalizedStringKey) {
+    private func showAlert(_ alertModel: AlertModel) {
         homeViewState.isShowAlert = true
-        homeViewState.alertMessage = message
+        homeViewState.alertModel = alertModel
+    }
+    
+    private func openPhoneSettings() {
+        if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(settingsUrl)
+        }
     }
 }
 
@@ -104,11 +116,12 @@ extension HomeViewModel {
         var timeElapsed: String = ""
         var imageSourceType: UIImagePickerController.SourceType = .photoLibrary
         var isOpenLiveCamera = false
-        var alertMessage: LocalizedStringKey = ""
+        var alertModel = AlertModel()
         var isShowAlert = false
     }
     
     private enum Constants {
-        static let alertMessage: LocalizedStringKey = "Please allow access to resource in the settings to continue"
+        static let AlertMessage: LocalizedStringKey = "Please allow access to resource in the settings to continue"
+        static let OpenSettignsActionButtonTitle: LocalizedStringKey = "Open Settings"
     }
 }

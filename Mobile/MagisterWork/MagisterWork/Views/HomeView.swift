@@ -43,11 +43,18 @@ struct HomeView: View {
                 LiveCameraView()
                     .toolbar(.hidden, for: .tabBar)
             }
-            .alert(viewModel.homeViewState.alertMessage, isPresented: $viewModel.homeViewState.isShowAlert) {
+            .alert(viewModel.homeViewState.alertModel.title, isPresented: $viewModel.homeViewState.isShowAlert, actions: {
                 Button(Constants.Ok, role: .cancel) {
                     viewModel.onAlertClosed()
                 }
-            }
+                if viewModel.homeViewState.alertModel.isActionButtonEnabled {
+                    Button(viewModel.homeViewState.alertModel.actionButtonTitle) {
+                        viewModel.homeViewState.alertModel.actionButtonHandler?()
+                    }
+                }
+            }, message: {
+                Text(viewModel.homeViewState.alertModel.message)
+            })
             .sheet(isPresented: $viewModel.homeViewState.isShowImagePicker) {
                 ImagePicker(uiImage: $uiImage, isPresenting: $viewModel.homeViewState.isShowImagePicker, sourceType: viewModel.homeViewState.imageSourceType)
                     .onDisappear {
