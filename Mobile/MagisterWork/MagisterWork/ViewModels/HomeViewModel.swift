@@ -15,24 +15,28 @@ class HomeViewModel: BaseViewModel {
         homeViewState.timeElapsed = ""
         homeViewState.predictionsResult = nil
         let startTime = CFAbsoluteTimeGetCurrent()
-        
-        do {
-            try predictor.makePredictions(for: photo) { predictions in
-                guard let predictions = predictions else {
-                    Logger.shared.e(self.kLogTag, "No predictions. Check console log.")
-                    self.homeViewState.isLoading = false
-                    return
+        DispatchQueue.global(qos: .background).async {
+            do {
+                try self.predictor.makePredictions(for: photo) { [weak self] predictions in
+                    guard let self = self else { return }
+                    guard let predictions = predictions else {
+                        Logger.shared.e(self.kLogTag, "No predictions. Check console log.")
+                        self.homeViewState.isLoading = false
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.homeViewState.predictionsResult = predictions.prefix(self.predictionsToShow).map{ prediction in
+                            Prediction(classification: prediction.classification, confidencePercentage: prediction.confidencePercentage)
+                        }
+                        self.homeViewState.isLoading = false
+                        let endTime = CFAbsoluteTimeGetCurrent() - startTime
+                        self.homeViewState.timeElapsed = Utils.formatElapsedTime(endTime)
+                    }
                 }
-                
-                self.homeViewState.predictionsResult = predictions.prefix(self.predictionsToShow).map{ prediction in
-                    Prediction(classification: prediction.classification, confidencePercentage: prediction.confidencePercentage)
-                }
-                self.homeViewState.isLoading = false
-                let endTime = CFAbsoluteTimeGetCurrent() - startTime
-                self.homeViewState.timeElapsed = Utils.formatElapsedTime(endTime)
+            } catch {
+                Logger.shared.e(self.kLogTag, "Vision was unable to make a prediction: \(error.localizedDescription)")
             }
-        } catch {
-            Logger.shared.e(kLogTag, "Vision was unable to make a prediction: \(error.localizedDescription)")
         }
     }
     
@@ -55,16 +59,20 @@ class HomeViewModel: BaseViewModel {
     //MARK: - Private methods
     
     private func performActionIfPermissionAccessed(for permission: PermissionType, action: @escaping () -> Void) {
-        let isPermissionAccessed = PermissionManager.getPermissionStatus(for: permission)
-        if isPermissionAccessed {
-            action()
-        } else {
-            PermissionManager.requestPermission(for: permission) { permissionStatus in
+        DispatchQueue.global(qos: .background).async {
+            let isPermissionAccessed = PermissionManager.getPermissionStatus(for: permission)
+            if isPermissionAccessed {
                 DispatchQueue.main.async {
-                    if permissionStatus {
-                        action()
-                    } else {
-                        self.permissionStatusDenied()
+                    action()
+                }
+            } else {
+                PermissionManager.requestPermission(for: permission) { permissionStatus in
+                    DispatchQueue.main.async {
+                        if permissionStatus {
+                            action()
+                        } else {
+                            self.permissionStatusDenied()
+                        }
                     }
                 }
             }

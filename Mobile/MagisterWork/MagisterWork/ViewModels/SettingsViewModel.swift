@@ -21,8 +21,7 @@ class SettingsViewModel: BaseViewModel {
     private func updateNetworkMetadata() {
         settingsViewState.isLoading = true
         settingsViewState.selectedNetworkMetadata = nil
-        let dispatchQueue = DispatchQueue(label: "com.magisterwork.settings")
-        dispatchQueue.async {
+        DispatchQueue.global(qos: .background).async {
             let modelMetadata = Utils.getNetworkSpecification()
             DispatchQueue.main.async {
                 self.settingsViewState.isLoading = false

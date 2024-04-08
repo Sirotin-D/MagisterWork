@@ -8,7 +8,7 @@ import AVFoundation
 class CameraManager: NSObject, ObservableObject {
     @Published var capturedImage: UIImage? = nil
     private let session = AVCaptureSession()
-    private let sessionQueue = DispatchQueue(label: "com.unn.sessionQueue")
+    private let sessionQueue = DispatchQueue(label: "com.unn.cameraManagerQueue")
     private let kLogTag = "CameraManager"
     
     func configureCaptureSession() {

@@ -12,6 +12,7 @@ class LiveCameraViewModel: BaseViewModel {
     private var cancelables = Set<AnyCancellable>()
     private let predictor = ImagePredictor()
     private let predictionsToShow = 2
+    private var isImagePredictorBusy = false
     private let kLogTag = "LiveCameraViewModel"
     
     override func onFirstTimeAppear() {
@@ -48,22 +49,30 @@ class LiveCameraViewModel: BaseViewModel {
     
     private func imageCaptured(photo: UIImage?) {
         guard let photo = photo else { return }
+        guard !isImagePredictorBusy else { return }
+        isImagePredictorBusy = true
         let startTime = CFAbsoluteTimeGetCurrent()
-        do {
-            try predictor.makePredictions(for: photo) { predictions in
-                guard let predictions = predictions else {
-                    Logger.shared.e(self.kLogTag, "No predictions. Check console log.")
-                    return
+        DispatchQueue.global(qos: .background).async {
+            do {
+                try self.predictor.makePredictions(for: photo) { [weak self] predictions in
+                    guard let self = self else { return }
+                    guard let predictions = predictions else {
+                        Logger.shared.e(self.kLogTag, "No predictions. Check console log.")
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.liveCameraViewState.predictionsResult = predictions.prefix(self.predictionsToShow).map{ prediction in
+                            Prediction(classification: prediction.classification, confidencePercentage: prediction.confidencePercentage)
+                        }
+                        let endTime = CFAbsoluteTimeGetCurrent() - startTime
+                        self.liveCameraViewState.timeElapsed = Utils.formatElapsedTime(endTime)
+                        self.isImagePredictorBusy = false
+                    }
                 }
-                
-                self.liveCameraViewState.predictionsResult = predictions.prefix(self.predictionsToShow).map{ prediction in
-                    Prediction(classification: prediction.classification, confidencePercentage: prediction.confidencePercentage)
-                }
-                let endTime = CFAbsoluteTimeGetCurrent() - startTime
-                self.liveCameraViewState.timeElapsed = Utils.formatElapsedTime(endTime)
+            } catch {
+                Logger.shared.e(self.kLogTag, "Vision was unable to make a prediction: \(error.localizedDescription)")
             }
-        } catch {
-            Logger.shared.e(kLogTag, "Vision was unable to make a prediction: \(error.localizedDescription)")
         }
     }
 }
