@@ -1,6 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
     "%@ - %@ %%" : {
       "localizations" : {
         "en" : {
@@ -103,6 +113,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ок"
+          }
+        }
+      }
+    },
+    "Please allow access to resource in the settings to continue" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пожалуйста, разрешите доступ к ресурсу в настройках, чтобы продолжить"
           }
         }
       }

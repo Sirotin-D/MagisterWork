@@ -29,6 +29,8 @@ class LiveCameraViewModel: ObservableObject {
         cameraManager.stopCapturing()
     }
     
+    //MARK: - Private methods
+    
     private func subscribeToCaptureSession() {
         cameraManager.$capturedImage.sink { [weak self] image in
             self?.imageCaptured(photo: image)
@@ -38,8 +40,6 @@ class LiveCameraViewModel: ObservableObject {
     private func unsubscribeFromCaptureSession() {
         self.cancelables.first?.cancel()
     }
-    
-    //MARK: - Private methods
     
     private func imageCaptured(photo: UIImage?) {
         guard let photo = photo else { return }

@@ -39,18 +39,18 @@ struct HomeView: View {
                     ProgressView()
                 }
             }
-            .navigationDestination(isPresented: $viewModel.homeViewState.isShowLiveCamera, destination: {
+            .navigationDestination(isPresented: $viewModel.homeViewState.isOpenLiveCamera) {
                 LiveCameraView()
                     .toolbar(.hidden, for: .tabBar)
-            })
+            }
             .alert(viewModel.homeViewState.alertMessage, isPresented: $viewModel.homeViewState.isShowAlert) {
                 Button(Constants.Ok, role: .cancel) {
-                    viewModel.alertClosed()
+                    viewModel.onAlertClosed()
                 }
             }
-            .sheet(isPresented: $viewModel.homeViewState.isPresenting){
-                ImagePicker(uiImage: $uiImage, isPresenting: $viewModel.homeViewState.isPresenting, sourceType: viewModel.homeViewState.imageSourceType)
-                    .onDisappear{
+            .sheet(isPresented: $viewModel.homeViewState.isShowImagePicker) {
+                ImagePicker(uiImage: $uiImage, isPresenting: $viewModel.homeViewState.isShowImagePicker, sourceType: viewModel.homeViewState.imageSourceType)
+                    .onDisappear {
                         if let uiImage = uiImage {
                             viewModel.imageSelected(for: uiImage)
                         }
