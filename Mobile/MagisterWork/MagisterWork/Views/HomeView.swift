@@ -33,11 +33,17 @@ struct HomeView: View {
                     }
                 }
                 
-                PredictionResultsView(predictionsResult: viewModel.homeViewState.predictionsResult, timeElapsed: viewModel.homeViewState.timeElapsed)
-                    .padding()
+                PredictionResultsView(
+                    predictionsResult: viewModel.homeViewState.predictionsResult,
+                    timeElapsed: viewModel.homeViewState.timeElapsed
+                )
+                .padding(.top, Paddings.Medium)
+                
                 if (viewModel.homeViewState.isLoading) {
                     ProgressView()
                 }
+                
+                Spacer()
             }
             .navigationDestination(isPresented: $viewModel.homeViewState.isOpenLiveCamera) {
                 LiveCameraView()
@@ -73,6 +79,10 @@ extension HomeView {
         static let Ok: LocalizedStringKey = "Ok"
     }
     
+    private enum Paddings {
+        static let Medium = CGFloat(10)
+    }
+    
     private enum IconNames {
         static let PhotoSystemIcon = "photo"
         static let CameraSystemIcon = "camera"
@@ -92,6 +102,7 @@ struct ImagePreview: View {
                     Image(uiImage: image!)
                         .resizable()
                         .scaledToFit()
+                        .padding(.all, CGFloat(1))
                 }
             }
     }
