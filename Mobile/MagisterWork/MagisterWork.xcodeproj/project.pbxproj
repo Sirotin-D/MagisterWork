@@ -47,6 +47,7 @@
 		CED127F22BC311E80068510E /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CED127F12BC311E80068510E /* InfoPlist.xcstrings */; };
 		CED128122BC31B640068510E /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED128112BC31B640068510E /* PermissionManager.swift */; };
 		CED128162BC405440068510E /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED128152BC405440068510E /* AlertModel.swift */; };
+		CED128182BC40BC80068510E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED128172BC40BC80068510E /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		CED127F12BC311E80068510E /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		CED128112BC31B640068510E /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		CED128152BC405440068510E /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
+		CED128172BC40BC80068510E /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 		CECC0C5A2BA8D26E003F386B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CED128172BC40BC80068510E /* BaseViewModel.swift */,
 				CECC0C5B2BA8D286003F386B /* HomeViewModel.swift */,
 				CE91B9DE2BACAFE100E4C4C5 /* SettingsViewModel.swift */,
 				CE8784042BBC384B006203D3 /* LiveCameraViewModel.swift */,
@@ -347,6 +350,7 @@
 				CE8784032BBC3831006203D3 /* LiveCameraView.swift in Sources */,
 				CECC0C452BA6092E003F386B /* imagetest.mlmodel in Sources */,
 				CE67A1102BA5EF8000649A3E /* ImagePicker.swift in Sources */,
+				CED128182BC40BC80068510E /* BaseViewModel.swift in Sources */,
 				CE67A10E2BA5EF5400649A3E /* InceptionV3.mlmodel in Sources */,
 				CE60FB4E2BC01A6C005EEF5F /* NeuralNetworkMetadataModel.swift in Sources */,
 				CECC0C592BA8C44C003F386B /* GlobalSettings.swift in Sources */,

@@ -6,7 +6,7 @@ import SwiftUI
 import AVFoundation
 import Combine
 
-class LiveCameraViewModel: ObservableObject {
+class LiveCameraViewModel: BaseViewModel {
     @Published var liveCameraViewState = LiveCameraViewState()
     @ObservedObject private var cameraManager = CameraManager()
     private var cancelables = Set<AnyCancellable>()
@@ -14,17 +14,22 @@ class LiveCameraViewModel: ObservableObject {
     private let predictionsToShow = 2
     private let kLogTag = "LiveCameraViewModel"
     
-    init() {
+    override func onFirstTimeAppear() {
+        super.onFirstTimeAppear()
         liveCameraViewState.captureSesion = cameraManager.getCaptureSession()
         cameraManager.configureCaptureSession()
-    }
-    
-    func onAppear() {
         subscribeToCaptureSession()
         cameraManager.startCapturing()
     }
     
-    func onDisappear() {
+    override func onAppear() {
+        super.onAppear()
+        subscribeToCaptureSession()
+        cameraManager.startCapturing()
+    }
+    
+    override func onDisappear() {
+        super.onDisappear()
         unsubscribeFromCaptureSession()
         cameraManager.stopCapturing()
     }

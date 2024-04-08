@@ -4,18 +4,16 @@
 
 import SwiftUI
 
-class SettingsViewModel: ObservableObject {
+class SettingsViewModel: BaseViewModel {
     @Published var settingsViewState = SettingsViewState()
     func neuralNetworkChanged(type: NeuralNetworkType) {
         GlobalSettings.shared.currentNetworkType = type
         updateNetworkMetadata()
     }
     
-    func onAppear() {
-        if settingsViewState.selectedNetworkMetadata == nil &&
-            !settingsViewState.isLoading {
-            updateNetworkMetadata()
-        }
+    override func onFirstTimeAppear() {
+        super.onFirstTimeAppear()
+        updateNetworkMetadata()
     }
     
     //MARK: - Private methods

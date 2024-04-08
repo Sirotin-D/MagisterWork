@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-class HomeViewModel: ObservableObject {
+class HomeViewModel: BaseViewModel {
     @Published var homeViewState = HomeViewState()
     private var predictor = ImagePredictor()
     private let predictionsToShow = 2
