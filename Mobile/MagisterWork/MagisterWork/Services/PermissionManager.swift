@@ -17,13 +17,15 @@ class PermissionManager {
         return permissionStatus
     }
     
-    static func requestPermission(for permission: PermissionType, complitionHandler: @escaping (Bool) -> Void) {
+    static func requestPermission(for permission: PermissionType) async -> Bool {
+        var isPermissionAccessed = false
         switch permission {
         case .PhotoLibrary:
-            requestPhotoLibraryPermissionStatus(complitionHandler)
+            isPermissionAccessed = await requestPhotoLibraryPermissionStatus()
         case .Camera:
-            requestCameraPermissionStatus(complitionHandler)
+            isPermissionAccessed = await requestCameraPermissionStatus()
         }
+        return isPermissionAccessed
     }
     
     //MARK: - Private methods
@@ -40,14 +42,12 @@ class PermissionManager {
         return isPhotoLibraryAuthAccessed
     }
     
-    private static func requestCameraPermissionStatus(_ complitionHandler: @escaping (Bool) -> Void) {
-        AVCaptureDevice.requestAccess(for: .video, completionHandler: complitionHandler)
+    private static func requestCameraPermissionStatus() async -> Bool {
+        await AVCaptureDevice.requestAccess(for: .video)
     }
     
-    private static func requestPhotoLibraryPermissionStatus(_ complitionHandler: @escaping (Bool) -> Void) {
-        PHPhotoLibrary.requestAuthorization(for: .addOnly) { permissionStatus in
-            complitionHandler(permissionStatus == .authorized)
-        }
+    private static func requestPhotoLibraryPermissionStatus() async -> Bool {
+        await PHPhotoLibrary.requestAuthorization(for: .addOnly) == .authorized
     }
 }
 

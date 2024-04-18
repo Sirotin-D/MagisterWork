@@ -15,7 +15,7 @@ class HomeViewModel: BaseViewModel {
         homeViewState.timeElapsed = ""
         homeViewState.predictionsResult = nil
         let startTime = CFAbsoluteTimeGetCurrent()
-        DispatchQueue.global(qos: .background).async {
+        DispatchQueue.global(qos: .userInitiated).async {
             do {
                 try self.predictor.makePredictions(for: photo) { [weak self] predictions in
                     guard let self = self else { return }
@@ -36,6 +36,7 @@ class HomeViewModel: BaseViewModel {
                 }
             } catch {
                 Logger.shared.e(self.kLogTag, "Vision was unable to make a prediction: \(error.localizedDescription)")
+                self.homeViewState.isLoading = false
             }
         }
     }
@@ -59,20 +60,19 @@ class HomeViewModel: BaseViewModel {
     //MARK: - Private methods
     
     private func performActionIfPermissionAccessed(for permission: PermissionType, action: @escaping () -> Void) {
-        DispatchQueue.global(qos: .background).async {
+        Task(priority: .userInitiated) {
             let isPermissionAccessed = PermissionManager.getPermissionStatus(for: permission)
             if isPermissionAccessed {
-                DispatchQueue.main.async {
+                await MainActor.run {
                     action()
                 }
             } else {
-                PermissionManager.requestPermission(for: permission) { permissionStatus in
-                    DispatchQueue.main.async {
-                        if permissionStatus {
-                            action()
-                        } else {
-                            self.permissionStatusDenied()
-                        }
+                let permissionRequestResult = await PermissionManager.requestPermission(for: permission)
+                await MainActor.run {
+                    if permissionRequestResult {
+                        action()
+                    } else {
+                        self.permissionStatusDenied()
                     }
                 }
             }

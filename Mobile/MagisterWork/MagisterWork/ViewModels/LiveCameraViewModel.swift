@@ -52,7 +52,7 @@ class LiveCameraViewModel: BaseViewModel {
         guard !isImagePredictorBusy else { return }
         isImagePredictorBusy = true
         let startTime = CFAbsoluteTimeGetCurrent()
-        DispatchQueue.global(qos: .background).async {
+        DispatchQueue.global(qos: .userInitiated).async {
             do {
                 try self.predictor.makePredictions(for: photo) { [weak self] predictions in
                     guard let self = self else { return }

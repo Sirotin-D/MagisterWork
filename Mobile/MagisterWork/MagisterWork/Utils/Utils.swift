@@ -5,7 +5,7 @@
 import CoreML
 
 class Utils {
-    static func getNetworkSpecification() -> NeuralNetworkMetadataModel {
+    static func getNetworkSpecification() async -> NeuralNetworkMetadataModel {
         let currentNetworkType = GlobalSettings.shared.currentNetworkType
         let neuralNetworkModel = NeuralNetworkBuilder.build(type: currentNetworkType)
         let networkModelDescription = neuralNetworkModel.modelDescription
