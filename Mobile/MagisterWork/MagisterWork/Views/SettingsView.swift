@@ -23,7 +23,7 @@ struct SettingsView: View {
                 if let metadata = viewModel.settingsViewState.selectedNetworkMetadata {
                     NetworkModelMetaDataView(metadata: metadata)
                 } else {
-                    ProgressView()
+                    ProgressView().tint(.blue)
                 }
                 
                 Spacer()

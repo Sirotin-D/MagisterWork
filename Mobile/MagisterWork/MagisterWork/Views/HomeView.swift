@@ -47,7 +47,7 @@ struct HomeView: View {
                 .padding(.top, Paddings.Medium)
                 
                 if (viewModel.homeViewState.isLoading) {
-                    ProgressView()
+                    ProgressView().tint(.blue)
                 }
                 
                 Spacer()
