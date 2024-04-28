@@ -12,22 +12,31 @@ struct HomeView: View {
         NavigationStack {
             VStack {
                 HStack {
-                    IconButton(systemName: IconNames.PhotoSystemIcon) {
-                        viewModel.photoLibraryImagePickerClicked()
-                    }
+                    IconButton(
+                        systemName: IconNames.PhotoSystemIcon,
+                        enabled: !viewModel.homeViewState.isLoading,
+                        action: viewModel.photoLibraryImagePickerClicked
+                    )
                     
-                    IconButton(systemName: IconNames.CameraSystemIcon) {
-                        viewModel.cameraImagePickerClicked()
-                    }
+                    IconButton(
+                        systemName: IconNames.CameraSystemIcon,
+                        enabled: !viewModel.homeViewState.isLoading,
+                        action: viewModel.cameraImagePickerClicked
+                    )
                     
-                    IconButton(systemName: IconNames.VideoSystemIcon) {
-                        viewModel.liveImageClassificationClicked()
-                    }
+                    IconButton(
+                        systemName: IconNames.VideoSystemIcon,
+                        enabled: !viewModel.homeViewState.isLoading,
+                        action: viewModel.liveImageClassificationClicked
+                    )
                 }
                 
                 ImagePreview(image: uiImage)
                 
-                IconButton(systemName: IconNames.BoltSystemIcon) {
+                IconButton(
+                    systemName: IconNames.BoltSystemIcon,
+                    enabled: !viewModel.homeViewState.isLoading
+                ) {
                     viewModel.predictionButtonClicked(for: uiImage)
                 }
                 
