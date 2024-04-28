@@ -10,34 +10,17 @@ class HomeViewModel: BaseViewModel {
     private let predictionsToShow = 2
     private let kLogTag = "HomeViewModel"
     
-    func imageSelected(for photo: UIImage) {
-        homeViewState.isLoading = true
-        homeViewState.timeElapsed = ""
-        homeViewState.predictionsResult = nil
-        let startTime = CFAbsoluteTimeGetCurrent()
-        DispatchQueue.global(qos: .userInitiated).async {
-            do {
-                try self.predictor.makePredictions(for: photo) { [weak self] predictions in
-                    guard let self = self else { return }
-                    guard let predictions = predictions else {
-                        Logger.shared.e(self.kLogTag, "No predictions. Check console log.")
-                        self.homeViewState.isLoading = false
-                        return
-                    }
-                    
-                    DispatchQueue.main.async {
-                        self.homeViewState.predictionsResult = predictions.prefix(self.predictionsToShow).map{ prediction in
-                            Prediction(classification: prediction.classification, confidencePercentage: prediction.confidencePercentage)
-                        }
-                        self.homeViewState.isLoading = false
-                        let endTime = CFAbsoluteTimeGetCurrent() - startTime
-                        self.homeViewState.timeElapsed = Utils.formatElapsedTime(endTime)
-                    }
-                }
-            } catch {
-                Logger.shared.e(self.kLogTag, "Vision was unable to make a prediction: \(error.localizedDescription)")
-                self.homeViewState.isLoading = false
-            }
+    func imageSelected(for photo: UIImage?) {
+        guard homeViewState.imagePickerDataChanged else { return }
+        homeViewState.imagePickerDataChanged = false
+        if let photo = photo {
+            predictImage(for: photo)
+        }
+    }
+    
+    func predictionButtonClicked(for photo: UIImage?) {
+        if let photo = photo {
+            predictImage(for: photo)
         }
     }
     
@@ -58,6 +41,37 @@ class HomeViewModel: BaseViewModel {
     }
     
     //MARK: - Private methods
+    
+    private func predictImage(for photo: UIImage) {
+        homeViewState.isLoading = true
+        homeViewState.timeElapsed = ""
+        homeViewState.predictionsResult = nil
+        let startTime = CFAbsoluteTimeGetCurrent()
+        DispatchQueue.global(qos: .userInitiated).async {
+            do {
+                try self.predictor.makePredictions(for: photo) { [weak self] predictions in
+                    guard let self = self else { return }
+                    guard let predictions = predictions else {
+                        Logger.shared.e(self.kLogTag, "No predictions. Check console log.")
+                        self.homeViewState.isLoading = false
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.homeViewState.predictionsResult = predictions.prefix(self.predictionsToShow).map{ prediction in
+                            prediction
+                        }
+                        self.homeViewState.isLoading = false
+                        let endTime = CFAbsoluteTimeGetCurrent() - startTime
+                        self.homeViewState.timeElapsed = Utils.formatElapsedTime(endTime)
+                    }
+                }
+            } catch {
+                Logger.shared.e(self.kLogTag, "Vision was unable to make a prediction: \(error.localizedDescription)")
+                self.homeViewState.isLoading = false
+            }
+        }
+    }
     
     private func performActionIfPermissionAccessed(for permission: PermissionType, action: @escaping () -> Void) {
         Task(priority: .userInitiated) {
@@ -90,14 +104,14 @@ class HomeViewModel: BaseViewModel {
     }
     
     private func showPhotoLibrary() {
-        homeViewState.isShowImagePicker = true
         homeViewState.imageSourceType = .photoLibrary
+        homeViewState.isShowImagePicker = true
     }
     
     private func showPhotoCamera() {
-        homeViewState.isShowImagePicker = true
         homeViewState.imageSourceType = UIImagePickerController.isSourceTypeAvailable(.camera)
         ? .camera : .photoLibrary
+        homeViewState.isShowImagePicker = true
     }
     
     private func showLiveCamera() {
@@ -126,6 +140,7 @@ extension HomeViewModel {
         var isOpenLiveCamera = false
         var alertModel = AlertModel()
         var isShowAlert = false
+        var imagePickerDataChanged = false
     }
     
     private enum Constants {

@@ -9,6 +9,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     
     @Binding var uiImage: UIImage?
     @Binding var isPresenting: Bool
+    @Binding var newImageSelected: Bool
     public var sourceType: UIImagePickerController.SourceType
     
     func makeUIViewController(context: Context) -> UIImagePickerController {
@@ -21,7 +22,6 @@ struct ImagePicker: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
     
     typealias UIViewControllerType = UIImagePickerController
-        
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -31,10 +31,11 @@ struct ImagePicker: UIViewControllerRepresentable {
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
         let parent: ImagePicker
-                
+        
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             parent.uiImage = info[.originalImage] as? UIImage
             parent.isPresenting = false
+            parent.newImageSelected = true
         }
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

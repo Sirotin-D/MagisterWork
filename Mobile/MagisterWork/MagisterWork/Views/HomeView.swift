@@ -28,9 +28,7 @@ struct HomeView: View {
                 ImagePreview(image: uiImage)
                 
                 IconButton(systemName: IconNames.BoltSystemIcon) {
-                    if let image = uiImage {
-                        viewModel.imageSelected(for: image)
-                    }
+                    viewModel.predictionButtonClicked(for: uiImage)
                 }
                 
                 PredictionResultsView(
@@ -62,12 +60,15 @@ struct HomeView: View {
                 Text(viewModel.homeViewState.alertModel.message)
             })
             .sheet(isPresented: $viewModel.homeViewState.isShowImagePicker) {
-                ImagePicker(uiImage: $uiImage, isPresenting: $viewModel.homeViewState.isShowImagePicker, sourceType: viewModel.homeViewState.imageSourceType)
-                    .onDisappear {
-                        if let uiImage = uiImage {
-                            viewModel.imageSelected(for: uiImage)
-                        }
-                    }
+                ImagePicker(
+                    uiImage: $uiImage,
+                    isPresenting: $viewModel.homeViewState.isShowImagePicker,
+                    newImageSelected: $viewModel.homeViewState.imagePickerDataChanged,
+                    sourceType: viewModel.homeViewState.imageSourceType
+                )
+                .onDisappear {
+                    viewModel.imageSelected(for: uiImage)
+                }
             }
             .padding()
         }
@@ -98,8 +99,8 @@ struct ImagePreview: View {
             .strokeBorder()
             .foregroundColor(.blue)
             .overlay {
-                if image != nil {
-                    Image(uiImage: image!)
+                if let image = image {
+                    Image(uiImage: image)
                         .resizable()
                         .scaledToFit()
                         .padding(.all, CGFloat(1))
