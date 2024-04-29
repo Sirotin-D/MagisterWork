@@ -19,6 +19,7 @@ struct NetworkModelMetaDataView: View {
                 Text(metadata.description)
                     .padding(.bottom, Constants.SubTitlesBottomPadding)
                 Text(Constants.ModelClassLabelsSubTitle).bold()
+                Text("Class labels count: \(metadata.classLabels.count)")
                 NavigationLink {
                     AllClassLabelsView(classLabels: metadata.classLabels)
                         .toolbar(.hidden, for: .tabBar)
@@ -42,15 +43,24 @@ extension NetworkModelMetaDataView {
 
 struct AllClassLabelsView: View {
     let classLabels: [NeuralNetworkClassLabel]
+    @State private var searchText = ""
+    private var sortedClassLabels: [NeuralNetworkClassLabel] {
+        return searchText.isEmpty ? classLabels :
+        classLabels.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+    }
+    
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, content: {
-                Text("Class labels count: \(classLabels.count)")
-                    .padding(.horizontal)
-                List(classLabels) { item in
-                    Text(item.name)
+            VStack {
+                if (sortedClassLabels.isEmpty) {
+                    Text(Constants.NoClassLabelsFoundText)
+                } else {
+                    List(sortedClassLabels) { item in
+                        Text(item.name)
+                    }
                 }
-            })
+            }
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
             .navigationTitle(Constants.ClassLabelsTitle)
             .toolbarTitleDisplayMode(.inlineLarge)
         }
@@ -60,7 +70,7 @@ struct AllClassLabelsView: View {
 extension AllClassLabelsView {
     private enum Constants {
         static let ClassLabelsTitle: LocalizedStringKey = "Class labels"
-        static let ClassLabelsCountSubtitle = "Class labels count:"
+        static let NoClassLabelsFoundText: LocalizedStringKey = "No class labels found"
     }
 }
 

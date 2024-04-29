@@ -107,6 +107,16 @@
         }
       }
     },
+    "No class labels found" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Классов объектов не найдено"
+          }
+        }
+      }
+    },
     "Ok" : {
       "localizations" : {
         "ru" : {
