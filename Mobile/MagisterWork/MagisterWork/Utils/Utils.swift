@@ -5,14 +5,13 @@
 import CoreML
 
 class Utils {
-    static func getNetworkSpecification() async -> NeuralNetworkMetadataModel {
-        let currentNetworkType = GlobalSettings.shared.currentNetworkType
-        let neuralNetworkModel = NeuralNetworkBuilder.build(type: currentNetworkType)
-        let networkModelDescription = neuralNetworkModel.modelDescription
-        let modelMetaData = networkModelDescription.metadata
-        let modelName = currentNetworkType.rawValue
+    static func getCurrentNetworkMetadata() async -> NeuralNetworkMetadataModel {
+        let imageClassifierDescription = ImagePredictor.shared.getCurrentClassififerDescription()
+        let networkModelDescription = imageClassifierDescription.modelDescription
+        let modelName = imageClassifierDescription.modelType.rawValue
+        let modelMetaData = imageClassifierDescription.modelDescription.metadata
         var modelDescription = ""
-        var modelClassLabels: [NeuralNetworkClassLabel] = []
+        var modelClassLabels = [NeuralNetworkClassLabel]()
         let metaDataKey = MLModelMetadataKey.description
         if let description = modelMetaData[metaDataKey] as? String {
             modelDescription = description

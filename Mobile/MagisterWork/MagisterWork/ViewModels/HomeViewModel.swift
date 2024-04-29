@@ -6,7 +6,7 @@ import SwiftUI
 
 class HomeViewModel: BaseViewModel {
     @Published var homeViewState = HomeViewState()
-    private var predictor = ImagePredictor()
+    private var predictor = ImagePredictor.shared
     private let predictionsToShow = 2
     private let kLogTag = "HomeViewModel"
     
@@ -46,9 +46,9 @@ class HomeViewModel: BaseViewModel {
         homeViewState.isLoading = true
         homeViewState.timeElapsed = ""
         homeViewState.predictionsResult = nil
-        let startTime = CFAbsoluteTimeGetCurrent()
         DispatchQueue.global(qos: .userInitiated).async {
             do {
+                let startTime = CFAbsoluteTimeGetCurrent()
                 try self.predictor.makePredictions(for: photo) { [weak self] predictions in
                     guard let self = self else { return }
                     guard let predictions = predictions else {
@@ -62,8 +62,8 @@ class HomeViewModel: BaseViewModel {
                             prediction
                         }
                         self.homeViewState.isLoading = false
-                        let endTime = CFAbsoluteTimeGetCurrent() - startTime
-                        self.homeViewState.timeElapsed = Utils.formatElapsedTime(endTime)
+                        let timeDuration = CFAbsoluteTimeGetCurrent() - startTime
+                        self.homeViewState.timeElapsed = Utils.formatElapsedTime(timeDuration)
                     }
                 }
             } catch {

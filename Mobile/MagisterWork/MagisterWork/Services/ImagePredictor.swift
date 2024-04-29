@@ -6,12 +6,41 @@ import Vision
 import UIKit
 
 class ImagePredictor {
+    public static let shared = ImagePredictor()
     private let kLogTag = "ImagePredictor"
+    /// The function signature the caller must provide as a completion handler.
+    typealias ImagePredictionHandler = (_ predictions: [Prediction]?) -> Void
+    
+    /// A dictionary of prediction handler functions, each keyed by its Vision request.
+    private var predictionHandlers = [VNRequest: ImagePredictionHandler]()
+    
+    /// Current using neural network model
+    private var imageClassifier: NeuralNetworkModel = createImageClassifier()
+    
+    private struct NeuralNetworkModel {
+        var model: MLModel
+        var type: NeuralNetworkType
+    }
+    
+    //MARK: - Public methods
+    
+    func updateImageClassifier() {
+        let currentNeuralNetworkType = GlobalSettings.shared.currentNetworkType
+        guard currentNeuralNetworkType != imageClassifier.type else { return }
+        imageClassifier = ImagePredictor.createImageClassifier()
+    }
+    
+    func getCurrentClassififerDescription() -> ImageClassifierDescription {
+        ImageClassifierDescription(
+            modelDescription: imageClassifier.model.modelDescription,
+            modelType: imageClassifier.type)
+    }
+    
     /// Generates an image classification prediction for a photo.
     /// - Parameter photo: An image, typically of an object or a scene.
     /// - Tag: makePredictions
     func makePredictions(for photo: UIImage, completionHandler: @escaping ImagePredictionHandler) throws {
-        let orientation = CGImagePropertyOrientation(photo.imageOrientation)
+        Logger.shared.i(kLogTag, "Using network model: \(imageClassifier.type)")
 
         guard let photoImage = photo.cgImage else {
             fatalError("Photo doesn't have underlying CGImage.")
@@ -20,6 +49,7 @@ class ImagePredictor {
         let imageClassificationRequest = createImageClassificationRequest()
         predictionHandlers[imageClassificationRequest] = completionHandler
 
+        let orientation = CGImagePropertyOrientation(photo.imageOrientation)
         let handler = VNImageRequestHandler(cgImage: photoImage, orientation: orientation)
         let requests: [VNRequest] = [imageClassificationRequest]
 
@@ -29,31 +59,22 @@ class ImagePredictor {
     
     //MARK: - Private methods
     
-    private func createImageClassifier() -> VNCoreMLModel {
+    private static func createImageClassifier() -> NeuralNetworkModel {
         let currentNetworkType = GlobalSettings.shared.currentNetworkType
-        Logger.shared.i(kLogTag, "Using network type: \(currentNetworkType)")
-        let imageClassifierModel = NeuralNetworkBuilder.build(type: currentNetworkType)
-
-        // Create a Vision instance using the image classifier's model instance.
-        guard let imageClassifierVisionModel = try? VNCoreMLModel(for: imageClassifierModel) else {
-            fatalError("App failed to create a `VNCoreMLModel` instance.")
-        }
-
-        return imageClassifierVisionModel
+        let currentNetworkModel = NeuralNetworkBuilder.build(type: currentNetworkType)
+        return NeuralNetworkModel(
+            model: currentNetworkModel,
+            type: currentNetworkType)
     }
-
-    /// The function signature the caller must provide as a completion handler.
-    typealias ImagePredictionHandler = (_ predictions: [Prediction]?) -> Void
-
-    /// A dictionary of prediction handler functions, each keyed by its Vision request.
-    private var predictionHandlers = [VNRequest: ImagePredictionHandler]()
 
     /// Generates a new request instance that uses the Image Predictor's image classifier model.
     private func createImageClassificationRequest() -> VNImageBasedRequest {
-        // Create an image classification request with an image classifier model.
-
-        let imageClassifier = createImageClassifier()
-        let imageClassificationRequest = VNCoreMLRequest(model: imageClassifier,
+        // Create a Vision instance using the image classifier's model instance.
+        guard let imageClassifierVisionModel = try? VNCoreMLModel(for: imageClassifier.model) else {
+            fatalError("App failed to create a `VNCoreMLModel` instance.")
+        }
+        
+        let imageClassificationRequest = VNCoreMLRequest(model: imageClassifierVisionModel,
                                                          completionHandler: visionRequestHandler)
 
         imageClassificationRequest.imageCropAndScaleOption = .centerCrop

@@ -10,7 +10,7 @@ class LiveCameraViewModel: BaseViewModel {
     @Published var liveCameraViewState = LiveCameraViewState()
     @ObservedObject private var cameraManager = CameraManager()
     private var cancelables = Set<AnyCancellable>()
-    private let predictor = ImagePredictor()
+    private let predictor = ImagePredictor.shared
     private let predictionsToShow = 2
     private var isImagePredictorBusy = false
     private let kLogTag = "LiveCameraViewModel"

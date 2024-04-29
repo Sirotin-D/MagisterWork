@@ -2,7 +2,7 @@
 //  NeuralNetworkMetadataModel.swift
 //
 
-import Foundation
+import CoreML
 
 struct NeuralNetworkMetadataModel {
     let name: String
@@ -13,4 +13,9 @@ struct NeuralNetworkMetadataModel {
 struct NeuralNetworkClassLabel: Identifiable {
     let id = UUID()
     let name: String
+}
+
+struct ImageClassifierDescription {
+    let modelDescription: MLModelDescription
+    let modelType: NeuralNetworkType
 }

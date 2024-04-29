@@ -10,32 +10,29 @@ class SettingsViewModel: BaseViewModel {
     
     func neuralNetworkChanged(type: NeuralNetworkType) {
         GlobalSettings.shared.currentNetworkType = type
-        updateNetworkMetadata()
+        updateNetworkData()
     }
     
     override func onFirstTimeAppear() {
         super.onFirstTimeAppear()
-        updateNetworkMetadata()
+        updateNetworkData()
     }
     
     //MARK: - Private methods
     
-    private func updateNetworkMetadata() {
+    private func updateNetworkData() {
         if !updateNeuralNetworkDataTask.isCancelled {
             updateNeuralNetworkDataTask.cancel()
         }
-        
         settingsViewState.isLoading = true
         settingsViewState.selectedNetworkMetadata = nil
         updateNeuralNetworkDataTask = Task(priority: .userInitiated) {
-            let modelMetadata = await Utils.getNetworkSpecification()
+            ImagePredictor.shared.updateImageClassifier()
+            let modelMetadata = await Utils.getCurrentNetworkMetadata()
             await MainActor.run { [weak self] in
                 guard let self = self else { return }
                 self.settingsViewState.isLoading = false
-                self.settingsViewState.selectedNetworkMetadata = NeuralNetworkMetadataModel(
-                    name: modelMetadata.name,
-                    description: modelMetadata.description,
-                    classLabels: modelMetadata.classLabels)
+                self.settingsViewState.selectedNetworkMetadata = modelMetadata
             }
         }
     }
