@@ -29,10 +29,14 @@ class SettingsViewModel: BaseViewModel {
         updateNeuralNetworkDataTask = Task(priority: .userInitiated) {
             ImagePredictor.shared.updateImageClassifier()
             let modelMetadata = await Utils.getCurrentNetworkMetadata()
+            let sortedMetaData = NeuralNetworkMetadataModel(
+                name: modelMetadata.name,
+                description: modelMetadata.description,
+                classLabels: modelMetadata.classLabels.sorted { $0.name.lowercased() < $1.name.lowercased() })
             await MainActor.run { [weak self] in
                 guard let self = self else { return }
                 self.settingsViewState.isLoading = false
-                self.settingsViewState.selectedNetworkMetadata = modelMetadata
+                self.settingsViewState.selectedNetworkMetadata = sortedMetaData
             }
         }
     }
