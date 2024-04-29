@@ -30,5 +30,5 @@ struct IconButton: View {
 }
 
 #Preview {
-    IconButton(systemName: "camera") {}
+    IconButton(systemName: "camera", action: {})
 }

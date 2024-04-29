@@ -6,7 +6,6 @@ import SwiftUI
 import AVKit
 
 struct ImagePicker: UIViewControllerRepresentable {
-    
     @Binding var uiImage: UIImage?
     @Binding var isPresenting: Bool
     @Binding var newImageSelected: Bool
