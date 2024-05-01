@@ -149,15 +149,11 @@
 		CE67A1062BA5466500649A3E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE9FCB332BE2DA7F00A8CBB4 /* Components */,
 				CE67A1042BA5433C00649A3E /* MainView.swift */,
-				CE60FB682BC2F5A5005EEF5F /* NetworkModelMetaDataView.swift */,
-				CE60FB642BC2F19F005EEF5F /* PredictionResultsView.swift */,
-				CE67A10F2BA5EF8000649A3E /* ImagePicker.swift */,
-				CE8784062BBC3AFC006203D3 /* CameraPreviewView.swift */,
 				CE67A1002BA53E6800649A3E /* HomeView.swift */,
 				CE8784022BBC3831006203D3 /* LiveCameraView.swift */,
 				CE67A1022BA53E9C00649A3E /* SettingsView.swift */,
-				CE60FB622BC2E6AE005EEF5F /* IconButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +193,18 @@
 				CE91B9E22BACC51500E4C4C5 /* VNClassificationObservation+confidenceString.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		CE9FCB332BE2DA7F00A8CBB4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE60FB682BC2F5A5005EEF5F /* NetworkModelMetaDataView.swift */,
+				CE60FB642BC2F19F005EEF5F /* PredictionResultsView.swift */,
+				CE67A10F2BA5EF8000649A3E /* ImagePicker.swift */,
+				CE8784062BBC3AFC006203D3 /* CameraPreviewView.swift */,
+				CE60FB622BC2E6AE005EEF5F /* IconButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		CEA609792BB24DA600CC6F7B /* App */ = {
