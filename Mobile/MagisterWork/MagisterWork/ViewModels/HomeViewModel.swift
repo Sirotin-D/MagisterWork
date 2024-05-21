@@ -53,7 +53,9 @@ class HomeViewModel: BaseViewModel {
                     guard let self = self else { return }
                     guard let predictions = predictions else {
                         Logger.shared.e(self.kLogTag, "No predictions. Check console log.")
-                        self.homeViewState.isLoading = false
+                        DispatchQueue.main.async {
+                            self.homeViewState.isLoading = false
+                        }
                         return
                     }
                     
