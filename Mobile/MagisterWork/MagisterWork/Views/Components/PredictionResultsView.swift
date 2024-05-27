@@ -6,16 +6,28 @@ import SwiftUI
 
 struct PredictionResultsView: View {
     let predictionsResult: [Prediction]?
+    let predictionClicked: ((String) -> Void)?
     let timeElapsed: String
+    
+    init(predictionsResult: [Prediction]?, timeElapsed: String, predictionClicked: ((String) -> Void)? = nil) {
+        self.predictionsResult = predictionsResult
+        self.predictionClicked = predictionClicked
+        self.timeElapsed = timeElapsed
+    }
+    
     var body: some View {
         HStack() {
             VStack {
                 Text(Constants.ImageCategories)
                 if let predictionResult = predictionsResult {
                     ForEach(predictionResult) { prediction in
-                        Text("\(prediction.classification) - \(prediction.confidencePercentage) %")
-                            .bold()
-                            .font(.subheadline)
+                        Button(action: {
+                            predictionClicked?(prediction.classification)
+                        }, label: {
+                            Text("\(prediction.classification.localized) - \(prediction.confidencePercentage) %")
+                                .bold()
+                                .font(.subheadline)
+                        })
                     }
                 } else {
                     Text(Constants.UnknownValue)

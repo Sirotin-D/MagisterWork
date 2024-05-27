@@ -37,6 +37,98 @@
         }
       }
     },
+    "Apple pie" : {
+
+    },
+    "Baby back ribs" : {
+
+    },
+    "Baklava" : {
+
+    },
+    "Beef carpaccio" : {
+
+    },
+    "Beef tartare" : {
+
+    },
+    "Beet salad" : {
+
+    },
+    "Beignets" : {
+
+    },
+    "Bibimbap" : {
+
+    },
+    "Bread pudding" : {
+
+    },
+    "Breakfast burrito" : {
+
+    },
+    "Bruschetta" : {
+
+    },
+    "Caesar salad" : {
+
+    },
+    "Calories:" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Количество калорий:"
+          }
+        }
+      }
+    },
+    "Cannoli" : {
+
+    },
+    "Caperese salad" : {
+
+    },
+    "Carrot cake" : {
+
+    },
+    "Ceviche" : {
+
+    },
+    "Cheese cake" : {
+
+    },
+    "Cheese plate" : {
+
+    },
+    "Chicken curry" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Курица карри"
+          }
+        }
+      }
+    },
+    "Chicken quesadilla" : {
+
+    },
+    "Chicken wings" : {
+
+    },
+    "Chocolate cake" : {
+
+    },
+    "Chocolate mousse" : {
+
+    },
+    "Churros" : {
+
+    },
+    "Clam chowder" : {
+
+    },
     "Class labels" : {
       "localizations" : {
         "ru" : {
@@ -77,6 +169,27 @@
         }
       }
     },
+    "Club sandwich" : {
+
+    },
+    "Cnocchi" : {
+
+    },
+    "Crab cakes" : {
+
+    },
+    "Creek salad" : {
+
+    },
+    "Creme brulee" : {
+
+    },
+    "Croque madame" : {
+
+    },
+    "Cup cakes" : {
+
+    },
     "Description:" : {
       "localizations" : {
         "ru" : {
@@ -87,6 +200,87 @@
         }
       }
     },
+    "Deviled eggs" : {
+
+    },
+    "Donuts" : {
+
+    },
+    "Dumplings" : {
+
+    },
+    "Edamame" : {
+
+    },
+    "Eggs benedict" : {
+
+    },
+    "Escargots" : {
+
+    },
+    "Falafel" : {
+
+    },
+    "Filet mignon" : {
+
+    },
+    "Fish and chips" : {
+
+    },
+    "Foie gras" : {
+
+    },
+    "French fries" : {
+
+    },
+    "French onion soup" : {
+
+    },
+    "French toast" : {
+
+    },
+    "Fried calamari" : {
+
+    },
+    "Fried rice" : {
+
+    },
+    "Frozen yogurt" : {
+
+    },
+    "Garlic bread" : {
+
+    },
+    "Grilled cheese sandwich" : {
+
+    },
+    "Grilled salmon" : {
+
+    },
+    "Guacamole" : {
+
+    },
+    "Gyoza" : {
+
+    },
+    "Hamburger" : {
+
+    },
+    "Hot and sour soup" : {
+
+    },
+    "Hot dog" : {
+
+    },
+    "Huevos rancheros" : {
+
+    },
+    "Hummus" : {
+
+    },
+    "Ice cream" : {
+
+    },
     "Image categories:" : {
       "localizations" : {
         "ru" : {
@@ -96,6 +290,30 @@
           }
         }
       }
+    },
+    "Lasagna" : {
+
+    },
+    "Lobster bisque" : {
+
+    },
+    "Lobster roll sandwich" : {
+
+    },
+    "Macaroni and cheese" : {
+
+    },
+    "Macarons" : {
+
+    },
+    "Miso soup" : {
+
+    },
+    "Mussels" : {
+
+    },
+    "Nachos" : {
+
     },
     "Name:" : {
       "localizations" : {
@@ -127,6 +345,12 @@
         }
       }
     },
+    "Omelette" : {
+
+    },
+    "Onion rings" : {
+
+    },
     "Open Settings" : {
       "localizations" : {
         "ru" : {
@@ -137,6 +361,30 @@
         }
       }
     },
+    "Oysters" : {
+
+    },
+    "Pad thai" : {
+
+    },
+    "Paella" : {
+
+    },
+    "Pancakes" : {
+
+    },
+    "Panna cotta" : {
+
+    },
+    "Peking duck" : {
+
+    },
+    "Pho" : {
+
+    },
+    "Pizza" : {
+
+    },
     "Please allow access to resource in the settings to continue" : {
       "localizations" : {
         "ru" : {
@@ -146,6 +394,42 @@
           }
         }
       }
+    },
+    "Pork chop" : {
+
+    },
+    "Poutine" : {
+
+    },
+    "Prime rib" : {
+
+    },
+    "Pulled pork sandwich" : {
+
+    },
+    "Ramen" : {
+
+    },
+    "Ravioli" : {
+
+    },
+    "Red velvet cake" : {
+
+    },
+    "Risotto" : {
+
+    },
+    "Samosa" : {
+
+    },
+    "Sashimi" : {
+
+    },
+    "Scallops" : {
+
+    },
+    "Seaweed salad" : {
+
     },
     "See all class labels" : {
       "localizations" : {
@@ -177,6 +461,33 @@
         }
       }
     },
+    "Shrimp and grits" : {
+
+    },
+    "Spaghetti bolognese" : {
+
+    },
+    "Spaghetti carbonara" : {
+
+    },
+    "Spring rolls" : {
+
+    },
+    "Steak" : {
+
+    },
+    "Strawberry short cake" : {
+
+    },
+    "Sushi" : {
+
+    },
+    "Tacos" : {
+
+    },
+    "Takoyaki" : {
+
+    },
     "Time elapsed:" : {
       "localizations" : {
         "ru" : {
@@ -186,6 +497,15 @@
           }
         }
       }
+    },
+    "Tiramisu" : {
+
+    },
+    "Tuna tartare" : {
+
+    },
+    "Waffles" : {
+
     }
   },
   "version" : "1.0"

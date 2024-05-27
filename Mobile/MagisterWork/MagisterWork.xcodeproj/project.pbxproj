@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE516EE42C011BFB007ECECB /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE516EE32C011BFB007ECECB /* String+localized.swift */; };
+		CE516EE62C053C6D007ECECB /* FoodLocalizedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE516EE52C053C6D007ECECB /* FoodLocalizedKeys.swift */; };
+		CE52B30E2BFA26EA00B035D5 /* AlexNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE52B30D2BFA26EA00B035D5 /* AlexNet.mlmodel */; };
+		CE52B3102BFA37D000B035D5 /* DenseNetFood101.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = CE52B30F2BFA37D000B035D5 /* DenseNetFood101.mlpackage */; };
 		CE5402D52BBB7D54000ED2DF /* MobileNetV2Int8LUT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE5402D02BBB7D46000ED2DF /* MobileNetV2Int8LUT.mlmodel */; };
 		CE5402D62BBB7D54000ED2DF /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE5402D12BBB7D47000ED2DF /* MobileNetV2.mlmodel */; };
 		CE5402D72BBB7D54000ED2DF /* MobileNetV2FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE5402D22BBB7D47000ED2DF /* MobileNetV2FP16.mlmodel */; };
@@ -19,6 +23,11 @@
 		CE60FB632BC2E6AE005EEF5F /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60FB622BC2E6AE005EEF5F /* IconButton.swift */; };
 		CE60FB652BC2F19F005EEF5F /* PredictionResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60FB642BC2F19F005EEF5F /* PredictionResultsView.swift */; };
 		CE60FB692BC2F5A5005EEF5F /* NetworkModelMetaDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60FB682BC2F5A5005EEF5F /* NetworkModelMetaDataView.swift */; };
+		CE6252D22BFD63BF0082BC7C /* FoodDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6252D12BFD63BF0082BC7C /* FoodDescriptionView.swift */; };
+		CE6252D42BFD63F60082BC7C /* FoodDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6252D32BFD63F60082BC7C /* FoodDescriptionViewModel.swift */; };
+		CE6252D62BFE507B0082BC7C /* MockFoodDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6252D52BFE507B0082BC7C /* MockFoodDescription.swift */; };
+		CE6252D82BFE50D20082BC7C /* ProductMetadataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6252D72BFE50D20082BC7C /* ProductMetadataModel.swift */; };
+		CE6252DA2BFE93810082BC7C /* FoodObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6252D92BFE93810082BC7C /* FoodObject.swift */; };
 		CE67A0EE2BA534EE00649A3E /* MagisterWorkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67A0ED2BA534EE00649A3E /* MagisterWorkApp.swift */; };
 		CE67A0F22BA534EF00649A3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE67A0F12BA534EF00649A3E /* Assets.xcassets */; };
 		CE67A0F52BA534EF00649A3E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE67A0F42BA534EF00649A3E /* Preview Assets.xcassets */; };
@@ -51,6 +60,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE516EE32C011BFB007ECECB /* String+localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
+		CE516EE52C053C6D007ECECB /* FoodLocalizedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLocalizedKeys.swift; sourceTree = "<group>"; };
+		CE52B30D2BFA26EA00B035D5 /* AlexNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AlexNet.mlmodel; sourceTree = "<group>"; };
+		CE52B30F2BFA37D000B035D5 /* DenseNetFood101.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = DenseNetFood101.mlpackage; sourceTree = "<group>"; };
 		CE5402D02BBB7D46000ED2DF /* MobileNetV2Int8LUT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2Int8LUT.mlmodel; sourceTree = "<group>"; };
 		CE5402D12BBB7D47000ED2DF /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
 		CE5402D22BBB7D47000ED2DF /* MobileNetV2FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2FP16.mlmodel; sourceTree = "<group>"; };
@@ -63,6 +76,11 @@
 		CE60FB622BC2E6AE005EEF5F /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		CE60FB642BC2F19F005EEF5F /* PredictionResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionResultsView.swift; sourceTree = "<group>"; };
 		CE60FB682BC2F5A5005EEF5F /* NetworkModelMetaDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModelMetaDataView.swift; sourceTree = "<group>"; };
+		CE6252D12BFD63BF0082BC7C /* FoodDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDescriptionView.swift; sourceTree = "<group>"; };
+		CE6252D32BFD63F60082BC7C /* FoodDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDescriptionViewModel.swift; sourceTree = "<group>"; };
+		CE6252D52BFE507B0082BC7C /* MockFoodDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFoodDescription.swift; sourceTree = "<group>"; };
+		CE6252D72BFE50D20082BC7C /* ProductMetadataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMetadataModel.swift; sourceTree = "<group>"; };
+		CE6252D92BFE93810082BC7C /* FoodObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodObject.swift; sourceTree = "<group>"; };
 		CE67A0EA2BA534EE00649A3E /* MagisterWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagisterWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE67A0ED2BA534EE00649A3E /* MagisterWorkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagisterWorkApp.swift; sourceTree = "<group>"; };
 		CE67A0F12BA534EF00649A3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,6 +172,7 @@
 				CE67A1002BA53E6800649A3E /* HomeView.swift */,
 				CE8784022BBC3831006203D3 /* LiveCameraView.swift */,
 				CE67A1022BA53E9C00649A3E /* SettingsView.swift */,
+				CE6252D12BFD63BF0082BC7C /* FoodDescriptionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,6 +191,8 @@
 		CE67A10C2BA5EF3300649A3E /* MLModels */ = {
 			isa = PBXGroup;
 			children = (
+				CE52B30D2BFA26EA00B035D5 /* AlexNet.mlmodel */,
+				CE52B30F2BFA37D000B035D5 /* DenseNetFood101.mlpackage */,
 				CE5402DA2BBB8255000ED2DF /* DeiT-base384.mlpackage */,
 				CE5402D12BBB7D47000ED2DF /* MobileNetV2.mlmodel */,
 				CE5402D22BBB7D47000ED2DF /* MobileNetV2FP16.mlmodel */,
@@ -191,6 +212,7 @@
 			children = (
 				CE91B9E02BACC4B000E4C4C5 /* CGImagePropertyOrientation+UIImageOrientation.swift */,
 				CE91B9E22BACC51500E4C4C5 /* VNClassificationObservation+confidenceString.swift */,
+				CE516EE32C011BFB007ECECB /* String+localized.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -218,6 +240,8 @@
 		CEA6097A2BB24DB500CC6F7B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE6252D52BFE507B0082BC7C /* MockFoodDescription.swift */,
+				CE516EE52C053C6D007ECECB /* FoodLocalizedKeys.swift */,
 				CE60FB592BC0CD8D005EEF5F /* Localizable.xcstrings */,
 				CED127F12BC311E80068510E /* InfoPlist.xcstrings */,
 				CE67A0F12BA534EF00649A3E /* Assets.xcassets */,
@@ -233,6 +257,8 @@
 				CECC0C532BA651F0003F386B /* NeuralNetworkType.swift */,
 				CE91B9D92BAC67D900E4C4C5 /* Prediction.swift */,
 				CE60FB4D2BC01A6C005EEF5F /* NeuralNetworkMetadataModel.swift */,
+				CE6252D72BFE50D20082BC7C /* ProductMetadataModel.swift */,
+				CE6252D92BFE93810082BC7C /* FoodObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				CED128172BC40BC80068510E /* BaseViewModel.swift */,
+				CE6252D32BFD63F60082BC7C /* FoodDescriptionViewModel.swift */,
 				CECC0C5B2BA8D286003F386B /* HomeViewModel.swift */,
 				CE91B9DE2BACAFE100E4C4C5 /* SettingsViewModel.swift */,
 				CE8784042BBC384B006203D3 /* LiveCameraViewModel.swift */,
@@ -333,14 +360,17 @@
 			files = (
 				CE60FB692BC2F5A5005EEF5F /* NetworkModelMetaDataView.swift in Sources */,
 				CE5402D62BBB7D54000ED2DF /* MobileNetV2.mlmodel in Sources */,
+				CE6252DA2BFE93810082BC7C /* FoodObject.swift in Sources */,
 				CECC0C512BA6164C003F386B /* SqueezeNet.mlmodel in Sources */,
 				CE5402D52BBB7D54000ED2DF /* MobileNetV2Int8LUT.mlmodel in Sources */,
 				CE60FB652BC2F19F005EEF5F /* PredictionResultsView.swift in Sources */,
 				CE5402D82BBB7D54000ED2DF /* Resnet50.mlmodel in Sources */,
+				CE516EE42C011BFB007ECECB /* String+localized.swift in Sources */,
 				CE67A1032BA53E9C00649A3E /* SettingsView.swift in Sources */,
 				CE60FB442BBF5E49005EEF5F /* Logger.swift in Sources */,
 				CECC0C562BA8C274003F386B /* NeuralNetworkBuilder.swift in Sources */,
 				CE5402DB2BBB8256000ED2DF /* DeiT-base384.mlpackage in Sources */,
+				CE6252D82BFE50D20082BC7C /* ProductMetadataModel.swift in Sources */,
 				CE91B9E32BACC51500E4C4C5 /* VNClassificationObservation+confidenceString.swift in Sources */,
 				CED128122BC31B640068510E /* PermissionManager.swift in Sources */,
 				CE91B9DC2BAC6B1900E4C4C5 /* ImagePredictor.swift in Sources */,
@@ -350,6 +380,7 @@
 				CED128162BC405440068510E /* AlertModel.swift in Sources */,
 				CE67A0EE2BA534EE00649A3E /* MagisterWorkApp.swift in Sources */,
 				CECC0C432BA607E9003F386B /* SeeFood.mlmodel in Sources */,
+				CE6252D22BFD63BF0082BC7C /* FoodDescriptionView.swift in Sources */,
 				CE91B9E12BACC4B000E4C4C5 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				CE60FB632BC2E6AE005EEF5F /* IconButton.swift in Sources */,
 				CE8784072BBC3AFC006203D3 /* CameraPreviewView.swift in Sources */,
@@ -357,16 +388,21 @@
 				CE8784052BBC384B006203D3 /* LiveCameraViewModel.swift in Sources */,
 				CE8784032BBC3831006203D3 /* LiveCameraView.swift in Sources */,
 				CECC0C452BA6092E003F386B /* imagetest.mlmodel in Sources */,
+				CE52B30E2BFA26EA00B035D5 /* AlexNet.mlmodel in Sources */,
+				CE516EE62C053C6D007ECECB /* FoodLocalizedKeys.swift in Sources */,
 				CE67A1102BA5EF8000649A3E /* ImagePicker.swift in Sources */,
 				CED128182BC40BC80068510E /* BaseViewModel.swift in Sources */,
 				CE67A10E2BA5EF5400649A3E /* InceptionV3.mlmodel in Sources */,
 				CE60FB4E2BC01A6C005EEF5F /* NeuralNetworkMetadataModel.swift in Sources */,
 				CECC0C592BA8C44C003F386B /* GlobalSettings.swift in Sources */,
 				CE87840B2BBCBD0A006203D3 /* CameraManager.swift in Sources */,
+				CE6252D62BFE507B0082BC7C /* MockFoodDescription.swift in Sources */,
 				CECC0C542BA651F0003F386B /* NeuralNetworkType.swift in Sources */,
 				CE91B9DA2BAC67D900E4C4C5 /* Prediction.swift in Sources */,
 				CE5402D72BBB7D54000ED2DF /* MobileNetV2FP16.mlmodel in Sources */,
+				CE6252D42BFD63F60082BC7C /* FoodDescriptionViewModel.swift in Sources */,
 				CE67A1012BA53E6800649A3E /* HomeView.swift in Sources */,
+				CE52B3102BFA37D000B035D5 /* DenseNetFood101.mlpackage in Sources */,
 				CE91B9DF2BACAFE100E4C4C5 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

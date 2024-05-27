@@ -40,6 +40,11 @@ class HomeViewModel: BaseViewModel {
         homeViewState.alertModel = AlertModel()
     }
     
+    func foodLabelClicked(foodName: String) {
+        homeViewState.selectedFoodName = foodName
+        homeViewState.isShowFoodDescription = true
+    }
+    
     //MARK: - Private methods
     
     private func predictImage(for photo: UIImage) {
@@ -61,7 +66,10 @@ class HomeViewModel: BaseViewModel {
                     
                     DispatchQueue.main.async {
                         self.homeViewState.predictionsResult = predictions.prefix(self.predictionsToShow).map{ prediction in
-                            prediction
+                            guard let foodObject = Utils.getFoodObject(for: prediction.classification) else {
+                                return prediction
+                            }
+                            return Prediction(classification: foodObject.getValue(), confidencePercentage: prediction.confidencePercentage)
                         }
                         self.homeViewState.isLoading = false
                         let timeDuration = CFAbsoluteTimeGetCurrent() - startTime
@@ -136,6 +144,7 @@ extension HomeViewModel {
     public struct HomeViewState {
         var isLoading = false
         var isShowImagePicker = false
+        var isShowFoodDescription = false
         var predictionsResult: [Prediction]?
         var timeElapsed: String = ""
         var imageSourceType: UIImagePickerController.SourceType = .photoLibrary
@@ -143,6 +152,7 @@ extension HomeViewModel {
         var alertModel = AlertModel()
         var isShowAlert = false
         var imagePickerDataChanged = false
+        var selectedFoodName: String? = nil
     }
     
     private enum Constants {

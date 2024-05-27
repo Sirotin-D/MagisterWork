@@ -16,4 +16,6 @@ enum NeuralNetworkType: String, CaseIterable, Identifiable, Equatable {
     case SqueezeNet = "SqueezeNet"
     case SeeFood = "SeeFood"
     case Deit = "DeiT-base384"
+    case AlexNet = "AlexNet"
+    case DenseNetFood101="DenseNetFood101"
 }

@@ -42,8 +42,8 @@ struct HomeView: View {
                 
                 PredictionResultsView(
                     predictionsResult: viewModel.homeViewState.predictionsResult,
-                    timeElapsed: viewModel.homeViewState.timeElapsed
-                )
+                    timeElapsed: viewModel.homeViewState.timeElapsed,
+                    predictionClicked: viewModel.foodLabelClicked)
                 .padding(.top, Paddings.Medium)
                 
                 if (viewModel.homeViewState.isLoading) {
@@ -68,6 +68,11 @@ struct HomeView: View {
             }, message: {
                 Text(viewModel.homeViewState.alertModel.message)
             })
+            .sheet(isPresented: $viewModel.homeViewState.isShowFoodDescription){
+                if let foodName = viewModel.homeViewState.selectedFoodName {
+                    FoodDescriptionView(foodName: foodName)
+                }
+            }
             .sheet(isPresented: $viewModel.homeViewState.isShowImagePicker) {
                 ImagePicker(
                     uiImage: $uiImage,
