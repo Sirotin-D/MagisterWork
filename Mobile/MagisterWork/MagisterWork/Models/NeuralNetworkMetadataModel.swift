@@ -19,3 +19,25 @@ struct ImageClassifierDescription {
     let modelDescription: MLModelDescription
     let modelType: NeuralNetworkType
 }
+
+extension NeuralNetworkClassLabel {
+    static func getMockClassLabels() -> [NeuralNetworkClassLabel] {
+        [
+            NeuralNetworkClassLabel(name: "apple_pie"),
+            NeuralNetworkClassLabel(name: "baby_back_ribs"),
+            NeuralNetworkClassLabel(name: "chicken_curry"),
+            NeuralNetworkClassLabel(name: "miso_soup"),
+            NeuralNetworkClassLabel(name: "sushi")
+        ]
+    }
+}
+
+extension NeuralNetworkMetadataModel {
+    static func getMockData() -> NeuralNetworkMetadataModel {
+        NeuralNetworkMetadataModel(
+            name: "TestModel",
+            description: "TestModelDescription",
+            classLabels: NeuralNetworkClassLabel.getMockClassLabels()
+        )
+    }
+}

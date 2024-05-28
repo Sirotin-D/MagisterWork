@@ -41,39 +41,6 @@ extension NetworkModelMetaDataView {
     }
 }
 
-struct AllClassLabelsView: View {
-    let classLabels: [NeuralNetworkClassLabel]
-    @State private var searchText = ""
-    private var sortedClassLabels: [NeuralNetworkClassLabel] {
-        return searchText.isEmpty ? classLabels :
-        classLabels.filter { $0.name.lowercased().contains(searchText.lowercased()) }
-    }
-    
-    var body: some View {
-        NavigationStack {
-            VStack {
-                if (sortedClassLabels.isEmpty) {
-                    Text(Constants.NoClassLabelsFoundText)
-                } else {
-                    List(sortedClassLabels) { item in
-                        Text(item.name)
-                    }
-                }
-            }
-            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
-            .navigationTitle(Constants.ClassLabelsTitle)
-            .toolbarTitleDisplayMode(.inlineLarge)
-        }
-    }
-}
-
-extension AllClassLabelsView {
-    private enum Constants {
-        static let ClassLabelsTitle: LocalizedStringKey = "Class labels"
-        static let NoClassLabelsFoundText: LocalizedStringKey = "No class labels found"
-    }
-}
-
-#Preview("Metadata") {
-    NetworkModelMetaDataView(metadata: NeuralNetworkMetadataModel(name: "TestModel", description: "TestModelDescription", classLabels: [NeuralNetworkClassLabel(name: "ClassLabel1"), NeuralNetworkClassLabel(name: "ClassLabel2")]))
+#Preview {
+    NetworkModelMetaDataView(metadata: NeuralNetworkMetadataModel.getMockData())
 }

@@ -17,7 +17,7 @@ struct PredictionResultsView: View {
     
     var body: some View {
         HStack() {
-            VStack {
+            VStack (spacing: Paddings.resultsSpacing) {
                 Text(Constants.ImageCategories)
                 if let predictionResult = predictionsResult {
                     ForEach(predictionResult) { prediction in
@@ -55,6 +55,10 @@ extension PredictionResultsView {
         static let TimeElapsed: LocalizedStringKey = "Time elapsed:"
         static let PersentSign = "%"
         static let UnknownValue = "NA"
+    }
+    
+    private enum Paddings {
+        static let resultsSpacing: CGFloat = 10
     }
 }
 

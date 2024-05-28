@@ -57,6 +57,7 @@
 		CED128122BC31B640068510E /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED128112BC31B640068510E /* PermissionManager.swift */; };
 		CED128162BC405440068510E /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED128152BC405440068510E /* AlertModel.swift */; };
 		CED128182BC40BC80068510E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED128172BC40BC80068510E /* BaseViewModel.swift */; };
+		CED17B1D2C0696ED003EAB40 /* AllClassLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED17B1C2C0696ED003EAB40 /* AllClassLabelsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		CED128112BC31B640068510E /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		CED128152BC405440068510E /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		CED128172BC40BC80068510E /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		CED17B1C2C0696ED003EAB40 /* AllClassLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllClassLabelsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				CE8784022BBC3831006203D3 /* LiveCameraView.swift */,
 				CE67A1022BA53E9C00649A3E /* SettingsView.swift */,
 				CE6252D12BFD63BF0082BC7C /* FoodDescriptionView.swift */,
+				CED17B1C2C0696ED003EAB40 /* AllClassLabelsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				CECC0C562BA8C274003F386B /* NeuralNetworkBuilder.swift in Sources */,
 				CE5402DB2BBB8256000ED2DF /* DeiT-base384.mlpackage in Sources */,
 				CE6252D82BFE50D20082BC7C /* ProductMetadataModel.swift in Sources */,
+				CED17B1D2C0696ED003EAB40 /* AllClassLabelsView.swift in Sources */,
 				CE91B9E32BACC51500E4C4C5 /* VNClassificationObservation+confidenceString.swift in Sources */,
 				CED128122BC31B640068510E /* PermissionManager.swift in Sources */,
 				CE91B9DC2BAC6B1900E4C4C5 /* ImagePredictor.swift in Sources */,
