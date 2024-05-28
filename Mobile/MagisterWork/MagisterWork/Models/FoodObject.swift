@@ -4,110 +4,6 @@
 
 import SwiftUI
 
-//enum FoodClassLabel: String {
-//    case apple_pie
-//    case baby_back_ribs
-//    case baklava
-//    case beef_carpaccio
-//    case beef_tartare
-//    case beet_salad
-//    case beignets
-//    case bibimbap
-//    case bread_pudding
-//    case breakfast_burrito
-//    case bruschetta
-//    case caesar_salad
-//    case cannoli
-//    case caprese_salad
-//    case carrot_cake
-//    case ceviche
-//    case cheesecake
-//    case cheese_plate
-//    case chicken_curry
-//    case chicken_quesadilla
-//    case chicken_wings
-//    case chocolate_cake
-//    case chocolate_mousse
-//    case churros
-//    case clam_chowder
-//    case club_sandwich
-//    case crab_cakes
-//    case creme_brulee
-//    case croque_madame
-//    case cup_cakes
-//    case deviled_eggs
-//    case donuts
-//    case dumplings
-//    case edamame
-//    case eggs_benedict
-//    case escargots
-//    case falafel
-//    case filet_mignon
-//    case fish_and_chips
-//    case foie_gras
-//    case french_fries
-//    case french_onion_soup
-//    case french_toast
-//    case fried_calamari
-//    case fried_rice
-//    case frozen_yogurt
-//    case garlic_bread
-//    case gnocchi
-//    case greek_salad
-//    case grilled_cheese_sandwich
-//    case grilled_salmon
-//    case guacamole
-//    case gyoza
-//    case hamburger
-//    case hot_and_sour_soup
-//    case hot_dog
-//    case huevos_rancheros
-//    case hummus
-//    case ice_cream
-//    case lasagna
-//    case lobster_bisque
-//    case lobster_roll_sandwich
-//    case macaroni_and_cheese
-//    case macarons
-//    case miso_soup
-//    case mussels
-//    case nachos
-//    case omelette
-//    case onion_rings
-//    case oysters
-//    case pad_thai
-//    case paella
-//    case pancakes
-//    case panna_cotta
-//    case peking_duck
-//    case pho
-//    case pizza
-//    case pork_chop
-//    case poutine
-//    case prime_rib
-//    case pulled_pork_sandwich
-//    case ramen
-//    case ravioli
-//    case red_velvet_cake
-//    case risotto
-//    case samosa
-//    case sashimi
-//    case scallops
-//    case seaweed_salad
-//    case shrimp_and_grits
-//    case spaghetti_bolognese
-//    case spaghetti_carbonara
-//    case spring_rolls
-//    case steak
-//    case strawberry_shortcake
-//    case sushi
-//    case tacos
-//    case takoyaki
-//    case tiramisu
-//    case tuna_tartare
-//    case waffles
-//}
-
 enum FoodObject: String, CaseIterable {
     case ApplePie = "Apple pie"
     case BabyBackRibs = "Baby back ribs"
@@ -122,10 +18,10 @@ enum FoodObject: String, CaseIterable {
     case Bruschetta = "Bruschetta"
     case CaesarSalad = "Caesar salad"
     case Cannoli = "Cannoli"
-    case CapreseSalad = "Caperese salad"
+    case CapreseSalad = "Caprese salad"
     case CarrotCake = "Carrot cake"
     case Ceviche = "Ceviche"
-    case Cheesecake = "Cheese cake"
+    case Cheesecake = "Cheesecake"
     case CheesePlate = "Cheese plate"
     case ChickenCurry = "Chicken curry"
     case ChickenQuesadilla = "Chicken quesadilla"
@@ -156,8 +52,8 @@ enum FoodObject: String, CaseIterable {
     case FriedRice = "Fried rice"
     case FrozenYogurt = "Frozen yogurt"
     case GarlicBread = "Garlic bread"
-    case Gnocchi = "Cnocchi"
-    case GreekSalad = "Creek salad"
+    case Gnocchi = "Gnocchi"
+    case GreekSalad = "Greek salad"
     case GrilledCheeseSandwich = "Grilled cheese sandwich"
     case GrilledSalmon = "Grilled salmon"
     case Guacamole = "Guacamole"
@@ -203,7 +99,7 @@ enum FoodObject: String, CaseIterable {
     case SpaghettiCarbonara = "Spaghetti carbonara"
     case SpringRolls = "Spring rolls"
     case Steak = "Steak"
-    case StrawberryShortCake = "Strawberry short cake"
+    case StrawberryShortCake = "Strawberry shortcake"
     case Sushi = "Sushi"
     case Tacos = "Tacos"
     case Takoyaki = "Takoyaki"

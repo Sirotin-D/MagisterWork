@@ -5,7 +5,7 @@
 import Foundation
 
 class MockFoodDescription {
-    static let applePieMetadata = ProductMetadataModel(name: "ApplePie", calories: 206.8)
+    static let applePieMetadata = ProductMetadataModel(name: "Apple pie", calories: 206.8)
     static let babyBackRibsMetadata = ProductMetadataModel(name: "Baby back ribs", calories: 0.0)
     static let baklavaMetadata = ProductMetadataModel(name: "Baklava", calories: 0.0)
     static let beefCarpatioMetadata = ProductMetadataModel(name: "Beef carpation", calories: 0.0)

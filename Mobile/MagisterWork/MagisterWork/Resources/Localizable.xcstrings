@@ -38,40 +38,124 @@
       }
     },
     "Apple pie" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Яблочный пирог"
+          }
+        }
+      }
     },
     "Baby back ribs" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рёбрышки"
+          }
+        }
+      }
     },
     "Baklava" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пахлава"
+          }
+        }
+      }
     },
     "Beef carpaccio" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Карпаччо из говядины"
+          }
+        }
+      }
     },
     "Beef tartare" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тартар из говядины"
+          }
+        }
+      }
     },
     "Beet salad" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Салат из свеклы"
+          }
+        }
+      }
     },
     "Beignets" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бенье"
+          }
+        }
+      }
     },
     "Bibimbap" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пибимпап"
+          }
+        }
+      }
     },
     "Bread pudding" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Хлебный пуддинг"
+          }
+        }
+      }
     },
     "Breakfast burrito" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Буррито"
+          }
+        }
+      }
     },
     "Bruschetta" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Брускетта"
+          }
+        }
+      }
     },
     "Caesar salad" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Салат цезарь"
+          }
+        }
+      }
     },
     "Calories:" : {
       "localizations" : {
@@ -84,22 +168,64 @@
       }
     },
     "Cannoli" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Канноли"
+          }
+        }
+      }
     },
-    "Caperese salad" : {
-
+    "Caprese salad" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Капрезе"
+          }
+        }
+      }
     },
     "Carrot cake" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Морковный пирог"
+          }
+        }
+      }
     },
     "Ceviche" : {
-
-    },
-    "Cheese cake" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Севиче"
+          }
+        }
+      }
     },
     "Cheese plate" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сырная тарелка"
+          }
+        }
+      }
+    },
+    "Cheesecake" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чизкейк"
+          }
+        }
+      }
     },
     "Chicken curry" : {
       "localizations" : {
@@ -112,22 +238,64 @@
       }
     },
     "Chicken quesadilla" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Куриная кесадилья"
+          }
+        }
+      }
     },
     "Chicken wings" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Куриные крылья"
+          }
+        }
+      }
     },
     "Chocolate cake" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шоколадный пирог"
+          }
+        }
+      }
     },
     "Chocolate mousse" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шоколадный мусс"
+          }
+        }
+      }
     },
     "Churros" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чуррос"
+          }
+        }
+      }
     },
     "Clam chowder" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Суп-пюре из моллюсков"
+          }
+        }
+      }
     },
     "Class labels" : {
       "localizations" : {
@@ -170,25 +338,54 @@
       }
     },
     "Club sandwich" : {
-
-    },
-    "Cnocchi" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сэндвич"
+          }
+        }
+      }
     },
     "Crab cakes" : {
-
-    },
-    "Creek salad" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Крабовые котлеты"
+          }
+        }
+      }
     },
     "Creme brulee" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Крем-брюле"
+          }
+        }
+      }
     },
     "Croque madame" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Крок-месье"
+          }
+        }
+      }
     },
     "Cup cakes" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Капкейк"
+          }
+        }
+      }
     },
     "Description:" : {
       "localizations" : {
@@ -201,85 +398,294 @@
       }
     },
     "Deviled eggs" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Яйца по-русски"
+          }
+        }
+      }
     },
     "Donuts" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пончики"
+          }
+        }
+      }
     },
     "Dumplings" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вареники"
+          }
+        }
+      }
     },
     "Edamame" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Эдамамэ"
+          }
+        }
+      }
     },
     "Eggs benedict" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Яйца бенедикт"
+          }
+        }
+      }
     },
     "Escargots" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Улитки"
+          }
+        }
+      }
     },
     "Falafel" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фалафель"
+          }
+        }
+      }
     },
     "Filet mignon" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Филе миньон"
+          }
+        }
+      }
     },
     "Fish and chips" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рыба и картофель фри"
+          }
+        }
+      }
     },
     "Foie gras" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фуа-гра"
+          }
+        }
+      }
     },
     "French fries" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картофель фри"
+          }
+        }
+      }
     },
     "French onion soup" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Французский луковый суп"
+          }
+        }
+      }
     },
     "French toast" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сладкие гренки"
+          }
+        }
+      }
     },
     "Fried calamari" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жареные кальмары"
+          }
+        }
+      }
     },
     "Fried rice" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жареный рис"
+          }
+        }
+      }
     },
     "Frozen yogurt" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Замороженный йогурт"
+          }
+        }
+      }
     },
     "Garlic bread" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чесночный хлеб"
+          }
+        }
+      }
+    },
+    "Gnocchi" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ньокки"
+          }
+        }
+      }
+    },
+    "Greek salad" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Греческий салат"
+          }
+        }
+      }
     },
     "Grilled cheese sandwich" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жареный сырный сэндвич"
+          }
+        }
+      }
     },
     "Grilled salmon" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лосось на гриле"
+          }
+        }
+      }
     },
     "Guacamole" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Гуакамоле"
+          }
+        }
+      }
     },
     "Gyoza" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Гёдза"
+          }
+        }
+      }
     },
     "Hamburger" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Гамбургер"
+          }
+        }
+      }
     },
     "Hot and sour soup" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Остро-кислый суп"
+          }
+        }
+      }
     },
     "Hot dog" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Хот дог"
+          }
+        }
+      }
     },
     "Huevos rancheros" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уэвос ранчерос"
+          }
+        }
+      }
     },
     "Hummus" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Хумус"
+          }
+        }
+      }
     },
     "Ice cream" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мороженое"
+          }
+        }
+      }
     },
     "Image categories:" : {
       "localizations" : {
@@ -292,28 +698,84 @@
       }
     },
     "Lasagna" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лазанья"
+          }
+        }
+      }
     },
     "Lobster bisque" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Суп-пюре из лобстера"
+          }
+        }
+      }
     },
     "Lobster roll sandwich" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ролл с лобстером"
+          }
+        }
+      }
     },
     "Macaroni and cheese" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Макароны с сыром"
+          }
+        }
+      }
     },
     "Macarons" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Макароны"
+          }
+        }
+      }
     },
     "Miso soup" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мисо-суп"
+          }
+        }
+      }
     },
     "Mussels" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мидии"
+          }
+        }
+      }
     },
     "Nachos" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Начос"
+          }
+        }
+      }
     },
     "Name:" : {
       "localizations" : {
@@ -346,10 +808,24 @@
       }
     },
     "Omelette" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Омлет"
+          }
+        }
+      }
     },
     "Onion rings" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Луковые кольца"
+          }
+        }
+      }
     },
     "Open Settings" : {
       "localizations" : {
@@ -362,28 +838,84 @@
       }
     },
     "Oysters" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Устрицы"
+          }
+        }
+      }
     },
     "Pad thai" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пад тай"
+          }
+        }
+      }
     },
     "Paella" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Паэлья"
+          }
+        }
+      }
     },
     "Pancakes" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Панкейк"
+          }
+        }
+      }
     },
     "Panna cotta" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Панна-котта"
+          }
+        }
+      }
     },
     "Peking duck" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Утка по-пекински "
+          }
+        }
+      }
     },
     "Pho" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фо"
+          }
+        }
+      }
     },
     "Pizza" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пицца"
+          }
+        }
+      }
     },
     "Please allow access to resource in the settings to continue" : {
       "localizations" : {
@@ -396,40 +928,124 @@
       }
     },
     "Pork chop" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Свиная отбивная"
+          }
+        }
+      }
     },
     "Poutine" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пути́н"
+          }
+        }
+      }
     },
     "Prime rib" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жаркое из стоячих ребер"
+          }
+        }
+      }
     },
     "Pulled pork sandwich" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сэндвич с тушеной свининой"
+          }
+        }
+      }
     },
     "Ramen" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рамен"
+          }
+        }
+      }
     },
     "Ravioli" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Равиоли"
+          }
+        }
+      }
     },
     "Red velvet cake" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Красный бархат"
+          }
+        }
+      }
     },
     "Risotto" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ризотто"
+          }
+        }
+      }
     },
     "Samosa" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Самоса"
+          }
+        }
+      }
     },
     "Sashimi" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Саши́ми"
+          }
+        }
+      }
     },
     "Scallops" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Морские гребешки"
+          }
+        }
+      }
     },
     "Seaweed salad" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Салат Чука"
+          }
+        }
+      }
     },
     "See all class labels" : {
       "localizations" : {
@@ -462,31 +1078,94 @@
       }
     },
     "Shrimp and grits" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Креветки и крупа"
+          }
+        }
+      }
     },
     "Spaghetti bolognese" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спагетти болоньезе"
+          }
+        }
+      }
     },
     "Spaghetti carbonara" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спагетти карбонара"
+          }
+        }
+      }
     },
     "Spring rolls" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спринг-роллы"
+          }
+        }
+      }
     },
     "Steak" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Стейк"
+          }
+        }
+      }
     },
-    "Strawberry short cake" : {
-
+    "Strawberry shortcake" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Клубничное бисквитное пирожное"
+          }
+        }
+      }
     },
     "Sushi" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Суши"
+          }
+        }
+      }
     },
     "Tacos" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тако"
+          }
+        }
+      }
     },
     "Takoyaki" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Такояки"
+          }
+        }
+      }
     },
     "Time elapsed:" : {
       "localizations" : {
@@ -499,13 +1178,34 @@
       }
     },
     "Tiramisu" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тирамису"
+          }
+        }
+      }
     },
     "Tuna tartare" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тартар из тунца"
+          }
+        }
+      }
     },
     "Waffles" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вафли"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
