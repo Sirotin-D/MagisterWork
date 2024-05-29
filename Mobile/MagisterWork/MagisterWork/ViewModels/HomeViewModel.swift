@@ -66,7 +66,7 @@ class HomeViewModel: BaseViewModel {
                     
                     DispatchQueue.main.async {
                         self.homeViewState.predictionsResult = predictions.prefix(self.predictionsToShow).map{ prediction in
-                            guard let foodObject = Utils.getFoodObject(for: prediction.classification) else {
+                            guard let foodObject = FoodService.getFoodObject(for: prediction.classification) else {
                                 return prediction
                             }
                             return Prediction(classification: foodObject.getValue(), confidencePercentage: prediction.confidencePercentage)

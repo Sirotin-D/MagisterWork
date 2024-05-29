@@ -12,7 +12,7 @@ struct FoodDescriptionView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: Paddings.mediumSpacing) {
+        VStack(spacing: Paddings.mediumSpacing) {
             if let productUIimage = viewModel.viewState.productImage {
                 Image(uiImage: productUIimage)
                     .resizable()
@@ -25,12 +25,54 @@ struct FoodDescriptionView: View {
                         .scaledToFit()
                 }
             }
+            
+            if viewModel.viewState.isLoading {
+                ProgressView().tint(.blue)
+            }
+            
             if let metadata = viewModel.viewState.productMetadata {
-                VStack(alignment: .leading) {
+                VStack {
                     Text(metadata.name.localized)
-                    Text(Constants.Calories)
-                        .bold()
-                    Text(String(metadata.calories))
+                    
+                    HStack {
+                        Text(Constants.Calories)
+                            .bold()
+                        Spacer()
+                    }
+                    HStack {
+                        Text(String(metadata.calories))
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Text(Constants.Proteins)
+                            .bold()
+                        Spacer()
+                    }
+                    HStack {
+                        Text(String(metadata.proteins))
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Text(Constants.Fats)
+                            .bold()
+                        Spacer()
+                    }
+                    HStack {
+                        Text(String(metadata.fats))
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Text(Constants.Carbohydrates)
+                            .bold()
+                        Spacer()
+                    }
+                    HStack {
+                        Text(String(metadata.carbohydrates))
+                        Spacer()
+                    }
                 }
                 .font(.title)
             }
@@ -47,6 +89,9 @@ struct FoodDescriptionView: View {
 extension FoodDescriptionView {
     private enum Constants {
         static let Calories: LocalizedStringKey = "Calories:"
+        static let Proteins: LocalizedStringKey = "Proteins (g):"
+        static let Fats: LocalizedStringKey = "Fats (g):"
+        static let Carbohydrates: LocalizedStringKey = "Carbohydrates (g):"
         static let FoodImagePlaceholder = "FoodPlaceholder"
     }
     

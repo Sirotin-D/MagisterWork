@@ -14,7 +14,7 @@ struct AllClassLabelsView: View {
     
     init(classLabels: [NeuralNetworkClassLabel]) {
         self.classLabels = classLabels.map{ classLabel in
-            guard let foodObject = Utils.getFoodObject(for: classLabel.name) else {
+            guard let foodObject = FoodService.getFoodObject(for: classLabel.name) else {
                 return classLabel
             }
             return NeuralNetworkClassLabel(name: foodObject.getValue().localized)

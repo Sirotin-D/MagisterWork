@@ -131,4 +131,8 @@ iOSInjectionProject/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+### API keys ###
+
+Mobile/MagisterWork/MagisterWork/Resources/APIKeys.json
+
 # End of https://www.toptal.com/developers/gitignore/api/xcode,swift,macos

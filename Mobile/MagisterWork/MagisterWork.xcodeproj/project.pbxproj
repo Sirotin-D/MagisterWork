@@ -36,6 +36,9 @@
 		CE67A1052BA5433C00649A3E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67A1042BA5433C00649A3E /* MainView.swift */; };
 		CE67A10E2BA5EF5400649A3E /* InceptionV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE67A10D2BA5EF5400649A3E /* InceptionV3.mlmodel */; };
 		CE67A1102BA5EF8000649A3E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67A10F2BA5EF8000649A3E /* ImagePicker.swift */; };
+		CE84DCA12C07C5D600EDB9B5 /* FoodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84DCA02C07C5D600EDB9B5 /* FoodService.swift */; };
+		CE84DCA52C07E29F00EDB9B5 /* APIKeys.json in Resources */ = {isa = PBXBuildFile; fileRef = CE84DCA42C07E29200EDB9B5 /* APIKeys.json */; settings = {ASSET_TAGS = (APIKeys, ); }; };
+		CE84DCA72C07E35600EDB9B5 /* ApiKeyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84DCA62C07E35600EDB9B5 /* ApiKeyConstants.swift */; };
 		CE8784032BBC3831006203D3 /* LiveCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8784022BBC3831006203D3 /* LiveCameraView.swift */; };
 		CE8784052BBC384B006203D3 /* LiveCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8784042BBC384B006203D3 /* LiveCameraViewModel.swift */; };
 		CE8784072BBC3AFC006203D3 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8784062BBC3AFC006203D3 /* CameraPreviewView.swift */; };
@@ -91,6 +94,9 @@
 		CE67A1042BA5433C00649A3E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CE67A10D2BA5EF5400649A3E /* InceptionV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = InceptionV3.mlmodel; sourceTree = "<group>"; };
 		CE67A10F2BA5EF8000649A3E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		CE84DCA02C07C5D600EDB9B5 /* FoodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodService.swift; sourceTree = "<group>"; };
+		CE84DCA42C07E29200EDB9B5 /* APIKeys.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = APIKeys.json; sourceTree = "<group>"; };
+		CE84DCA62C07E35600EDB9B5 /* ApiKeyConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyConstants.swift; sourceTree = "<group>"; };
 		CE8784022BBC3831006203D3 /* LiveCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCameraView.swift; sourceTree = "<group>"; };
 		CE8784042BBC384B006203D3 /* LiveCameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCameraViewModel.swift; sourceTree = "<group>"; };
 		CE8784062BBC3AFC006203D3 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 				CE87840A2BBCBD0A006203D3 /* CameraManager.swift */,
 				CECC0C552BA8C274003F386B /* NeuralNetworkBuilder.swift */,
 				CED128112BC31B640068510E /* PermissionManager.swift */,
+				CE84DCA02C07C5D600EDB9B5 /* FoodService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -245,6 +252,7 @@
 			children = (
 				CE6252D52BFE507B0082BC7C /* MockFoodDescription.swift */,
 				CE516EE52C053C6D007ECECB /* FoodLocalizedKeys.swift */,
+				CE84DCA42C07E29200EDB9B5 /* APIKeys.json */,
 				CE60FB592BC0CD8D005EEF5F /* Localizable.xcstrings */,
 				CED127F12BC311E80068510E /* InfoPlist.xcstrings */,
 				CE67A0F12BA534EF00649A3E /* Assets.xcassets */,
@@ -272,6 +280,7 @@
 				CECC0C582BA8C44C003F386B /* GlobalSettings.swift */,
 				CE60FB432BBF5E49005EEF5F /* Logger.swift */,
 				CE60FB4F2BC07CFD005EEF5F /* Utils.swift */,
+				CE84DCA62C07E35600EDB9B5 /* ApiKeyConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -315,6 +324,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					APIKeys,
+				);
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
@@ -351,6 +363,7 @@
 				CE67A0F22BA534EF00649A3E /* Assets.xcassets in Resources */,
 				CED127F22BC311E80068510E /* InfoPlist.xcstrings in Resources */,
 				CE60FB5A2BC0CD8D005EEF5F /* Localizable.xcstrings in Resources */,
+				CE84DCA52C07E29F00EDB9B5 /* APIKeys.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,10 +411,12 @@
 				CED128182BC40BC80068510E /* BaseViewModel.swift in Sources */,
 				CE67A10E2BA5EF5400649A3E /* InceptionV3.mlmodel in Sources */,
 				CE60FB4E2BC01A6C005EEF5F /* NeuralNetworkMetadataModel.swift in Sources */,
+				CE84DCA12C07C5D600EDB9B5 /* FoodService.swift in Sources */,
 				CECC0C592BA8C44C003F386B /* GlobalSettings.swift in Sources */,
 				CE87840B2BBCBD0A006203D3 /* CameraManager.swift in Sources */,
 				CE6252D62BFE507B0082BC7C /* MockFoodDescription.swift in Sources */,
 				CECC0C542BA651F0003F386B /* NeuralNetworkType.swift in Sources */,
+				CE84DCA72C07E35600EDB9B5 /* ApiKeyConstants.swift in Sources */,
 				CE91B9DA2BAC67D900E4C4C5 /* Prediction.swift in Sources */,
 				CE5402D72BBB7D54000ED2DF /* MobileNetV2FP16.mlmodel in Sources */,
 				CE6252D42BFD63F60082BC7C /* FoodDescriptionViewModel.swift in Sources */,

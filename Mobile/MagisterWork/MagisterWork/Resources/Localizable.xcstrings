@@ -187,6 +187,16 @@
         }
       }
     },
+    "Carbohydrates (g):" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Углеводы (г):"
+          }
+        }
+      }
+    },
     "Carrot cake" : {
       "localizations" : {
         "ru" : {
@@ -463,6 +473,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Фалафель"
+          }
+        }
+      }
+    },
+    "Fats (g):" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жиры (г):"
           }
         }
       }
@@ -953,6 +973,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Жаркое из стоячих ребер"
+          }
+        }
+      }
+    },
+    "Proteins (g):" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Белки (г):"
           }
         }
       }

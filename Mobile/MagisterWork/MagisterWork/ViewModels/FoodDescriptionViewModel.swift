@@ -13,19 +13,43 @@ class FoodDescriptionViewModel: BaseViewModel {
     }
     
     override func onFirstTimeAppear() {
-        guard let selectedFoodObject = Utils.getFoodObject(for: selectedImageName),
-              let productMetadata = Utils.getFoodMetadata(for: selectedFoodObject),
-              let productImage = selectedFoodObject.getFoodImage() else {
-            viewState.productMetadata = ProductMetadataModel(name: selectedImageName, calories: 0.0)
-            return
+        fetchFoodNutritionFacts()
+    }
+    
+    private func fetchFoodNutritionFacts() {
+        viewState.isLoading = true
+        Task(priority: .userInitiated) {
+            guard let foodMetadata = !GlobalSettings.shared.isXcodePreview ?
+                    await FoodService.fetchFoodNutrition(foodName: selectedImageName) :
+                        FoodNutritionFactsModel.getMockData()
+            else {
+                viewState.isLoading = false
+                return
+            }
+            
+            await MainActor.run {
+                guard let selectedFoodObject = FoodService.getFoodObject(for: selectedImageName),
+                      let productImage = selectedFoodObject.getFoodImage() else {
+                    self.viewState.isLoading = false
+                    return
+                }
+                viewState.productImage = productImage
+                viewState.productMetadata = ProductMetadataModel(
+                    name: selectedImageName,
+                    calories: foodMetadata.calories,
+                    proteins: foodMetadata.protein_g,
+                    fats: foodMetadata.fat_total_g,
+                    carbohydrates: foodMetadata.carbohydrates_total_g
+                )
+                viewState.isLoading = false
+            }
         }
-        viewState.productMetadata = productMetadata
-        viewState.productImage = productImage
     }
 }
 
 extension FoodDescriptionViewModel {
     struct FoodDescriptionViewState {
+        var isLoading = false
         var productMetadata: ProductMetadataModel? = nil
         var productImage: UIImage? = nil
     }
