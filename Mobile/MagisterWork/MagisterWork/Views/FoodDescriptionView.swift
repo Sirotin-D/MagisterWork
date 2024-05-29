@@ -17,6 +17,7 @@ struct FoodDescriptionView: View {
                 Image(uiImage: productUIimage)
                     .resizable()
                     .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
             } else {
                 if let placeholder = UIImage(named: Constants.FoodImagePlaceholder) {
                     Image(uiImage: placeholder)
@@ -55,5 +56,5 @@ extension FoodDescriptionView {
 }
 
 #Preview {
-    FoodDescriptionView(foodName: "Apple")
+    FoodDescriptionView(foodName: FoodObject.getMockFoodName())
 }

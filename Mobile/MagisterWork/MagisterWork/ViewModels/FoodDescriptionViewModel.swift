@@ -14,11 +14,13 @@ class FoodDescriptionViewModel: BaseViewModel {
     
     override func onFirstTimeAppear() {
         guard let selectedFoodObject = Utils.getFoodObject(for: selectedImageName),
-              let productMetadata = Utils.getFoodMetadata(for: selectedFoodObject) else {
+              let productMetadata = Utils.getFoodMetadata(for: selectedFoodObject),
+              let productImage = selectedFoodObject.getFoodImage() else {
             viewState.productMetadata = ProductMetadataModel(name: selectedImageName, calories: 0.0)
             return
         }
         viewState.productMetadata = productMetadata
+        viewState.productImage = productImage
     }
 }
 

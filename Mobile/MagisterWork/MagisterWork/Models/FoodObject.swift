@@ -110,4 +110,19 @@ enum FoodObject: String, CaseIterable {
     func getValue() -> String {
         self.rawValue
     }
+    
+    func getFoodImage() -> UIImage? {
+        let foodName = self.getValue()
+        let words = foodName.split(separator: " ")
+        let capitalizedWords = words.map { $0.capitalized }
+        let result = capitalizedWords.joined()
+        let formattedFoodName = result + "Image"
+        return UIImage(named: formattedFoodName)
+    }
+}
+
+extension FoodObject {
+    static func getMockFoodName() -> String {
+        self.ApplePie.getValue()
+    }
 }
