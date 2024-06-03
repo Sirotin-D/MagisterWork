@@ -15,6 +15,12 @@ struct NeuralNetworkClassLabel: Identifiable {
     let name: String
 }
 
+struct NeuralNetworkClassLabelViewData: Identifiable {
+    let id = UUID()
+    let name: String
+    let localizedName: String
+}
+
 struct ImageClassifierDescription {
     let modelDescription: MLModelDescription
     let modelType: NeuralNetworkType

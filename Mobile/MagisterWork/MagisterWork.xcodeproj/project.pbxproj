@@ -39,6 +39,7 @@
 		CE84DCA12C07C5D600EDB9B5 /* FoodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84DCA02C07C5D600EDB9B5 /* FoodService.swift */; };
 		CE84DCA52C07E29F00EDB9B5 /* APIKeys.json in Resources */ = {isa = PBXBuildFile; fileRef = CE84DCA42C07E29200EDB9B5 /* APIKeys.json */; settings = {ASSET_TAGS = (APIKeys, ); }; };
 		CE84DCA72C07E35600EDB9B5 /* ApiKeyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84DCA62C07E35600EDB9B5 /* ApiKeyConstants.swift */; };
+		CE84DCAB2C0D46D900EDB9B5 /* AllClassLabelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84DCAA2C0D46D900EDB9B5 /* AllClassLabelsViewModel.swift */; };
 		CE8784032BBC3831006203D3 /* LiveCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8784022BBC3831006203D3 /* LiveCameraView.swift */; };
 		CE8784052BBC384B006203D3 /* LiveCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8784042BBC384B006203D3 /* LiveCameraViewModel.swift */; };
 		CE8784072BBC3AFC006203D3 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8784062BBC3AFC006203D3 /* CameraPreviewView.swift */; };
@@ -97,6 +98,7 @@
 		CE84DCA02C07C5D600EDB9B5 /* FoodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodService.swift; sourceTree = "<group>"; };
 		CE84DCA42C07E29200EDB9B5 /* APIKeys.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = APIKeys.json; sourceTree = "<group>"; };
 		CE84DCA62C07E35600EDB9B5 /* ApiKeyConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeyConstants.swift; sourceTree = "<group>"; };
+		CE84DCAA2C0D46D900EDB9B5 /* AllClassLabelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllClassLabelsViewModel.swift; sourceTree = "<group>"; };
 		CE8784022BBC3831006203D3 /* LiveCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCameraView.swift; sourceTree = "<group>"; };
 		CE8784042BBC384B006203D3 /* LiveCameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCameraViewModel.swift; sourceTree = "<group>"; };
 		CE8784062BBC3AFC006203D3 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				CECC0C5B2BA8D286003F386B /* HomeViewModel.swift */,
 				CE91B9DE2BACAFE100E4C4C5 /* SettingsViewModel.swift */,
 				CE8784042BBC384B006203D3 /* LiveCameraViewModel.swift */,
+				CE84DCAA2C0D46D900EDB9B5 /* AllClassLabelsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				CE52B30E2BFA26EA00B035D5 /* AlexNet.mlmodel in Sources */,
 				CE516EE62C053C6D007ECECB /* FoodLocalizedKeys.swift in Sources */,
 				CE67A1102BA5EF8000649A3E /* ImagePicker.swift in Sources */,
+				CE84DCAB2C0D46D900EDB9B5 /* AllClassLabelsViewModel.swift in Sources */,
 				CED128182BC40BC80068510E /* BaseViewModel.swift in Sources */,
 				CE67A10E2BA5EF5400649A3E /* InceptionV3.mlmodel in Sources */,
 				CE60FB4E2BC01A6C005EEF5F /* NeuralNetworkMetadataModel.swift in Sources */,

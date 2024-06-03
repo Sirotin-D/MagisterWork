@@ -5,20 +5,15 @@
 import SwiftUI
 
 struct AllClassLabelsView: View {
-    let classLabels: [NeuralNetworkClassLabel]
+    @ObservedObject private var viewModel: AllClassLabelsViewModel
     @State private var searchText = ""
-    private var sortedClassLabels: [NeuralNetworkClassLabel] {
-        return searchText.isEmpty ? classLabels :
-        classLabels.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+    private var sortedClassLabels: [NeuralNetworkClassLabelViewData] {
+        return searchText.isEmpty ? viewModel.viewState.classLabels :
+        viewModel.viewState.classLabels.filter { $0.localizedName.lowercased().contains(searchText.lowercased()) }
     }
     
     init(classLabels: [NeuralNetworkClassLabel]) {
-        self.classLabels = classLabels.map{ classLabel in
-            guard let foodObject = FoodService.getFoodObject(for: classLabel.name) else {
-                return classLabel
-            }
-            return NeuralNetworkClassLabel(name: foodObject.getValue().localized)
-        }.sorted { $0.name.lowercased() < $1.name.lowercased() }
+        viewModel = AllClassLabelsViewModel(classLabels: classLabels)
     }
     
     var body: some View {
@@ -28,13 +23,26 @@ struct AllClassLabelsView: View {
                     Text(Constants.NoClassLabelsFoundText)
                 } else {
                     List(sortedClassLabels) { item in
-                        Text(item.name)
+                        Button(action: {
+                            viewModel.onClassLabelClicked(for: item)
+                        }, label: {
+                            Text(item.localizedName)
+                                .foregroundStyle(.black)
+                        })
                     }
                 }
             }
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
             .navigationTitle(Constants.ClassLabelsTitle)
             .toolbarTitleDisplayMode(.inlineLarge)
+            .sheet(isPresented: $viewModel.viewState.openFoodDescription) {
+                FoodDescriptionView(
+                    foodName: viewModel.viewState.selectedFoodObject
+                )
+            }
+        }
+        .onAppear {
+            viewModel.onAppear()
         }
     }
 }

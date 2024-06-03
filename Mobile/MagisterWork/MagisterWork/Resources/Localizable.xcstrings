@@ -157,12 +157,12 @@
         }
       }
     },
-    "Calories:" : {
+    "Calories (100g):" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Количество калорий:"
+            "value" : "Калории (на 100г):"
           }
         }
       }

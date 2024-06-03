@@ -70,7 +70,7 @@ struct FoodDescriptionView: View {
 
 extension FoodDescriptionView {
     private enum Constants {
-        static let Calories: LocalizedStringKey = "Calories:"
+        static let Calories: LocalizedStringKey = "Calories (100g):"
         static let Proteins: LocalizedStringKey = "Proteins (g):"
         static let Fats: LocalizedStringKey = "Fats (g):"
         static let Carbohydrates: LocalizedStringKey = "Carbohydrates (g):"
