@@ -78,7 +78,9 @@ class HomeViewModel: BaseViewModel {
                 }
             } catch {
                 Logger.shared.e(self.kLogTag, "Vision was unable to make a prediction: \(error.localizedDescription)")
-                self.homeViewState.isLoading = false
+                DispatchQueue.main.async {
+                    self.homeViewState.isLoading = false
+                }
             }
         }
     }
