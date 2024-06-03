@@ -5,6 +5,7 @@
 import SwiftUI
 
 class FoodDescriptionViewModel: BaseViewModel {
+    private let kLogTag = "FoodDescriptionViewModel"
     private let selectedImageName: String
     @Published var viewState = FoodDescriptionViewState()
     
@@ -19,28 +20,38 @@ class FoodDescriptionViewModel: BaseViewModel {
     private func fetchFoodNutritionFacts() {
         viewState.isLoading = true
         Task(priority: .userInitiated) {
-            guard let foodMetadata = !GlobalSettings.shared.isXcodePreview ?
-                    await FoodService.fetchFoodNutrition(foodName: selectedImageName) :
-                        FoodNutritionFactsModel.getMockData()
-            else {
-                viewState.isLoading = false
+            var foodMetadata: ProductMetadataModel?
+            
+            if let foodMetadataResult = await FoodService.fetchFoodNutrition(foodName: selectedImageName) {
+                foodMetadata = ProductMetadataModel(
+                    name: selectedImageName,
+                    calories: foodMetadataResult.calories,
+                    proteins: foodMetadataResult.protein_g,
+                    fats: foodMetadataResult.fat_total_g,
+                    carbohydrates: foodMetadataResult.carbohydrates_total_g
+                )
+            } else {
+                foodMetadata = FoodService.getMockFoodNutrition(foodName: selectedImageName)
+            }
+            
+            guard let foodMetadata = foodMetadata else {
+                Logger.shared.e(kLogTag, "No matching result found while fetching food nutrition facts")
+                await MainActor.run {
+                    viewState.isLoading = false
+                }
+                return
+            }
+            
+            guard let selectedFoodObject = FoodService.getFoodObject(for: selectedImageName) else {
+                await MainActor.run {
+                    self.viewState.isLoading = false
+                }
                 return
             }
             
             await MainActor.run {
-                guard let selectedFoodObject = FoodService.getFoodObject(for: selectedImageName),
-                      let productImage = selectedFoodObject.getFoodImage() else {
-                    self.viewState.isLoading = false
-                    return
-                }
-                viewState.productImage = productImage
-                viewState.productMetadata = ProductMetadataModel(
-                    name: selectedImageName,
-                    calories: foodMetadata.calories,
-                    proteins: foodMetadata.protein_g,
-                    fats: foodMetadata.fat_total_g,
-                    carbohydrates: foodMetadata.carbohydrates_total_g
-                )
+                viewState.productImage = selectedFoodObject.getFoodImage()
+                viewState.productMetadata = foodMetadata
                 viewState.isLoading = false
             }
         }

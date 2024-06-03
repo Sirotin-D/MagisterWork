@@ -32,50 +32,32 @@ struct FoodDescriptionView: View {
             
             if let metadata = viewModel.viewState.productMetadata {
                 VStack {
-                    Text(metadata.name.localized)
-                    
+                    Text(metadata.name.localized).font(.title)
                     HStack {
-                        Text(Constants.Calories)
-                            .bold()
-                        Spacer()
-                    }
-                    HStack {
-                        Text(String(metadata.calories))
-                        Spacer()
-                    }
-                    
-                    HStack {
-                        Text(Constants.Proteins)
-                            .bold()
-                        Spacer()
-                    }
-                    HStack {
-                        Text(String(metadata.proteins))
-                        Spacer()
-                    }
-                    
-                    HStack {
-                        Text(Constants.Fats)
-                            .bold()
-                        Spacer()
-                    }
-                    HStack {
-                        Text(String(metadata.fats))
-                        Spacer()
-                    }
-                    
-                    HStack {
-                        Text(Constants.Carbohydrates)
-                            .bold()
-                        Spacer()
-                    }
-                    HStack {
-                        Text(String(metadata.carbohydrates))
+                        VStack(alignment: .leading, spacing: Paddings.smallSpacing) {
+                            Text(Constants.Calories)
+                                .bold()
+                            Text(String(metadata.calories))
+                            
+                            Text(Constants.Proteins)
+                                .bold()
+                            Text(String(metadata.proteins))
+                            
+                            Text(Constants.Fats)
+                                .bold()
+                            Text(String(metadata.fats))
+                            
+                            Text(Constants.Carbohydrates)
+                                .bold()
+                            Text(String(metadata.carbohydrates))
+                        }
+                        .font(.title)
+                        
                         Spacer()
                     }
                 }
-                .font(.title)
             }
+            
             Spacer()
         }
         .padding()
@@ -96,6 +78,7 @@ extension FoodDescriptionView {
     }
     
     private enum Paddings {
+        static let smallSpacing: CGFloat = 5
         static let mediumSpacing: CGFloat = 10
     }
 }
