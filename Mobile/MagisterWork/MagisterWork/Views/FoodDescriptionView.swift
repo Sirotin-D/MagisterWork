@@ -33,6 +33,8 @@ struct FoodDescriptionView: View {
             if let metadata = viewModel.viewState.productMetadata {
                 VStack {
                     Text(metadata.name.localized).font(.title)
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
                     HStack {
                         VStack(alignment: .leading, spacing: Paddings.smallSpacing) {
                             Text(Constants.Calories)
