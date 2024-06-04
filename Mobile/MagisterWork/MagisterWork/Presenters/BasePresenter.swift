@@ -1,10 +1,10 @@
 //
-//  BaseViewModel.swift
+//  BasePresenter.swift
 //
 
 import Foundation
 
-class BaseViewModel: ObservableObject {
+class BasePresenter: ObservableObject {
     private var isFirstTimeAppear = true
     
     func onFirstTimeAppear() {}

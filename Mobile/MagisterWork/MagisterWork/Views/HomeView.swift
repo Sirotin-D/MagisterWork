@@ -6,7 +6,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var uiImage: UIImage?
-    @ObservedObject private var viewModel = HomeViewModel()
+    @ObservedObject private var viewModel = HomePresenter()
     
     var body: some View {
         NavigationStack {

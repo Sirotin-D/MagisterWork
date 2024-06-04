@@ -1,12 +1,12 @@
 //
-//  HomeViewModel.swift
+//  HomePresenter.swift
 //
 
 import SwiftUI
 
-class HomeViewModel: BaseViewModel {
+class HomePresenter: BasePresenter {
     @Published var homeViewState = HomeViewState()
-    private var predictor = ImagePredictor.shared
+    private var interactor = PredictionInteractor()
     private let predictionsToShow = 2
     private let kLogTag = "HomeViewModel"
     
@@ -54,7 +54,7 @@ class HomeViewModel: BaseViewModel {
         DispatchQueue.global(qos: .userInitiated).async {
             do {
                 let startTime = CFAbsoluteTimeGetCurrent()
-                try self.predictor.makePredictions(for: photo) { [weak self] predictions in
+                try self.interactor.predictImage(for: photo) { [weak self] predictions in
                     guard let self = self else { return }
                     guard let predictions = predictions else {
                         Logger.shared.e(self.kLogTag, "No predictions. Check console log.")
@@ -142,7 +142,7 @@ class HomeViewModel: BaseViewModel {
     }
 }
 
-extension HomeViewModel {
+extension HomePresenter {
     public struct HomeViewState {
         var isLoading = false
         var isShowImagePicker = false

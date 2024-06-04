@@ -5,20 +5,21 @@
 import Foundation
 
 protocol IFoodService {
-    static func fetchFoodNutrition(foodName: String) async -> FoodNutritionFactsModel?
-    static func getMockFoodNutrition(foodName: String) -> ProductMetadataModel?
+    func fetchFoodDescription(foodName: String) async -> FoodDescriptionModel?
+    func getMockFoodDescription(foodName: String) -> ProductMetadataModel?
+    static func getFoodObject(for classLabel: String) -> FoodObject?
 }
 
 class FoodService: IFoodService {
-    private static let kLogTag = "FoodService"
-    private static let nutritionApiUrl = "https://api.api-ninjas.com/v1/nutrition?query="
+    private let kLogTag = "FoodService"
+    private let nutritionApiUrl = "https://api.api-ninjas.com/v1/nutrition?query="
     
-    static func fetchFoodNutrition(foodName: String) async -> FoodNutritionFactsModel? {
+    func fetchFoodDescription(foodName: String) async -> FoodDescriptionModel? {
         if GlobalSettings.shared.isXcodePreview {
-            return FoodNutritionFactsModel.getMockData()
+            return FoodDescriptionModel.getMockData()
         }
         
-        var nutritionFactsResponseModel: FoodNutritionFactsModel?
+        var nutritionFactsResponseModel: FoodDescriptionModel?
         let formattedUrl = nutritionApiUrl + foodName
         guard let url = URL(string: formattedUrl) else {return nil}
         var request = URLRequest(url: url)
@@ -26,7 +27,7 @@ class FoodService: IFoodService {
         request.setValue(nutritionApiKey, forHTTPHeaderField: "X-Api-Key")
         do {
             let (data, _) = try await URLSession.shared.data(for: request)
-            let decodedModel = try JSONDecoder().decode([FoodNutritionFactsModel].self, from: data)
+            let decodedModel = try JSONDecoder().decode([FoodDescriptionModel].self, from: data)
             if !decodedModel.isEmpty {
                 nutritionFactsResponseModel = decodedModel.first
             }
@@ -50,8 +51,8 @@ class FoodService: IFoodService {
         return foodObject
     }
     
-    static func getMockFoodNutrition(foodName: String) -> ProductMetadataModel? {
-        guard let foodObject = getFoodObject(for: foodName) else {return nil}
+    func getMockFoodDescription(foodName: String) -> ProductMetadataModel? {
+        guard let foodObject = FoodService.getFoodObject(for: foodName) else {return nil}
         var mockFoodNutrition: ProductMetadataModel?
         switch foodObject {
         case .ApplePie:

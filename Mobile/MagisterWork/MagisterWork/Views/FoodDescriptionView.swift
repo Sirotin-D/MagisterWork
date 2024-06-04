@@ -5,10 +5,10 @@
 import SwiftUI
 
 struct FoodDescriptionView: View {
-    @ObservedObject var viewModel: FoodDescriptionViewModel
+    @ObservedObject var viewModel: FoodDescriptionPresenter
     
     init(foodName: String) {
-        viewModel = FoodDescriptionViewModel(selectedImageName: foodName)
+        viewModel = FoodDescriptionPresenter(selectedImageName: foodName)
     }
     
     var body: some View {

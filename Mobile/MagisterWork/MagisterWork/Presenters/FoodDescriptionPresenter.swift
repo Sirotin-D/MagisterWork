@@ -1,12 +1,13 @@
 //
-//  FoodDescriptionViewModel.swift
+//  FoodDescriptionPresenter.swift
 //
 
 import SwiftUI
 
-class FoodDescriptionViewModel: BaseViewModel {
+class FoodDescriptionPresenter: BasePresenter {
     private let kLogTag = "FoodDescriptionViewModel"
     private let selectedImageName: String
+    private let interactor = FoodDescriptionInteractor()
     @Published var viewState = FoodDescriptionViewState()
     
     init(selectedImageName: String) {
@@ -22,7 +23,7 @@ class FoodDescriptionViewModel: BaseViewModel {
         Task(priority: .userInitiated) {
             var foodMetadata: ProductMetadataModel?
             
-            if let foodMetadataResult = await FoodService.fetchFoodNutrition(foodName: selectedImageName) {
+            if let foodMetadataResult = await interactor.fetchFoodDescription(foodName: selectedImageName) {
                 foodMetadata = ProductMetadataModel(
                     name: selectedImageName,
                     calories: foodMetadataResult.calories,
@@ -31,7 +32,7 @@ class FoodDescriptionViewModel: BaseViewModel {
                     carbohydrates: foodMetadataResult.carbohydrates_total_g
                 )
             } else {
-                foodMetadata = FoodService.getMockFoodNutrition(foodName: selectedImageName)
+                foodMetadata = await interactor.getMockFoodDescription(foodName: selectedImageName)
             }
             
             guard let foodMetadata = foodMetadata else {
@@ -58,7 +59,7 @@ class FoodDescriptionViewModel: BaseViewModel {
     }
 }
 
-extension FoodDescriptionViewModel {
+extension FoodDescriptionPresenter {
     struct FoodDescriptionViewState {
         var isLoading = false
         var productMetadata: ProductMetadataModel? = nil

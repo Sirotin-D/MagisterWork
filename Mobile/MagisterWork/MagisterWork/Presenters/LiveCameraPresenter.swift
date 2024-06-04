@@ -1,16 +1,16 @@
 //
-//  LiveCameraViewModel.swift
+//  LiveCameraPresenter.swift
 //
 
 import SwiftUI
 import AVFoundation
 import Combine
 
-class LiveCameraViewModel: BaseViewModel {
+class LiveCameraPresenter: BasePresenter {
     @Published var liveCameraViewState = LiveCameraViewState()
     @ObservedObject private var cameraManager = CameraManager()
     private var cancelables = Set<AnyCancellable>()
-    private let predictor = ImagePredictor.shared
+    private let interactor = PredictionInteractor()
     private let predictionsToShow = 2
     private var isImagePredictorBusy = false
     private let kLogTag = "LiveCameraViewModel"
@@ -54,7 +54,7 @@ class LiveCameraViewModel: BaseViewModel {
         let startTime = CFAbsoluteTimeGetCurrent()
         DispatchQueue.global(qos: .userInitiated).async {
             do {
-                try self.predictor.makePredictions(for: photo) { [weak self] predictions in
+                try self.interactor.predictImage(for: photo) { [weak self] predictions in
                     guard let self = self else { return }
                     guard let predictions = predictions else {
                         Logger.shared.e(self.kLogTag, "No predictions. Check console log.")
@@ -77,7 +77,7 @@ class LiveCameraViewModel: BaseViewModel {
     }
 }
 
-extension LiveCameraViewModel {
+extension LiveCameraPresenter {
     public struct LiveCameraViewState {
         var predictionsResult: [Prediction]?
         var timeElapsed: String = ""

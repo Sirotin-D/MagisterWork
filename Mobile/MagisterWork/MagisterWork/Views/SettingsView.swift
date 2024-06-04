@@ -5,7 +5,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @ObservedObject private var viewModel = SettingsViewModel()
+    @ObservedObject private var viewModel = SettingsPresenter()
     var body: some View {
         NavigationStack {
             VStack {

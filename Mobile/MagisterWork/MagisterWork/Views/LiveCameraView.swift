@@ -5,7 +5,7 @@
 import SwiftUI
 
 struct LiveCameraView: View {
-    @ObservedObject private var viewModel = LiveCameraViewModel()
+    @ObservedObject private var viewModel = LiveCameraPresenter()
     var body: some View {
         VStack {
             if let captureSession = viewModel.liveCameraViewState.captureSesion {

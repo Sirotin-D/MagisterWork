@@ -1,10 +1,10 @@
 //
-//  AllClassLabelsViewModel.swift
+//  AllClassLabelsPresenter.swift
 //
 
 import Foundation
 
-class AllClassLabelsViewModel: BaseViewModel {
+class AllClassLabelsPresenter: BasePresenter {
     private var classLabels: [NeuralNetworkClassLabel]
     @Published public var viewState = AllClassLabelsViewState()
     
@@ -38,7 +38,7 @@ class AllClassLabelsViewModel: BaseViewModel {
     }
 }
 
-extension AllClassLabelsViewModel {
+extension AllClassLabelsPresenter {
     struct AllClassLabelsViewState {
         var classLabels: [NeuralNetworkClassLabelViewData] = []
         var openFoodDescription: Bool = false

@@ -18,7 +18,7 @@ extension ProductMetadataModel {
     }
 }
 
-struct FoodNutritionFactsModel: Decodable {
+struct FoodDescriptionModel: Decodable {
     let name: String
     let calories: Double
     let serving_size_g: Double
@@ -33,9 +33,9 @@ struct FoodNutritionFactsModel: Decodable {
     let sugar_g: Double
 }
 
-extension FoodNutritionFactsModel {
-    static func getMockData() -> FoodNutritionFactsModel {
-        FoodNutritionFactsModel(
+extension FoodDescriptionModel {
+    static func getMockData() -> FoodDescriptionModel {
+        FoodDescriptionModel(
             name: "Apple pie",
             calories: 0.0,
             serving_size_g: 0.0,

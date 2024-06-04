@@ -1,11 +1,12 @@
 //
-//  SettingsViewModel.swift
+//  SettingsPresenter.swift
 //
 
 import SwiftUI
 
-class SettingsViewModel: BaseViewModel {
+class SettingsPresenter: BasePresenter {
     @Published var settingsViewState = SettingsViewState()
+    private let interactor = SettingsInteractor()
     private var updateNeuralNetworkDataTask = Task{}
     
     func neuralNetworkChanged(type: NeuralNetworkType) {
@@ -27,8 +28,8 @@ class SettingsViewModel: BaseViewModel {
         settingsViewState.isLoading = true
         settingsViewState.selectedNetworkMetadata = nil
         updateNeuralNetworkDataTask = Task(priority: .userInitiated) {
-            ImagePredictor.shared.updateImageClassifier()
-            let modelMetadata = await Utils.getCurrentNetworkMetadata()
+            interactor.updateImageClassifier()
+            let modelMetadata = await interactor.getCurrentNetworkMetadata()
             let sortedMetaData = NeuralNetworkMetadataModel(
                 name: modelMetadata.name,
                 description: modelMetadata.description,
@@ -42,7 +43,7 @@ class SettingsViewModel: BaseViewModel {
     }
 }
 
-extension SettingsViewModel {
+extension SettingsPresenter {
     public struct SettingsViewState {
         var selectedNeuralNetwork = GlobalSettings.shared.currentNetworkType
         var selectedNetworkMetadata: NeuralNetworkMetadataModel? = nil

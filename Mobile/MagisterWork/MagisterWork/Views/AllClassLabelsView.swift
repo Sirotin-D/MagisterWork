@@ -5,7 +5,7 @@
 import SwiftUI
 
 struct AllClassLabelsView: View {
-    @ObservedObject private var viewModel: AllClassLabelsViewModel
+    @ObservedObject private var viewModel: AllClassLabelsPresenter
     @State private var searchText = ""
     private var sortedClassLabels: [NeuralNetworkClassLabelViewData] {
         return searchText.isEmpty ? viewModel.viewState.classLabels :
@@ -13,7 +13,7 @@ struct AllClassLabelsView: View {
     }
     
     init(classLabels: [NeuralNetworkClassLabel]) {
-        viewModel = AllClassLabelsViewModel(classLabels: classLabels)
+        viewModel = AllClassLabelsPresenter(classLabels: classLabels)
     }
     
     var body: some View {
