@@ -63,7 +63,10 @@ class LiveCameraViewModel: BaseViewModel {
                     
                     DispatchQueue.main.async {
                         self.liveCameraViewState.predictionsResult = predictions.prefix(self.predictionsToShow).map{ prediction in
-                            Prediction(classification: prediction.classification, confidencePercentage: prediction.confidencePercentage)
+                            guard let foodObject = FoodService.getFoodObject(for: prediction.classification) else {
+                                return prediction
+                            }
+                            return Prediction(classification: foodObject.getValue(), confidencePercentage: prediction.confidencePercentage)
                         }
                         let endTime = CFAbsoluteTimeGetCurrent() - startTime
                         self.liveCameraViewState.timeElapsed = Utils.formatElapsedTime(endTime)
