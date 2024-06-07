@@ -128,7 +128,7 @@ class ImagePredictor {
         predictions = observations.map { observation in
             // Convert each observation into an `ImagePredictor.Prediction` instance.
             Prediction(classification: observation.identifier,
-                       confidencePercentage: observation.confidencePercentageString)
+                       confidencePercentage: observation.confidencePercentage)
         }
     }
 }

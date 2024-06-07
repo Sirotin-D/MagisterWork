@@ -15,5 +15,5 @@ struct Prediction: Identifiable {
     /// The image classifier's confidence as a percentage string.
     ///
     /// The prediction string doesn't include the % symbol in the string.
-    let confidencePercentage: String
+    let confidencePercentage: Float
 }

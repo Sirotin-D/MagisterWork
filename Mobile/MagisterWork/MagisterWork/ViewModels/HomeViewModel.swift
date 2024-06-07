@@ -7,7 +7,6 @@ import SwiftUI
 class HomeViewModel: BaseViewModel {
     @Published var homeViewState = HomeViewState()
     private var predictor = ImagePredictor.shared
-    private let predictionsToShow = 2
     private let kLogTag = "HomeViewModel"
     
     func imageSelected(for photo: UIImage?) {
@@ -65,7 +64,13 @@ class HomeViewModel: BaseViewModel {
                     }
                     
                     DispatchQueue.main.async {
-                        self.homeViewState.predictionsResult = predictions.prefix(self.predictionsToShow).map{ prediction in
+                        var predictionsToShow = 2
+                        if let mostLikelyObject = predictions.first {
+                            if mostLikelyObject.confidencePercentage >= 80 {
+                                predictionsToShow = 1
+                            }
+                        }
+                        self.homeViewState.predictionsResult = predictions.prefix(predictionsToShow).map{ prediction in
                             guard let foodObject = FoodService.getFoodObject(for: prediction.classification) else {
                                 return prediction
                             }

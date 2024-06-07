@@ -24,7 +24,7 @@ struct PredictionResultsView: View {
                         Button(action: {
                             predictionClicked?(prediction.classification)
                         }, label: {
-                            Text("\(prediction.classification.localized) - \(prediction.confidencePercentage) %")
+                            Text("\(prediction.classification.localized) - \(Utils.formatPersentage(prediction.confidencePercentage)) %")
                                 .bold()
                                 .font(.subheadline)
                         })
@@ -64,7 +64,7 @@ extension PredictionResultsView {
 
 #Preview {
     PredictionResultsView(predictionsResult: [
-        Prediction(classification: "Class object 1", confidencePercentage: "80"),
-        Prediction(classification: "Class object 2", confidencePercentage: "20")
+        Prediction(classification: "Class object 1", confidencePercentage: 80),
+        Prediction(classification: "Class object 2", confidencePercentage: 20)
     ], timeElapsed: "0,02")
 }

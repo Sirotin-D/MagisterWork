@@ -27,4 +27,8 @@ class Utils {
     static func formatElapsedTime(_ value: Double) -> String {
         return String(format: "%.2f", (value * 100).rounded(.toNearestOrEven) / 100)
     }
+    
+    static func formatPersentage(_ value: Float) -> String {
+        return String(format: "%.1f", (value * 10).rounded() / 10)
+    }
 }
