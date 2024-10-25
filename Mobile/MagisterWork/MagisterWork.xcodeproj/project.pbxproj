@@ -52,6 +52,7 @@
 		CED128162BC405440068510E /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED128152BC405440068510E /* AlertModel.swift */; };
 		CED128182BC40BC80068510E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED128172BC40BC80068510E /* BaseViewModel.swift */; };
 		CED17B1D2C0696ED003EAB40 /* AllClassLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED17B1C2C0696ED003EAB40 /* AllClassLabelsView.swift */; };
+		CEF95F372C1381D500C130C4 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CEF95F362C1381D500C130C4 /* MobileNet.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		CED128152BC405440068510E /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		CED128172BC40BC80068510E /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		CED17B1C2C0696ED003EAB40 /* AllClassLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllClassLabelsView.swift; sourceTree = "<group>"; };
+		CEF95F362C1381D500C130C4 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 			children = (
 				CE52B30D2BFA26EA00B035D5 /* AlexNet.mlmodel */,
 				CE84DCC62C0E648100EDB9B5 /* DenseNet.mlmodel */,
+				CEF95F362C1381D500C130C4 /* MobileNet.mlmodel */,
 			);
 			path = MLModels;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				CE516EE62C053C6D007ECECB /* FoodLocalizedKeys.swift in Sources */,
 				CE67A1102BA5EF8000649A3E /* ImagePicker.swift in Sources */,
 				CE84DCAB2C0D46D900EDB9B5 /* AllClassLabelsViewModel.swift in Sources */,
+				CEF95F372C1381D500C130C4 /* MobileNet.mlmodel in Sources */,
 				CED128182BC40BC80068510E /* BaseViewModel.swift in Sources */,
 				CE60FB4E2BC01A6C005EEF5F /* NeuralNetworkMetadataModel.swift in Sources */,
 				CE84DCA12C07C5D600EDB9B5 /* FoodService.swift in Sources */,
@@ -538,7 +542,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dsirotin.magisterworkapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unn.magisterwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -572,7 +576,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dsirotin.magisterworkapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.unn.magisterwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

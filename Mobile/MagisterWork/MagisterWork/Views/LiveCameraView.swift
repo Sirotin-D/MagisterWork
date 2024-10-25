@@ -12,8 +12,24 @@ struct LiveCameraView: View {
                 CameraPreviewView(session: captureSession)
             }
             
-            PredictionResultsView(predictionsResult: viewModel.liveCameraViewState.predictionsResult, timeElapsed: viewModel.liveCameraViewState.timeElapsed)
+            IconButton(
+                systemName: IconNames.BoltSystemIcon,
+                color: viewModel.liveCameraViewState.activateButtonColor
+            ) {
+                viewModel.activateButtonClicked()
+            }
+            
+            PredictionResultsView(
+                predictionsResult: viewModel.liveCameraViewState.predictionsResult,
+                timeElapsed: viewModel.liveCameraViewState.timeElapsed,
+                predictionClicked: viewModel.foodLabelClicked
+            )
             .padding()
+            .navigationDestination(isPresented: $viewModel.liveCameraViewState.isShowFoodDescription) {
+                if let foodName = viewModel.liveCameraViewState.selectedFoodName {
+                    FoodDescriptionView(foodName: foodName)
+                }
+            }
         }
         .onAppear() {
             viewModel.onAppear()
@@ -21,6 +37,17 @@ struct LiveCameraView: View {
         .onDisappear() {
             viewModel.onDisappear()
         }
+//        .sheet(isPresented: $viewModel.liveCameraViewState.isShowFoodDescription){
+//            if let foodName = viewModel.liveCameraViewState.selectedFoodName {
+//                FoodDescriptionView(foodName: foodName)
+//            }
+//        }
+    }
+}
+
+extension LiveCameraView {
+    struct IconNames {
+        static let BoltSystemIcon = "bolt.fill"
     }
 }
 

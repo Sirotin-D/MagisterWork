@@ -10,6 +10,7 @@ struct MagisterWorkApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .preferredColorScheme(.light)
                 .task {
                     do {
                         try await KeyConstants.loadAPIKeys()

@@ -19,20 +19,23 @@ class LiveCameraViewModel: BaseViewModel {
         super.onFirstTimeAppear()
         liveCameraViewState.captureSesion = cameraManager.getCaptureSession()
         cameraManager.configureCaptureSession()
-        subscribeToCaptureSession()
-        cameraManager.startCapturing()
     }
     
-    override func onAppear() {
-        super.onAppear()
-        subscribeToCaptureSession()
-        cameraManager.startCapturing()
+    func activateButtonClicked() {
+        if !liveCameraViewState.isStartSessionButtonActivated {
+            subscribeToCaptureSession()
+            cameraManager.startCapturing()
+        } else {
+            unsubscribeFromCaptureSession()
+            cameraManager.stopCapturing()
+        }
+        liveCameraViewState.isStartSessionButtonActivated = !liveCameraViewState.isStartSessionButtonActivated
     }
     
-    override func onDisappear() {
-        super.onDisappear()
-        unsubscribeFromCaptureSession()
-        cameraManager.stopCapturing()
+    func foodLabelClicked(foodName: String) {
+        if liveCameraViewState.isStartSessionButtonActivated { return }
+        liveCameraViewState.selectedFoodName = foodName
+        liveCameraViewState.isShowFoodDescription = true
     }
     
     //MARK: - Private methods
@@ -77,6 +80,9 @@ class LiveCameraViewModel: BaseViewModel {
                 Logger.shared.e(self.kLogTag, "Vision was unable to make a prediction: \(error.localizedDescription)")
             }
         }
+//        DispatchQueue.global(qos: .userInitiated).async {
+//
+//        }
     }
 }
 
@@ -85,5 +91,11 @@ extension LiveCameraViewModel {
         var predictionsResult: [Prediction]?
         var timeElapsed: String = ""
         var captureSesion: AVCaptureSession?
+        var isShowFoodDescription = false
+        var selectedFoodName: String? = nil
+        var isStartSessionButtonActivated = false
+        var activateButtonColor: Color {
+            isStartSessionButtonActivated ? .red : .blue
+        }
     }
 }

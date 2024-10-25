@@ -11,7 +11,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                HStack {
+                HStack (spacing: CGFloat(10)) {
                     IconButton(
                         systemName: IconNames.PhotoSystemIcon,
                         enabled: !viewModel.homeViewState.isLoading,

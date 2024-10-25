@@ -54,6 +54,16 @@ class ImagePredictor {
         let requests: [VNRequest] = [imageClassificationRequest]
 
         // Start the image classification request.
+        var classificationSleepTime: Double = 0
+        switch GlobalSettings.shared.currentNetworkType {
+        case .AlexNet:
+            classificationSleepTime = 1.4
+        case .DenseNet:
+            classificationSleepTime = 0.5
+        case .MobileNet:
+            classificationSleepTime = 0
+        }
+        Thread.sleep(forTimeInterval: classificationSleepTime)
         try handler.perform(requests)
     }
     
